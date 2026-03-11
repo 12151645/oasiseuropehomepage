@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import ctaVilla from "@/assets/cta-villa.jpg";
 
 const testimonials = [
   {
@@ -52,7 +53,13 @@ const ManagementTestimonials = () => {
   }, [next]);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background">
+    <section ref={ref} className="relative py-24 md:py-32 overflow-hidden">
+      <img
+        src={ctaVilla}
+        alt="Luxury Mediterranean villa"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-foreground/60" />
       <div className="section-padding max-w-3xl mx-auto text-center">
         <div
           className={`transition-all duration-1000 ${
