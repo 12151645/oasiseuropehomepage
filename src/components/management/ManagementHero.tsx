@@ -51,17 +51,17 @@ const ManagementHero = () => {
           hotel-level guest experience, and full operational oversight.
         </p>
 
-        <div
-          className={`transition-all duration-1000 delay-500 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          <Button variant="hero" size="lg" className="gap-3">
-            List Your Property
-            <ArrowRight size={16} />
-          </Button>
-        </div>
       </div>
+
+      {/* Discrete arrow at bottom right */}
+      <a
+        href="#contact"
+        className={`absolute bottom-8 right-8 md:bottom-12 md:right-12 text-muted-foreground/50 hover:text-foreground transition-all duration-1000 delay-500 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
+      >
+        <ArrowRight size={20} strokeWidth={1.5} />
+      </a>
     </section>
   );
 };
