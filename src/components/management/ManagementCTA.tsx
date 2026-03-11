@@ -4,7 +4,7 @@ import ctaVilla from "@/assets/cta-villa.jpg";
 
 const ManagementCTA = () => {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[45vh] flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <img
         src={ctaVilla}
