@@ -93,7 +93,7 @@ const ManagementTestimonials = () => {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "bg-foreground scale-125" : "bg-border"
+                  i === current ? "bg-primary-foreground scale-125" : "bg-primary-foreground/30"
                 }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
