@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import plasterTexture from "@/assets/plaster-texture.png";
 
 const ManagementHero = () => {
   const [visible, setVisible] = useState(false);
@@ -11,10 +12,17 @@ const ManagementHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-secondary">
-      <div className="section-padding py-32 md:py-40 max-w-4xl">
+    <section
+      className="relative min-h-[70vh] flex flex-col justify-center items-center text-center"
+      style={{
+        backgroundImage: `url(${plasterTexture})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
-          className={`label-sm text-muted-foreground mb-8 transition-all duration-1000 ${
+          className={`label-sm text-muted-foreground mb-6 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -22,7 +30,7 @@ const ManagementHero = () => {
         </p>
 
         <h1
-          className={`heading-xl text-foreground mb-8 transition-all duration-1000 delay-200 ${
+          className={`heading-xl text-foreground mb-6 transition-all duration-1000 delay-200 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -32,7 +40,7 @@ const ManagementHero = () => {
         </h1>
 
         <p
-          className={`font-display text-xl md:text-2xl font-light text-muted-foreground mb-8 leading-relaxed transition-all duration-1000 delay-300 ${
+          className={`font-display text-xl md:text-2xl font-light text-muted-foreground mb-6 leading-relaxed transition-all duration-1000 delay-300 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -42,7 +50,7 @@ const ManagementHero = () => {
         </p>
 
         <p
-          className={`body-lg text-muted-foreground max-w-2xl mb-12 transition-all duration-1000 delay-400 ${
+          className={`body-lg text-muted-foreground max-w-xl mx-auto mb-10 transition-all duration-1000 delay-400 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
