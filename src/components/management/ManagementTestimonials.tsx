@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import ctaVilla from "@/assets/cta-villa.jpg";
 
 const testimonials = [
   {
@@ -52,14 +53,20 @@ const ManagementTestimonials = () => {
   }, [next]);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background">
-      <div className="section-padding max-w-3xl mx-auto text-center">
+    <section ref={ref} className="relative py-24 md:py-32 overflow-hidden">
+      <img
+        src={ctaVilla}
+        alt="Luxury Mediterranean villa"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-foreground/60" />
+      <div className="relative z-10 section-padding max-w-3xl mx-auto text-center">
         <div
           className={`transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-16">What Owners Say</p>
+          <p className="label-sm text-primary-foreground/70 mb-16">What Owners Say</p>
 
           <div className="relative min-h-[200px] flex items-center justify-center">
             {testimonials.map((t, i) => (
@@ -69,10 +76,10 @@ const ManagementTestimonials = () => {
                   i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
                 }`}
               >
-                <blockquote className="font-display text-2xl md:text-3xl font-light italic leading-relaxed text-foreground mb-8">
+                <blockquote className="font-display text-2xl md:text-3xl font-light italic leading-relaxed text-primary-foreground mb-8">
                   "{t.quote}"
                 </blockquote>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                <p className="text-sm text-primary-foreground/60 uppercase tracking-wider">
                   {t.author} — {t.location}
                 </p>
               </div>
@@ -86,7 +93,7 @@ const ManagementTestimonials = () => {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "bg-foreground scale-125" : "bg-border"
+                  i === current ? "bg-primary-foreground scale-125" : "bg-primary-foreground/30"
                 }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
