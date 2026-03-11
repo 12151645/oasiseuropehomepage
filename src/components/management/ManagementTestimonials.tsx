@@ -66,7 +66,7 @@ const ManagementTestimonials = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-16">What Owners Say</p>
+          <p className="label-sm text-primary-foreground/70 mb-16">What Owners Say</p>
 
           <div className="relative min-h-[200px] flex items-center justify-center">
             {testimonials.map((t, i) => (
