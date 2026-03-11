@@ -76,17 +76,20 @@ const ManagementModel = () => {
 
   return (
     <section ref={ref} className="bg-secondary">
-      {/* Header */}
-      <div className="section-padding pt-24 md:pt-32 pb-12">
-        <div className="max-w-3xl">
+      {/* Split Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[60vh]">
+        {/* Left - Content + Steps */}
+        <div
+          className={`flex flex-col justify-center section-padding py-20 lg:py-28 transition-all duration-1000 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <p className="label-sm text-muted-foreground mb-4">The Oasis Model</p>
           <h2 className="heading-lg mb-6">A Structured Management System</h2>
-          <p className="body-lg text-muted-foreground">
+          <p className="body-lg text-muted-foreground mb-12">
             Unlike traditional agencies, Oasis Europe operates through a structured
             asset management model designed to maximise long-term property performance.
           </p>
-        </div>
-      </div>
 
       {/* Split Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[60vh]">
