@@ -76,10 +76,10 @@ const ManagementTestimonials = () => {
                   i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
                 }`}
               >
-                <blockquote className="font-display text-2xl md:text-3xl font-light italic leading-relaxed text-foreground mb-8">
+                <blockquote className="font-display text-2xl md:text-3xl font-light italic leading-relaxed text-primary-foreground mb-8">
                   "{t.quote}"
                 </blockquote>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                <p className="text-sm text-primary-foreground/60 uppercase tracking-wider">
                   {t.author} — {t.location}
                 </p>
               </div>
