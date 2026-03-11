@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import plasterTexture from "@/assets/plaster-texture.png";
 
 const ManagementHero = () => {
   const [visible, setVisible] = useState(false);
