@@ -60,7 +60,7 @@ const ManagementTestimonials = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-foreground/60" />
-      <div className="section-padding max-w-3xl mx-auto text-center">
+      <div className="relative z-10 section-padding max-w-3xl mx-auto text-center">
         <div
           className={`transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
