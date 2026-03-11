@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "Management", href: "#" },
+  { label: "Management", href: "/management" },
   { label: "Development", href: "#" },
   { label: "Capital", href: "#" },
   { label: "Advisory", href: "#" },
