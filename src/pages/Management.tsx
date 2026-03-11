@@ -16,8 +16,8 @@ const Management = () => {
       <ManagementHero />
       <ManagementPositioning />
       <ManagementModel />
-      <ManagementListings />
       <ManagementPhilosophy />
+      <ManagementListings />
       <ManagementOwnerExperience />
       <ManagementTestimonials />
       <ManagementCTA />
