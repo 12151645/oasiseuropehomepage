@@ -6,7 +6,7 @@ const navItems = [
   { label: "Developments", href: "/developments" },
   { label: "Capital", href: "/capital" },
   { label: "Advisory", href: "/advisory" },
-  { label: "Brands", href: "#" },
+  { label: "About Us", href: "/about" },
 ];
 
 const Navbar = () => {
