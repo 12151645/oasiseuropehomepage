@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import devHero from "@/assets/dev-hero.jpg";
 
 const DevelopmentsBreak = () => {
   const [visible, setVisible] = useState(false);
@@ -15,15 +14,9 @@ const DevelopmentsBreak = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-      <img
-        src={devHero}
-        alt="Luxury development detail"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-black/60" />
+    <section ref={ref} className="bg-black py-24 md:py-32 overflow-hidden">
       <div
-        className={`relative z-10 flex flex-col items-center justify-center h-full section-padding text-center transition-all duration-1000 ${
+        className={`flex flex-col items-center justify-center section-padding text-center transition-all duration-1000 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
       >
