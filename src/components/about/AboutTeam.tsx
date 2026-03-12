@@ -32,21 +32,9 @@ const AboutTeam = () => {
 
   return (
     <section ref={ref} style={{ backgroundColor: 'rgb(250, 248, 245)' }}>
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
-        {/* Left - Image */}
-        <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
-          <img
-            src={teamImage}
-            alt="Oasis Europe team in consultation"
-            className={`w-full h-full object-cover transition-all duration-1000 ${
-              visible ? "opacity-100 scale-100" : "opacity-0 scale-105"
-            }`}
-          />
-        </div>
-
-        {/* Right - Content */}
+      <div className="section-padding py-20 lg:py-28">
         <div
-          className={`flex flex-col justify-center section-padding py-20 lg:py-28 transition-all duration-1000 delay-200 ${
+          className={`max-w-4xl mx-auto transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
