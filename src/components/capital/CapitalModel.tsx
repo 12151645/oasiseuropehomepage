@@ -83,7 +83,7 @@ const CapitalModel = () => {
             return (
               <div
                 key={step.number}
-                className={`grid grid-cols-1 lg:grid-cols-2 border-t border-border transition-all duration-700 ${
+                className={`grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] border-t border-border transition-all duration-700 ${
                   visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${i * 200}ms` }}
