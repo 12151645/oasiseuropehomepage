@@ -58,7 +58,7 @@ const CapitalModel = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -66,7 +66,6 @@ const CapitalModel = () => {
 
   return (
     <section ref={ref} style={{ backgroundColor: 'rgb(58, 64, 50)' }}>
-      {/* Header */}
       <div
         className={`text-center py-20 md:py-28 transition-all duration-1000 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -75,52 +74,58 @@ const CapitalModel = () => {
         <p className="label-sm text-white/50 mb-4">Investment Process</p>
         <h2 className="heading-lg text-white">How It Works</h2>
       </div>
+      <div className="section-padding py-24 md:py-32">
 
-      {/* Steps */}
-      <div className="space-y-6 md:space-y-10 px-6 md:px-12 lg:px-20 pb-24 md:pb-32">
-        {steps.map((step, i) => (
-          <div
-            key={step.number}
-            className={`relative rounded-2xl overflow-hidden transition-all duration-700 ${
-              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
-            style={{ transitionDelay: `${i * 150}ms` }}
-          >
-            {/* Full-width image */}
-            <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-              <img
-                src={step.image}
-                alt={step.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        <div className="space-y-0">
+          {steps.map((step, i) => {
+            const isEven = i % 2 === 0;
+            return (
+              <div
+                key={step.number}
+                className={`grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] border-t border-white/10 transition-all duration-700 ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${i * 200}ms` }}
+              >
+                <div
+                  className={`relative min-h-[400px] lg:min-h-full overflow-hidden ${
+                    isEven ? "lg:order-1" : "lg:order-2"
+                  }`}
+                >
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/10" />
+                </div>
 
-              {/* Content overlay at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16">
-                <div className="flex items-start gap-6 md:gap-10">
-                  <span className="font-display text-5xl md:text-7xl font-light text-white/20 leading-none shrink-0">
+                <div
+                  className={`flex flex-col justify-center py-12 lg:py-16 px-6 lg:px-16 ${
+                    isEven ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
+                  <p className="font-display text-5xl font-light text-white/20 mb-4">
                     {step.number}
-                  </span>
-                  <div className="max-w-2xl">
-                    <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-white/70 font-light leading-relaxed mb-4">
-                      {step.description}
-                    </p>
-                    <div className="flex flex-wrap gap-x-8 gap-y-1">
-                      {step.highlights.map((h) => (
-                        <span key={h} className="text-sm text-white/50 italic font-display">
-                          — {h}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                  </p>
+                  <h3 className="font-display text-2xl md:text-3xl font-medium text-white mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-white/70 font-light leading-relaxed mb-6">
+                    {step.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {step.highlights.map((h) => (
+                      <li key={h} className="text-sm text-white/50 italic font-display">
+                        — {h}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
