@@ -65,7 +65,7 @@ const CapitalModel = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-capital py-24 md:py-32">
+    <section ref={ref} className="bg-background py-24 md:py-32">
       <div className="section-padding">
         <div
           className={`text-center mb-16 md:mb-20 transition-all duration-1000 ${
