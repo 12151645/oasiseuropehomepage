@@ -138,7 +138,7 @@ const DevelopmentsModel = () => {
                 </h3>
                 <ul className="space-y-3">
                   {step.items.map((item) => (
-                    <li key={item} className="text-sm text-muted-foreground font-light leading-relaxed">
+                    <li key={item} className="text-sm text-primary-foreground/70 font-light leading-relaxed">
                       {item}
                     </li>
                   ))}
