@@ -43,62 +43,66 @@ const AdvisoryApproach = () => {
   }, []);
 
   return (
-    <>
-      {/* Hero heading section with background image */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <img
-          src={heroImage}
-          alt="Modern architectural interior"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-foreground/85" />
+    <section ref={ref} style={{ backgroundColor: 'rgb(250, 248, 245)' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[85vh]">
+        {/* Left - Content */}
+        <div
+          className={`flex flex-col justify-center section-padding py-20 lg:py-28 transition-all duration-1000 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <p className="label-sm text-muted-foreground mb-4">Our Approach</p>
+          <h2 className="heading-lg text-foreground mb-4">
+            Independent Advisory,
+            <br />
+            Uncompromised Standards
+          </h2>
+          <p className="text-sm text-muted-foreground font-light leading-relaxed mb-12 max-w-md">
+            Our advisory is built on four pillars that ensure every decision is informed, protected, and optimised.
+          </p>
 
-        <div className="relative z-10 section-padding">
-          <div className="text-center">
-            <p className="label-sm text-sand/50 mb-4">Our Approach</p>
-            <h2 className="heading-lg text-sand">
-              Independent Advisory,
-              <br />
-              Uncompromised Standards
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      {/* Pillars section */}
-      <section
-        ref={ref}
-        className="py-24 md:py-32"
-        style={{ backgroundColor: 'rgb(250, 248, 245)' }}
-      >
-        <div className="section-padding">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="space-y-0">
             {pillars.map((pillar, i) => {
               const Icon = pillar.icon;
               return (
                 <div
                   key={pillar.title}
-                  className={`text-center transition-all duration-700 ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`group border-t border-border last:border-b py-7 transition-all duration-700 ${
+                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
-                  style={{ transitionDelay: `${i * 150}ms` }}
+                  style={{ transitionDelay: `${300 + i * 150}ms` }}
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 mb-6">
-                    <Icon size={24} className="text-accent" strokeWidth={1.5} />
+                  <div className="flex items-start gap-5">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-foreground/5 flex items-center justify-center mt-0.5">
+                      <Icon size={18} strokeWidth={1.3} className="text-foreground/70" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg font-medium text-foreground mb-2">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                        {pillar.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="font-display text-xl font-medium mb-4 text-foreground">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                    {pillar.description}
-                  </p>
                 </div>
               );
             })}
           </div>
         </div>
-      </section>
-    </>
+
+        {/* Right - Image */}
+        <div className="relative min-h-[450px] lg:min-h-full overflow-hidden">
+          <img
+            src={heroImage}
+            alt="Modern architectural interior"
+            className={`w-full h-full object-cover transition-all duration-1000 ${
+              visible ? "opacity-100 scale-100" : "opacity-0 scale-105"
+            }`}
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
