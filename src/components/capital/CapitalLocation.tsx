@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import capitalLocation from "@/assets/capital-location.jpg";
+import capitalLocation from "@/assets/capital-prime-location.png";
 
 const CapitalLocation = () => {
   const [visible, setVisible] = useState(false);
