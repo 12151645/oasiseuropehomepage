@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import aboutStoryBg from "@/assets/about-story.jpg";
+import aboutStoryBg from "@/assets/about-team.jpg";
 
 const AboutStory = () => {
   const [visible, setVisible] = useState(false);
