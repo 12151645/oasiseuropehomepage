@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Shield, Search, TrendingUp, Handshake } from "lucide-react";
-import heroImage from "@/assets/advisory-hero.jpg";
+import approachImage from "@/assets/advisory-approach.jpg";
 
 const pillars = [
   {
@@ -94,7 +94,7 @@ const AdvisoryApproach = () => {
         {/* Right - Image */}
         <div className="relative min-h-[450px] lg:min-h-full overflow-hidden">
           <img
-            src={heroImage}
+            src={approachImage}
             alt="Modern architectural interior"
             className={`w-full h-full object-cover transition-all duration-1000 ${
               visible ? "opacity-100 scale-100" : "opacity-0 scale-105"
