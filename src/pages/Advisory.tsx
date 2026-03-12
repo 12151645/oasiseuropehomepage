@@ -11,9 +11,9 @@ const Advisory = () => {
     <main className="overflow-x-hidden">
       <Navbar />
       <AdvisoryHero />
+      <AdvisoryApproach />
       <AdvisoryAcquisition />
       <AdvisoryExitStrategy />
-      <AdvisoryApproach />
       <AdvisoryCTA />
       <Footer />
     </main>
