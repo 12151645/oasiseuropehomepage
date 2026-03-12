@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import devPlanning from "@/assets/dev-planning.jpg";
+import villaMarbesa56 from "@/assets/villa-marbesa-56.jpg";
 
 const ManagementPositioning = () => {
   const [visible, setVisible] = useState(false);
