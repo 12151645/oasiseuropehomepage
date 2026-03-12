@@ -15,7 +15,7 @@ const DevelopmentsShowcase = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-black">
+    <section ref={ref} className="bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
         {/* Left - Content */}
         <div
