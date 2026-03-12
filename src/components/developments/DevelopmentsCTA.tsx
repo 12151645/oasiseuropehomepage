@@ -11,7 +11,7 @@ const DevelopmentsCTA = () => {
           We create a tailored plan for every individual project.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button variant="hero" size="lg" className="gap-3">
+          <Button variant="hero" size="lg" className="gap-3 bg-developments hover:bg-developments/90">
             Start Your Project
             <ArrowRight size={16} />
           </Button>
