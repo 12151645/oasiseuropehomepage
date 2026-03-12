@@ -23,12 +23,12 @@ const ManagementPositioning = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-8">Starting Point</p>
+          <p className="label-sm text-primary-foreground/50 mb-8">Starting Point</p>
 
-          <h2 className="heading-lg mb-8">How Do We Start?</h2>
+          <h2 className="heading-lg text-primary-foreground mb-8">How Do We Start?</h2>
 
-          <div className="space-y-5 text-sm text-muted-foreground font-light leading-relaxed">
-            <p className="body-lg text-foreground font-normal">
+          <div className="space-y-5 text-sm text-primary-foreground/70 font-light leading-relaxed">
+            <p className="body-lg text-primary-foreground font-normal">
               Every project begins with a clear objective.
             </p>
             <p>
