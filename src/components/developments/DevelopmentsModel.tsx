@@ -76,7 +76,7 @@ const DevelopmentsModel = () => {
   }, [next]);
 
   return (
-    <section ref={ref} className="bg-black">
+    <section ref={ref} className="bg-secondary">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
         {/* Left - Image with overlay */}
         <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
@@ -100,6 +100,7 @@ const DevelopmentsModel = () => {
               Oasis Europe manages the project on-site. Our role is to ensure
               the finished result meets both design standards and financial expectations.
             </p>
+
           </div>
         </div>
 
@@ -115,7 +116,7 @@ const DevelopmentsModel = () => {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`h-0.5 transition-all duration-500 ${
-                  i === current ? "w-10 bg-primary-foreground" : "w-5 bg-primary-foreground/30 hover:bg-primary-foreground/50"
+                  i === current ? "w-10 bg-foreground" : "w-5 bg-foreground/30 hover:bg-foreground/50"
                 }`}
                 aria-label={`Go to step ${i + 1}`}
               />
@@ -132,13 +133,13 @@ const DevelopmentsModel = () => {
                     : "opacity-0 translate-y-4 absolute inset-0 pointer-events-none"
                 }`}
               >
-                <p className="label-sm text-accent mb-4">{step.number}</p>
-                <h3 className="font-display text-2xl md:text-3xl font-medium mb-6 text-primary-foreground">
+                <p className="label-sm text-accent-foreground mb-4">{step.number}</p>
+                <h3 className="font-display text-2xl md:text-3xl font-medium mb-6 text-foreground">
                   {step.title}
                 </h3>
                 <ul className="space-y-3">
                   {step.items.map((item) => (
-                    <li key={item} className="text-sm text-primary-foreground/60 font-light leading-relaxed">
+                    <li key={item} className="text-sm text-muted-foreground font-light leading-relaxed">
                       {item}
                     </li>
                   ))}
@@ -147,7 +148,7 @@ const DevelopmentsModel = () => {
             ))}
           </div>
 
-          <p className="mt-12 italic font-display text-lg text-primary-foreground/70">
+          <p className="mt-12 italic font-display text-lg text-foreground/70">
             We do not simply manage construction. We manage outcomes.
           </p>
         </div>
