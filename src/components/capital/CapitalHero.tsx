@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import capitalHero from "@/assets/capital-hero.jpg";
 
 const CapitalHero = () => {
   const [visible, setVisible] = useState(false);
