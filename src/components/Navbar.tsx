@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Management", href: "/management" },
-  { label: "Development", href: "#" },
+  { label: "Developments", href: "/developments" },
   { label: "Capital", href: "#" },
   { label: "Advisory", href: "#" },
   { label: "Brands", href: "#" },
