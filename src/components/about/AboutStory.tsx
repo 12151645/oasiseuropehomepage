@@ -14,7 +14,7 @@ const AboutStory = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-secondary">
+    <section ref={ref} className="py-24 md:py-32 bg-background">
       <div className="section-padding">
         <div
           className={`max-w-3xl mx-auto text-center transition-all duration-1000 ${
