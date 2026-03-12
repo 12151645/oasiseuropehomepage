@@ -97,7 +97,7 @@ const CapitalModel = () => {
                     alt={step.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-capital/30" />
+                  <div className="absolute inset-0 bg-foreground/10" />
                 </div>
 
                 <div
