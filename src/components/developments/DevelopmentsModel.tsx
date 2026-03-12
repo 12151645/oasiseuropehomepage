@@ -133,8 +133,8 @@ const DevelopmentsModel = () => {
                     : "opacity-0 translate-y-4 absolute inset-0 pointer-events-none"
                 }`}
               >
-                <p className="label-sm text-accent mb-4">{step.number}</p>
-                <h3 className="font-display text-2xl md:text-3xl font-medium mb-6 text-primary-foreground">
+                <p className="label-sm text-accent-foreground mb-4">{step.number}</p>
+                <h3 className="font-display text-2xl md:text-3xl font-medium mb-6 text-foreground">
                   {step.title}
                 </h3>
                 <ul className="space-y-3">
