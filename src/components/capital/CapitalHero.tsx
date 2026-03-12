@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import capitalHero from "@/assets/capital-hero.jpg";
 
 const CapitalHero = () => {
   const [visible, setVisible] = useState(false);
@@ -10,18 +10,24 @@ const CapitalHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center bg-secondary">
-      <div className="section-padding py-24 md:py-32 max-w-3xl mx-auto">
+    <section className="relative min-h-[85vh] flex flex-col justify-center items-center text-center">
+      <img
+        src={capitalHero}
+        alt="Luxury Mediterranean villa investment"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-capital/75" />
+      <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
-          className={`label-sm text-muted-foreground mb-6 transition-all duration-1000 ${
+          className={`label-sm text-capital-foreground/60 mb-6 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Investments
+          Investment Fund
         </p>
 
         <h1
-          className={`heading-xl text-foreground mb-6 transition-all duration-1000 delay-200 ${
+          className={`heading-xl text-capital-foreground mb-8 transition-all duration-1000 delay-200 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -31,36 +37,16 @@ const CapitalHero = () => {
         </h1>
 
         <p
-          className={`font-display text-xl md:text-2xl font-light text-muted-foreground mb-6 leading-relaxed transition-all duration-1000 delay-300 ${
+          className={`body-lg text-capital-foreground/80 max-w-xl mx-auto transition-all duration-1000 delay-[400ms] ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Structured access to luxury real estate.
-          <br />
-          <em className="italic">Performance-driven returns.</em>
-        </p>
-
-        <p
-          className={`body-lg text-muted-foreground max-w-xl mx-auto mb-10 transition-all duration-1000 delay-[400ms] ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          Our Private Capital Fund brings investors together to invest in luxury
-          real estate properties. We select exclusive properties, manage the portfolio,
-          and use our ecosystem to generate a solid annual return — all while the
-          investment is secured by the property value.
+          The Oasis Europe Private Investment Fund provides structured access to
+          high-end residential real estate projects in prime Mediterranean locations.
+          The model is straightforward and each project follows a defined lifecycle
+          with professional oversight from acquisition through exit.
         </p>
       </div>
-
-      <a
-        href="#contact"
-        className={`absolute bottom-8 right-8 md:bottom-12 md:right-12 flex items-center gap-2 text-muted-foreground/50 hover:text-foreground transition-all duration-1000 delay-500 ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-        }`}
-      >
-        <span className="text-xs uppercase tracking-[0.15em] font-body">Invest With Us</span>
-        <ArrowRight size={16} strokeWidth={1.5} />
-      </a>
     </section>
   );
 };

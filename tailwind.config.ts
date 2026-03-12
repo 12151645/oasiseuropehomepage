@@ -57,6 +57,11 @@ export default {
         },
         "warm-black": "hsl(var(--warm-black))",
         gold: "hsl(var(--gold))",
+        capital: {
+          DEFAULT: "hsl(var(--capital))",
+          light: "hsl(var(--capital-light))",
+          foreground: "hsl(var(--capital-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -1,12 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import architecturalDetail from "@/assets/architectural-detail.jpg";
 
-const stats = [
-  { value: "12–24", label: "Month Project Lifecycle" },
-  { value: "100%", label: "Asset-Backed Security" },
-  { value: "Prime", label: "Mediterranean Locations" },
-];
-
 const CapitalPositioning = () => {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -21,36 +15,9 @@ const CapitalPositioning = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-background">
+    <section ref={ref} className="bg-capital">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
-        {/* Left - Stats */}
-        <div
-          className={`flex flex-col justify-center section-padding py-20 lg:py-32 transition-all duration-1000 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <p className="label-sm text-muted-foreground mb-8">The Concept</p>
-
-          <div className="space-y-8 mb-12">
-            {stats.map((stat) => (
-              <div key={stat.label} className="border-b border-border pb-6">
-                <p className="font-display text-4xl md:text-5xl font-light text-foreground mb-2">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="space-y-3 text-sm text-muted-foreground font-light leading-relaxed">
-            <p>Invest in a curated project. Acquire a prime villa below optimised value.</p>
-            <p>Transform it into a premium turnkey residence. Sell strategically at enhanced market positioning.</p>
-          </div>
-        </div>
-
-        {/* Right - Image */}
+        {/* Left - Image */}
         <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
           <img
             src={architecturalDetail}
@@ -59,6 +26,39 @@ const CapitalPositioning = () => {
               visible ? "opacity-100 scale-100" : "opacity-0 scale-105"
             }`}
           />
+        </div>
+
+        {/* Right - Content */}
+        <div
+          className={`flex flex-col justify-center section-padding py-20 lg:py-32 transition-all duration-1000 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <p className="label-sm text-capital-foreground/50 mb-6">The Concept</p>
+          <h2 className="heading-lg text-capital-foreground mb-8">The Model</h2>
+
+          <div className="space-y-5 text-base text-capital-foreground/75 font-light leading-relaxed">
+            <p>
+              The model is straightforward. Invest in a curated project. Acquire a prime
+              villa below optimised value. Transform it into a premium turnkey residence.
+              Sell strategically at enhanced market positioning.
+            </p>
+            <p>
+              Each project is structured as a Private Investment Fund — providing a
+              transparent and professionally managed investment framework. From acquisition
+              to return generation, we oversee the entire lifecycle of the investment.
+            </p>
+            <p>
+              Beyond sourcing the property, we manage all operational and financial aspects
+              to optimise performance, maintain quality standards, and ensure consistent income.
+              With a hands-off approach and full transparency, Oasis Europe enables investors
+              to participate in professionally managed real estate projects focused on solid returns.
+            </p>
+          </div>
+
+          <p className="mt-10 italic font-display text-xl text-capital-foreground">
+            We are the smart choice.
+          </p>
         </div>
       </div>
     </section>
