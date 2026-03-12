@@ -53,6 +53,7 @@ const steps = [
 
 const CapitalModel = () => {
   const [visible, setVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -64,6 +65,8 @@ const CapitalModel = () => {
     return () => observer.disconnect();
   }, []);
 
+  const activeStep = steps[activeIndex];
+
   return (
     <section ref={ref} style={{ backgroundColor: 'rgb(58, 64, 50)' }}>
       <div
@@ -74,57 +77,85 @@ const CapitalModel = () => {
         <p className="label-sm text-white/50 mb-4">Investment Process</p>
         <h2 className="heading-lg text-white">How It Works</h2>
       </div>
-      <div className="section-padding py-24 md:py-32">
 
-        <div className="space-y-0">
-          {steps.map((step, i) => {
-            const isEven = i % 2 === 0;
-            return (
-              <div
+      <div className="section-padding pb-24 md:pb-32">
+        <div
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-0 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Left: Accordion */}
+          <div className="flex flex-col">
+            {steps.map((step, i) => {
+              const isActive = i === activeIndex;
+              return (
+                <button
+                  key={step.number}
+                  onClick={() => setActiveIndex(i)}
+                  className={`text-left border-t border-white/10 px-6 lg:px-10 transition-all duration-500 ${
+                    isActive
+                      ? "py-8 lg:py-10 bg-white/5"
+                      : "py-5 lg:py-6 hover:bg-white/[0.02]"
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <span className={`font-display text-sm tracking-wider transition-colors duration-300 ${
+                      isActive ? "text-white/60" : "text-white/25"
+                    }`}>
+                      {step.number}
+                    </span>
+                    <h3 className={`font-display font-medium transition-all duration-300 ${
+                      isActive ? "text-xl md:text-2xl text-white" : "text-lg text-white/50"
+                    }`}>
+                      {step.title}
+                    </h3>
+                  </div>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ${
+                      isActive ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="text-sm text-white/60 font-light leading-relaxed pl-10 mb-4">
+                      {step.description}
+                    </p>
+                    <ul className="space-y-1.5 pl-10">
+                      {step.highlights.map((h) => (
+                        <li key={h} className="text-sm text-white/40 italic font-display">
+                          — {h}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Mobile image */}
+                    <div className="lg:hidden mt-6 pl-10">
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        className="w-full h-56 object-cover"
+                      />
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+            <div className="border-t border-white/10" />
+          </div>
+
+          {/* Right: Active Image (desktop only) */}
+          <div className="hidden lg:block relative overflow-hidden min-h-[500px]">
+            {steps.map((step, i) => (
+              <img
                 key={step.number}
-                className={`grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] border-t border-white/10 transition-all duration-700 ${
-                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                src={step.image}
+                alt={step.title}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                  i === activeIndex ? "opacity-100" : "opacity-0"
                 }`}
-                style={{ transitionDelay: `${i * 200}ms` }}
-              >
-                <div
-                  className={`relative min-h-[400px] lg:min-h-full overflow-hidden ${
-                    isEven ? "lg:order-1" : "lg:order-2"
-                  }`}
-                >
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/10" />
-                </div>
-
-                <div
-                  className={`flex flex-col justify-center py-12 lg:py-16 px-6 lg:px-16 ${
-                    isEven ? "lg:order-2" : "lg:order-1"
-                  }`}
-                >
-                  <p className="font-display text-5xl font-light text-white/20 mb-4">
-                    {step.number}
-                  </p>
-                  <h3 className="font-display text-2xl md:text-3xl font-medium text-white mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-white/70 font-light leading-relaxed mb-6">
-                    {step.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {step.highlights.map((h) => (
-                      <li key={h} className="text-sm text-white/50 italic font-display">
-                        — {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            );
-          })}
+              />
+            ))}
+            <div className="absolute inset-0 bg-black/10" />
+          </div>
         </div>
       </div>
     </section>
