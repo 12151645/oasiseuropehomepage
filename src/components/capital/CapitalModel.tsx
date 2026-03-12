@@ -65,7 +65,7 @@ const CapitalModel = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-background">
+    <section ref={ref} style={{ backgroundColor: 'rgb(58, 64, 50)' }}>
       <div
         className={`text-center py-20 md:py-28 transition-all duration-1000 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
