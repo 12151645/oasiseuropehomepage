@@ -17,20 +17,9 @@ const ManagementPositioning = () => {
   return (
     <section ref={ref} className="bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
-        {/* Left - Image */}
-        <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
-          <img
-            src={devPlanning}
-            alt="Luxury renovation planning"
-            className={`w-full h-full object-cover transition-all duration-1000 ${
-              visible ? "opacity-100 scale-100" : "opacity-0 scale-105"
-            }`}
-          />
-        </div>
-
-        {/* Right - Content */}
+        {/* Left - Content */}
         <div
-          className={`flex flex-col justify-center section-padding py-20 lg:py-32 transition-all duration-1000 delay-300 ${
+          className={`flex flex-col justify-center section-padding py-20 lg:py-32 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -51,6 +40,17 @@ const ManagementPositioning = () => {
               Design decisions are guided by purpose — not preference alone.
             </p>
           </div>
+        </div>
+
+        {/* Right - Image */}
+        <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
+          <img
+            src={devPlanning}
+            alt="Luxury renovation planning"
+            className={`w-full h-full object-cover transition-all duration-1000 delay-300 ${
+              visible ? "opacity-100 scale-100" : "opacity-0 scale-105"
+            }`}
+          />
         </div>
       </div>
     </section>
