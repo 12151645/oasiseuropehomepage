@@ -65,15 +65,15 @@ const CapitalModel = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-capital py-24 md:py-32">
+    <section ref={ref} className="bg-background py-24 md:py-32">
       <div className="section-padding">
         <div
           className={`text-center mb-16 md:mb-20 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-capital-foreground/50 mb-4">Investment Process</p>
-          <h2 className="heading-lg text-capital-foreground">How It Works</h2>
+          <p className="label-sm text-muted-foreground mb-4">Investment Process</p>
+          <h2 className="heading-lg text-foreground">How It Works</h2>
         </div>
 
         <div className="space-y-0">
@@ -82,7 +82,7 @@ const CapitalModel = () => {
             return (
               <div
                 key={step.number}
-                className={`grid grid-cols-1 lg:grid-cols-2 border-t border-capital-light/30 transition-all duration-700 ${
+                className={`grid grid-cols-1 lg:grid-cols-2 border-t border-border transition-all duration-700 ${
                   visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${i * 200}ms` }}
@@ -97,7 +97,7 @@ const CapitalModel = () => {
                     alt={step.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-capital/30" />
+                  <div className="absolute inset-0 bg-foreground/10" />
                 </div>
 
                 <div
@@ -105,18 +105,18 @@ const CapitalModel = () => {
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <p className="font-display text-5xl font-light text-capital-foreground/20 mb-4">
+                  <p className="font-display text-5xl font-light text-muted-foreground/30 mb-4">
                     {step.number}
                   </p>
-                  <h3 className="font-display text-2xl md:text-3xl font-medium text-capital-foreground mb-4">
+                  <h3 className="font-display text-2xl md:text-3xl font-medium text-foreground mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-capital-foreground/70 font-light leading-relaxed mb-6">
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
                     {step.description}
                   </p>
                   <ul className="space-y-2">
                     {step.highlights.map((h) => (
-                      <li key={h} className="text-sm text-capital-foreground/50 italic font-display">
+                      <li key={h} className="text-sm text-muted-foreground/70 italic font-display">
                         — {h}
                       </li>
                     ))}
