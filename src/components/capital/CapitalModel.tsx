@@ -105,18 +105,18 @@ const CapitalModel = () => {
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <p className="font-display text-5xl font-light text-capital-foreground/20 mb-4">
+                  <p className="font-display text-5xl font-light text-muted-foreground/30 mb-4">
                     {step.number}
                   </p>
-                  <h3 className="font-display text-2xl md:text-3xl font-medium text-capital-foreground mb-4">
+                  <h3 className="font-display text-2xl md:text-3xl font-medium text-foreground mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-capital-foreground/70 font-light leading-relaxed mb-6">
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
                     {step.description}
                   </p>
                   <ul className="space-y-2">
                     {step.highlights.map((h) => (
-                      <li key={h} className="text-sm text-capital-foreground/50 italic font-display">
+                      <li key={h} className="text-sm text-muted-foreground/70 italic font-display">
                         — {h}
                       </li>
                     ))}
