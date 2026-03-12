@@ -133,7 +133,7 @@ const DevelopmentsModel = () => {
                 }`}
               >
                 <p className="label-sm text-accent mb-4">{step.number}</p>
-                <h3 className="font-display text-2xl md:text-3xl font-medium mb-6 text-foreground">
+                <h3 className="font-display text-2xl md:text-3xl font-medium mb-6 text-primary-foreground">
                   {step.title}
                 </h3>
                 <ul className="space-y-3">
