@@ -89,7 +89,7 @@ const CapitalModel = () => {
                 style={{ transitionDelay: `${i * 200}ms` }}
               >
                 <div
-                  className={`relative min-h-[350px] lg:min-h-[500px] overflow-hidden ${
+                  className={`relative min-h-[400px] lg:min-h-full overflow-hidden ${
                     isEven ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
