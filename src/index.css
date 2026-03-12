@@ -43,6 +43,9 @@
     --capital: 150 12% 24%;
     --capital-light: 150 10% 32%;
     --capital-foreground: 40 30% 95%;
+    --advisory: 30 30% 92%;
+    --advisory-dark: 30 20% 82%;
+    --advisory-foreground: 25 15% 20%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

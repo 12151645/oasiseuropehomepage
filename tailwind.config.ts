@@ -62,6 +62,11 @@ export default {
           light: "hsl(var(--capital-light))",
           foreground: "hsl(var(--capital-foreground))",
         },
+        advisory: {
+          DEFAULT: "hsl(var(--advisory))",
+          dark: "hsl(var(--advisory-dark))",
+          foreground: "hsl(var(--advisory-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
