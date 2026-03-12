@@ -14,7 +14,7 @@ const Developments = () => {
       <Navbar />
       <DevelopmentsHero />
       <DevelopmentsPositioning />
-      <DevelopmentsBreak />
+      
       <DevelopmentsModel />
       <DevelopmentsObjectives />
       <DevelopmentsShowcase />
