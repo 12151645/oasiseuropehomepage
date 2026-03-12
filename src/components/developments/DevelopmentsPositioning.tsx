@@ -15,7 +15,7 @@ const ManagementPositioning = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-background">
+    <section ref={ref} className="bg-black text-primary-foreground">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
         {/* Left - Content */}
         <div
@@ -23,12 +23,12 @@ const ManagementPositioning = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-8">Starting Point</p>
+          <p className="label-sm text-primary-foreground/50 mb-8">Starting Point</p>
 
-          <h2 className="heading-lg mb-8">How Do We Start?</h2>
+          <h2 className="heading-lg text-primary-foreground mb-8">How Do We Start?</h2>
 
-          <div className="space-y-5 text-sm text-muted-foreground font-light leading-relaxed">
-            <p className="body-lg text-foreground font-normal">
+          <div className="space-y-5 text-sm text-primary-foreground/70 font-light leading-relaxed">
+            <p className="body-lg text-primary-foreground font-normal">
               Every project begins with a clear objective.
             </p>
             <p>
@@ -36,7 +36,7 @@ const ManagementPositioning = () => {
               rental performance? A strategic resale or long-term capital
               appreciation? The strategy determines the scope.
             </p>
-            <p className="italic font-display text-lg text-foreground">
+            <p className="italic font-display text-lg text-primary-foreground">
               Design decisions are guided by purpose — not preference alone.
             </p>
           </div>
