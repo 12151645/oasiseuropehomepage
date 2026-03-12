@@ -23,9 +23,9 @@ const DevelopmentsShowcase = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-8">Our Philosophy</p>
+          <p className="label-sm text-primary-foreground/70 mb-8">Our Philosophy</p>
 
-          <h2 className="heading-lg mb-8">
+          <h2 className="heading-lg text-primary-foreground mb-8">
             Design With
             <br />
             <em className="italic font-light">Market Logic</em>
