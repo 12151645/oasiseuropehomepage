@@ -42,11 +42,11 @@ const CapitalExpectations = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-capital">
+    <section ref={ref} className="py-24 md:py-32 bg-secondary">
       <div className="section-padding">
         <div className="text-center mb-16 md:mb-20">
-          <p className="label-sm text-capital-foreground/50 mb-4">Investor Experience</p>
-          <h2 className="heading-lg text-capital-foreground">What Investors Can Expect</h2>
+          <p className="label-sm text-muted-foreground mb-4">Investor Experience</p>
+          <h2 className="heading-lg text-foreground">What Investors Can Expect</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -60,13 +60,13 @@ const CapitalExpectations = () => {
                 }`}
                 style={{ transitionDelay: `${i * 150}ms` }}
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 mb-6 border border-capital-foreground/20 rounded-full">
-                  <Icon size={22} className="text-gold" strokeWidth={1.5} />
+                <div className="inline-flex items-center justify-center w-12 h-12 mb-6 border border-border rounded-full">
+                  <Icon size={22} className="text-accent" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-display text-xl font-medium mb-4 text-capital-foreground">
+                <h3 className="font-display text-xl font-medium mb-4 text-foreground">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-capital-foreground/60 font-light leading-relaxed">
+                <p className="text-sm text-muted-foreground font-light leading-relaxed">
                   {pillar.description}
                 </p>
               </div>

@@ -15,7 +15,7 @@ const CapitalPositioning = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-capital">
+    <section ref={ref} className="bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
         {/* Left - Image */}
         <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
@@ -34,10 +34,10 @@ const CapitalPositioning = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-capital-foreground/50 mb-6">The Concept</p>
-          <h2 className="heading-lg text-capital-foreground mb-8">The Model</h2>
+          <p className="label-sm text-muted-foreground mb-6">The Concept</p>
+          <h2 className="heading-lg text-foreground mb-8">The Model</h2>
 
-          <div className="space-y-5 text-base text-capital-foreground/75 font-light leading-relaxed">
+          <div className="space-y-5 text-base text-muted-foreground font-light leading-relaxed">
             <p>
               The model is straightforward. Invest in a curated project. Acquire a prime
               villa below optimised value. Transform it into a premium turnkey residence.
@@ -56,7 +56,7 @@ const CapitalPositioning = () => {
             </p>
           </div>
 
-          <p className="mt-10 italic font-display text-xl text-capital-foreground">
+          <p className="mt-10 italic font-display text-xl text-foreground">
             We are the smart choice.
           </p>
         </div>
