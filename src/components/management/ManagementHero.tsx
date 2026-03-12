@@ -14,7 +14,7 @@ const ManagementHero = () => {
     <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center bg-secondary">
       <div className="section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
-          className={`label-sm text-muted-foreground mb-6 transition-all duration-1000 ${
+          className={`label-sm font-lora text-muted-foreground mb-6 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -22,13 +22,11 @@ const ManagementHero = () => {
         </p>
 
         <h1
-          className={`heading-xl text-foreground mb-6 transition-all duration-1000 delay-200 ${
+          className={`heading-xl font-sans-pro text-foreground mb-6 transition-all duration-1000 delay-200 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Hospitality Asset
-          <br />
-          <em className="italic font-light">Management</em>
+          Hospitality Asset Management
         </h1>
 
         <p

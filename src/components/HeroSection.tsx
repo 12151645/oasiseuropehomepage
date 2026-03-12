@@ -35,7 +35,7 @@ const HeroSection = () => {
       <div className="relative z-10 section-padding pb-12 md:pb-20">
         <div className="max-w-4xl">
           <p
-            className={`label-sm text-sand/70 mb-6 transition-all duration-1000 ${
+            className={`label-sm font-lora text-sand/70 mb-6 transition-all duration-1000 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -43,13 +43,13 @@ const HeroSection = () => {
           </p>
 
           <h1
-            className={`heading-xl text-sand mb-8 transition-all duration-1000 delay-200 ${
+            className={`heading-xl font-sans-pro text-sand mb-8 transition-all duration-1000 delay-200 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
             Asset Management,
             <br />
-            <em className="italic font-light">Reimagined.</em>
+            Reimagined.
           </h1>
 
           <p
