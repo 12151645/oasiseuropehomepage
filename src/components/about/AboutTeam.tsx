@@ -1,5 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import teamImage from "@/assets/about-team.jpg";
+import stefanoPhoto from "@/assets/team-stefano.jpg";
+import joeyPhoto from "@/assets/team-joey.jpg";
+
+const teamMembers = [
+  {
+    name: "Stefano van Tuyl",
+    role: "Owner & Founder",
+    photo: stefanoPhoto,
+    bio: "Drives the vision and strategy behind Oasis Europe, combining entrepreneurial energy with deep expertise in luxury real estate and rental management.",
+  },
+  {
+    name: "Joey de Rooij",
+    role: "Owner & CFO",
+    photo: joeyPhoto,
+    bio: "Leads financial strategy and data-driven decision making, ensuring solid annual returns through structured investment and long-term planning.",
+  },
+];
 
 const AboutTeam = () => {
   const [visible, setVisible] = useState(false);
@@ -40,17 +57,44 @@ const AboutTeam = () => {
             <br />
             <em className="italic font-light">Global Standards</em>
           </h2>
-          <p className="body-lg text-muted-foreground mb-6 leading-relaxed">
+          <p className="body-lg text-muted-foreground mb-10 leading-relaxed">
             Our team brings together decades of experience across real estate,
             finance, design, and hospitality. Based full-time in Marbella, we
             operate with the proximity that only local presence can provide.
           </p>
-          <p className="body-lg text-muted-foreground mb-8 leading-relaxed">
-            From property managers and renovation specialists to investment
-            advisors and legal coordinators, every member of the Oasis Europe
-            team is aligned around a single principle: structured excellence
-            in service of our clients' long-term interests.
-          </p>
+
+          {/* Team Member Profiles */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+            {teamMembers.map((member, i) => (
+              <div
+                key={member.name}
+                className={`transition-all duration-700 ${
+                  visible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
+                }`}
+                style={{ transitionDelay: `${400 + i * 200}ms` }}
+              >
+                <div className="aspect-[4/5] overflow-hidden rounded-sm mb-4">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <h3 className="font-display text-lg text-foreground mb-1">
+                  {member.name}
+                </h3>
+                <p className="label-sm text-muted-foreground mb-3">
+                  {member.role}
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {member.bio}
+                </p>
+              </div>
+            ))}
+          </div>
+
           <p className="font-display text-lg italic text-foreground/70">
             A curated network of professionals, working as one.
           </p>
