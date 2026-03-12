@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 const AdvisoryCTA = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary">
+    <section className="py-24 md:py-32 bg-advisory">
       <div className="section-padding max-w-3xl mx-auto text-center">
         <p className="label-sm text-advisory-foreground/50 mb-4">Asset Advisory</p>
         <h2 className="heading-lg text-advisory-foreground mb-6">
