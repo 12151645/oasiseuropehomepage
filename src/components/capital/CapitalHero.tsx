@@ -25,9 +25,7 @@ const CapitalHero = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Private
-          <br />
-          <em className="italic font-light">Capital</em>
+          Private <em className="italic font-light">Capital</em>
         </h1>
 
         <p
