@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Shield, Search, TrendingUp, Handshake } from "lucide-react";
-import heroImage from "@/assets/advisory-hero.jpg";
+import approachImage from "@/assets/advisory-approach.jpg";
 
 const pillars = [
   {
