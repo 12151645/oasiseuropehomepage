@@ -1,0 +1,68 @@
+import { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
+
+const CapitalHero = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center bg-secondary">
+      <div className="section-padding py-24 md:py-32 max-w-3xl mx-auto">
+        <p
+          className={`label-sm text-muted-foreground mb-6 transition-all duration-1000 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          Investments
+        </p>
+
+        <h1
+          className={`heading-xl text-foreground mb-6 transition-all duration-1000 delay-200 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          Private
+          <br />
+          <em className="italic font-light">Capital</em>
+        </h1>
+
+        <p
+          className={`font-display text-xl md:text-2xl font-light text-muted-foreground mb-6 leading-relaxed transition-all duration-1000 delay-300 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          Structured access to luxury real estate.
+          <br />
+          <em className="italic">Performance-driven returns.</em>
+        </p>
+
+        <p
+          className={`body-lg text-muted-foreground max-w-xl mx-auto mb-10 transition-all duration-1000 delay-[400ms] ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          Our Private Capital Fund brings investors together to invest in luxury
+          real estate properties. We select exclusive properties, manage the portfolio,
+          and use our ecosystem to generate a solid annual return — all while the
+          investment is secured by the property value.
+        </p>
+      </div>
+
+      <a
+        href="#contact"
+        className={`absolute bottom-8 right-8 md:bottom-12 md:right-12 flex items-center gap-2 text-muted-foreground/50 hover:text-foreground transition-all duration-1000 delay-500 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
+      >
+        <span className="text-xs uppercase tracking-[0.15em] font-body">Invest With Us</span>
+        <ArrowRight size={16} strokeWidth={1.5} />
+      </a>
+    </section>
+  );
+};
+
+export default CapitalHero;
