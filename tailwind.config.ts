@@ -67,10 +67,6 @@ export default {
           dark: "hsl(var(--advisory-dark))",
           foreground: "hsl(var(--advisory-foreground))",
         },
-        developments: {
-          DEFAULT: "hsl(var(--developments))",
-          foreground: "hsl(var(--developments-foreground))",
-        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
