@@ -31,7 +31,7 @@ const DevelopmentsShowcase = () => {
             <em className="italic font-light">Market Logic</em>
           </h2>
 
-          <div className="space-y-5 text-sm text-muted-foreground font-light leading-relaxed">
+          <div className="space-y-5 text-sm text-primary-foreground/70 font-light leading-relaxed">
             <p>
               Every element is considered in relation to value, performance
               and the owner's expectation. Execution without budget control
