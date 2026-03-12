@@ -62,6 +62,7 @@ export default {
           light: "hsl(var(--capital-light))",
           foreground: "hsl(var(--capital-foreground))",
         },
+        developments: "hsl(var(--developments))",
         advisory: {
           DEFAULT: "hsl(var(--advisory))",
           dark: "hsl(var(--advisory-dark))",
