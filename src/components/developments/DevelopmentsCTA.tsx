@@ -1,21 +1,29 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import devCtaBg from "@/assets/dev-cta-bg.jpg";
 
 const DevelopmentsCTA = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
-      <div className="section-padding max-w-3xl mx-auto text-center">
-        <p className="label-sm text-muted-foreground mb-4">Project Management</p>
-        <h2 className="heading-lg mb-6">Interested in Our Services?</h2>
-        <p className="body-lg text-muted-foreground mb-12 leading-relaxed">
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <img
+        src={devCtaBg}
+        alt="Luxury villa exterior"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-foreground/60" />
+
+      <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto text-center">
+        <p className="label-sm text-primary-foreground/50 mb-4">Project Management</p>
+        <h2 className="heading-lg text-primary-foreground mb-6">Interested in Our Services?</h2>
+        <p className="body-lg text-primary-foreground/70 mb-12 leading-relaxed">
           We create a tailored plan for every individual project.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button variant="hero" size="lg" className="gap-3 bg-developments hover:bg-developments/90">
+          <Button variant="hero" size="lg" className="gap-3 bg-primary-foreground text-foreground hover:bg-primary-foreground/90">
             Start Your Project
             <ArrowRight size={16} />
           </Button>
-          <Button variant="hero-outline" size="lg">
+          <Button variant="hero-outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
             Learn More
           </Button>
         </div>
