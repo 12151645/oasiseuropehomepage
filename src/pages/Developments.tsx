@@ -9,7 +9,7 @@ import DevelopmentsCTA from "@/components/developments/DevelopmentsCTA";
 
 const Developments = () => {
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden dark bg-background text-foreground">
       <Navbar />
       <DevelopmentsHero />
       <DevelopmentsPositioning />
