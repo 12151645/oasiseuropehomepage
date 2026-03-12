@@ -70,7 +70,6 @@ const CapitalModel = () => {
         className={`text-center py-20 md:py-28 transition-all duration-1000 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
-        style={{ backgroundColor: 'rgb(58, 64, 50)' }}
       >
         <p className="label-sm text-white/50 mb-4">Investment Process</p>
         <h2 className="heading-lg text-white">How It Works</h2>
