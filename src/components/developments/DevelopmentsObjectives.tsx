@@ -57,10 +57,10 @@ const DevelopmentsObjectives = () => {
                 <div className="inline-flex items-center justify-center w-14 h-14 mb-6">
                   <Icon size={28} className="text-accent" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-display text-xl font-medium mb-4 text-foreground">
+                <h3 className="font-display text-xl font-medium mb-4 text-primary-foreground">
                   {obj.title}
                 </h3>
-                <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                <p className="text-sm text-primary-foreground/70 font-light leading-relaxed">
                   {obj.description}
                 </p>
               </div>

@@ -36,7 +36,7 @@ const ManagementPositioning = () => {
               rental performance? A strategic resale or long-term capital
               appreciation? The strategy determines the scope.
             </p>
-            <p className="italic font-display text-lg text-foreground">
+            <p className="italic font-display text-lg text-primary-foreground">
               Design decisions are guided by purpose — not preference alone.
             </p>
           </div>

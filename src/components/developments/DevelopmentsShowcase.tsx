@@ -42,7 +42,7 @@ const DevelopmentsShowcase = () => {
               framework and manage the project on-site to ensure the finished
               result meets both design standards and financial expectations.
             </p>
-            <p className="italic font-display text-lg text-foreground">
+            <p className="italic font-display text-lg text-primary-foreground">
               We create a tailored plan for every individual project.
             </p>
           </div>
