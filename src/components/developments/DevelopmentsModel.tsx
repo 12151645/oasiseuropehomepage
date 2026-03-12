@@ -76,7 +76,7 @@ const DevelopmentsModel = () => {
   }, [next]);
 
   return (
-    <section ref={ref} className="bg-secondary">
+    <section ref={ref} className="bg-background">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
         {/* Left - Image with overlay */}
         <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
