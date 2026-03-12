@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import Management from "./pages/Management.tsx";
 import Developments from "./pages/Developments.tsx";
 import Capital from "./pages/Capital.tsx";
+import Advisory from "./pages/Advisory.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
