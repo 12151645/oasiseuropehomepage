@@ -15,7 +15,7 @@ const DevelopmentsShowcase = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-black text-primary-foreground">
+    <section ref={ref} className="bg-secondary">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
         {/* Left - Content */}
         <div
@@ -23,15 +23,15 @@ const DevelopmentsShowcase = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-primary-foreground/50 mb-8">Our Philosophy</p>
+          <p className="label-sm text-muted-foreground mb-8">Our Philosophy</p>
 
-          <h2 className="heading-lg text-primary-foreground mb-8">
+          <h2 className="heading-lg mb-8">
             Design With
             <br />
             <em className="italic font-light">Market Logic</em>
           </h2>
 
-          <div className="space-y-5 text-sm text-primary-foreground/70 font-light leading-relaxed">
+          <div className="space-y-5 text-sm text-muted-foreground font-light leading-relaxed">
             <p>
               Every element is considered in relation to value, performance
               and the owner's expectation. Execution without budget control
@@ -42,7 +42,7 @@ const DevelopmentsShowcase = () => {
               framework and manage the project on-site to ensure the finished
               result meets both design standards and financial expectations.
             </p>
-            <p className="italic font-display text-lg text-primary-foreground">
+            <p className="italic font-display text-lg text-foreground">
               We create a tailored plan for every individual project.
             </p>
           </div>

@@ -36,11 +36,11 @@ const DevelopmentsObjectives = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-black text-primary-foreground">
+    <section ref={ref} className="py-24 md:py-32 bg-background">
       <div className="section-padding">
         <div className="text-center mb-16 md:mb-20">
-          <p className="label-sm text-primary-foreground/50 mb-4">Project Objectives</p>
-          <h2 className="heading-lg text-primary-foreground">What Is Your Objective?</h2>
+          <p className="label-sm text-muted-foreground mb-4">Project Objectives</p>
+          <h2 className="heading-lg">What Is Your Objective?</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -57,10 +57,10 @@ const DevelopmentsObjectives = () => {
                 <div className="inline-flex items-center justify-center w-14 h-14 mb-6">
                   <Icon size={28} className="text-accent" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-display text-xl font-medium mb-4 text-primary-foreground">
+                <h3 className="font-display text-xl font-medium mb-4 text-foreground">
                   {obj.title}
                 </h3>
-                <p className="text-sm text-primary-foreground/70 font-light leading-relaxed">
+                <p className="text-sm text-muted-foreground font-light leading-relaxed">
                   {obj.description}
                 </p>
               </div>
