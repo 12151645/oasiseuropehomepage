@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const DevelopmentsCTA = () => {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-24 md:py-32 bg-black text-primary-foreground">
       <div className="section-padding max-w-3xl mx-auto text-center">
         <p className="label-sm text-muted-foreground mb-4">Project Management</p>
         <h2 className="heading-lg mb-6">Interested in Our Services?</h2>
