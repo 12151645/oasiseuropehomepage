@@ -43,12 +43,6 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="label-sm border border-foreground px-5 py-2.5 hover:bg-foreground hover:text-background transition-all duration-300"
-          >
-            Contact
-          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -75,13 +69,6 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="label-sm border border-foreground px-5 py-2.5 text-center hover:bg-foreground hover:text-background transition-all duration-300"
-              onClick={() => setMenuOpen(false)}
-            >
-              Contact
-            </a>
           </div>
         </div>
       )}
