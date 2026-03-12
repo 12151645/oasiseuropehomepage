@@ -45,7 +45,7 @@ const ManagementPositioning = () => {
         {/* Right - Image */}
         <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
           <img
-            src={devPlanning}
+            src={villaMarbesa56}
             alt="Luxury renovation planning"
             className={`w-full h-full object-cover transition-all duration-1000 delay-300 ${
               visible ? "opacity-100 scale-100" : "opacity-0 scale-105"
