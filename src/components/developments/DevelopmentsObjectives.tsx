@@ -36,7 +36,7 @@ const DevelopmentsObjectives = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background">
+    <section ref={ref} className="py-24 md:py-32 bg-black text-primary-foreground">
       <div className="section-padding">
         <div className="text-center mb-16 md:mb-20">
           <p className="label-sm text-muted-foreground mb-4">Project Objectives</p>
