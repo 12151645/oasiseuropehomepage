@@ -116,7 +116,7 @@ const DevelopmentsModel = () => {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`h-0.5 transition-all duration-500 ${
-                  i === current ? "w-10 bg-primary-foreground" : "w-5 bg-primary-foreground/30 hover:bg-primary-foreground/50"
+                  i === current ? "w-10 bg-foreground" : "w-5 bg-foreground/30 hover:bg-foreground/50"
                 }`}
                 aria-label={`Go to step ${i + 1}`}
               />
