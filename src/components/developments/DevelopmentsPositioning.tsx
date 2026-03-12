@@ -15,7 +15,7 @@ const ManagementPositioning = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-background">
+    <section ref={ref} className="bg-black text-primary-foreground">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
         {/* Left - Content */}
         <div
