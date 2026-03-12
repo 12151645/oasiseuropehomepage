@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         display: ['"Cormorant Garamond"', 'serif'],
         body: ['"Source Sans 3"', 'sans-serif'],
+        lora: ['"Lora"', 'serif'],
+        'sans-pro': ['"Source Sans Pro"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
