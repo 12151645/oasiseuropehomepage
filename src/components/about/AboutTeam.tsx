@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import teamImage from "@/assets/about-team.jpg";
 import stefanoPhoto from "@/assets/team-stefano.jpg";
 import joeyPhoto from "@/assets/team-joey.jpg";
 
