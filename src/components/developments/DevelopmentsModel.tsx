@@ -100,6 +100,7 @@ const DevelopmentsModel = () => {
               Oasis Europe manages the project on-site. Our role is to ensure
               the finished result meets both design standards and financial expectations.
             </p>
+
           </div>
         </div>
 
