@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import aboutHero from "@/assets/about-hero.jpg";
 
 const AboutHero = () => {
   const [visible, setVisible] = useState(false);
@@ -10,13 +9,8 @@ const AboutHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] flex flex-col justify-center items-center text-center overflow-hidden">
-      <img
-        src={aboutHero}
-        alt="Mediterranean coastline at golden hour"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-foreground/60" />
+    <section className="relative min-h-[80vh] flex flex-col justify-center items-center text-center overflow-hidden bg-foreground">
+      <div className="absolute inset-0 bg-foreground" />
 
       <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
