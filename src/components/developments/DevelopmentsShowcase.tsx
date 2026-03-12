@@ -31,7 +31,7 @@ const DevelopmentsShowcase = () => {
             <em className="italic font-light">Market Logic</em>
           </h2>
 
-          <div className="space-y-5 text-sm text-primary-foreground/60 font-light leading-relaxed">
+          <div className="space-y-5 text-sm text-muted-foreground font-light leading-relaxed">
             <p>
               Every element is considered in relation to value, performance
               and the owner's expectation. Execution without budget control
@@ -42,7 +42,7 @@ const DevelopmentsShowcase = () => {
               framework and manage the project on-site to ensure the finished
               result meets both design standards and financial expectations.
             </p>
-            <p className="italic font-display text-lg text-primary-foreground">
+            <p className="italic font-display text-lg text-foreground">
               We create a tailored plan for every individual project.
             </p>
           </div>

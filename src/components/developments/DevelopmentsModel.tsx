@@ -148,7 +148,7 @@ const DevelopmentsModel = () => {
             ))}
           </div>
 
-          <p className="mt-12 italic font-display text-lg text-primary-foreground/70">
+          <p className="mt-12 italic font-display text-lg text-foreground/70">
             We do not simply manage construction. We manage outcomes.
           </p>
         </div>
