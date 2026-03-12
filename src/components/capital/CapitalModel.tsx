@@ -65,16 +65,17 @@ const CapitalModel = () => {
   }, []);
 
   return (
-    <section ref={ref} className="bg-background py-24 md:py-32">
-      <div className="section-padding">
-        <div
-          className={`text-center mb-16 md:mb-20 transition-all duration-1000 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
-          <p className="label-sm text-muted-foreground mb-4">Investment Process</p>
-          <h2 className="heading-lg text-foreground">How It Works</h2>
-        </div>
+    <section ref={ref} className="bg-background">
+      <div
+        className={`text-center py-20 md:py-28 transition-all duration-1000 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+        style={{ backgroundColor: 'rgb(58, 64, 50)' }}
+      >
+        <p className="label-sm text-white/50 mb-4">Investment Process</p>
+        <h2 className="heading-lg text-white">How It Works</h2>
+      </div>
+      <div className="section-padding py-24 md:py-32">
 
         <div className="space-y-0">
           {steps.map((step, i) => {
