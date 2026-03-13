@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="py-16 bg-foreground">
       <div className="section-padding">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
-          <a href="/" className="font-display text-xl font-light tracking-wide text-primary-foreground">
+          <a href="/" className="font-sans-pro text-xl font-light tracking-wide text-primary-foreground">
             OASIS <span className="font-medium">EUROPE</span>
           </a>
           <p className="text-xs text-primary-foreground/40 uppercase tracking-wider">
