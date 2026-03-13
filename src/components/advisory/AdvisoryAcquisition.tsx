@@ -46,10 +46,10 @@ const AdvisoryAcquisition = () => {
             decisions grounded in data and market intelligence.
           </p>
           <div className="space-y-4 mt-4">
-            <p className="font-display text-lg italic text-foreground/80">
+            <p className="font-sans-pro text-lg italic text-foreground/80">
               We do not operate as traditional brokers.
             </p>
-            <p className="font-display text-lg italic text-foreground/80">
+            <p className="font-sans-pro text-lg italic text-foreground/80">
               We act as independent long-term asset advisors.
             </p>
           </div>
