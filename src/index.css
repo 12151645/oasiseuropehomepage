@@ -113,7 +113,7 @@
   }
 
   .heading-lg {
-    @apply text-2xl md:text-3xl lg:text-4xl font-display font-bold leading-[1.15] tracking-tight uppercase;
+    @apply text-4xl md:text-5xl lg:text-6xl font-display font-light leading-[1.15] tracking-normal normal-case;
   }
 
   .heading-md {
