@@ -117,7 +117,7 @@
   }
 
   .heading-md {
-    @apply text-xl md:text-2xl font-sans-pro font-bold leading-[1.2] uppercase;
+    @apply text-xl md:text-2xl font-display font-bold leading-[1.2] uppercase;
   }
 
   .body-lg {
