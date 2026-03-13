@@ -109,15 +109,15 @@
   }
 
   .heading-xl {
-    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-[1.1] tracking-tight uppercase;
+    @apply text-5xl md:text-6xl lg:text-7xl font-display font-light leading-[1.1] tracking-normal normal-case;
   }
 
   .heading-lg {
-    @apply text-2xl md:text-3xl lg:text-4xl font-display font-bold leading-[1.15] tracking-tight uppercase;
+    @apply text-4xl md:text-5xl lg:text-6xl font-display font-light leading-[1.15] tracking-normal normal-case;
   }
 
   .heading-md {
-    @apply text-xl md:text-2xl font-display font-bold leading-[1.2] uppercase;
+    @apply text-2xl md:text-3xl font-display font-light leading-[1.2] normal-case;
   }
 
   .body-lg {
