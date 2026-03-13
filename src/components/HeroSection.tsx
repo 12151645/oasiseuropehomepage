@@ -43,7 +43,7 @@ const HeroSection = () => {
           </p>
 
           <h1
-            className={`heading-xl font-sans-pro text-sand mb-8 transition-all duration-1000 delay-200 ${
+            className={`heading-xl text-sand mb-8 transition-all duration-1000 delay-200 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
