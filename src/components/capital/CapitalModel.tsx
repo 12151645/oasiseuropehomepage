@@ -104,7 +104,7 @@ const CapitalModel = () => {
                     }`}>
                       {step.number}
                     </span>
-                    <h3 className={`font-display font-medium transition-all duration-300 ${
+                    <h3 className={`font-sans-pro font-medium transition-all duration-300 ${
                       isActive ? "text-xl md:text-2xl text-white" : "text-lg text-white/50"
                     }`}>
                       {step.title}
