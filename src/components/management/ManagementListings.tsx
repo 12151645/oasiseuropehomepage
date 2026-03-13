@@ -94,7 +94,7 @@ const ManagementListings = () => {
               </div>
 
               {/* Details */}
-              <h3 className="font-display text-xl font-medium text-foreground mb-1">
+              <h3 className="font-sans-pro text-xl font-medium text-foreground mb-1">
                 {listing.title}
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
@@ -109,7 +109,7 @@ const ManagementListings = () => {
                 <span>{listing.size}</span>
               </div>
 
-              <p className="font-display text-lg font-medium text-foreground">
+              <p className="font-sans-pro text-lg font-medium text-foreground">
                 {listing.price}
               </p>
             </a>

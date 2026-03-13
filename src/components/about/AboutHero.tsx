@@ -40,7 +40,7 @@ const AboutHero = () => {
         <div className="flex items-center gap-3 justify-start max-w-3xl mx-auto">
           <span className="w-6 h-px bg-foreground" />
           <div className="text-left">
-            <p className="font-display text-sm font-semibold text-foreground">
+            <p className="font-sans-pro text-sm font-semibold text-foreground">
               Stefano van Tuyl
             </p>
             <p className="text-xs text-muted-foreground tracking-wide uppercase">

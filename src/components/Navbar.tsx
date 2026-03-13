@@ -28,7 +28,7 @@ const Navbar = () => {
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <a href="/" className="font-display text-xl md:text-2xl font-light tracking-wide">
+        <a href="/" className="font-sans-pro text-xl md:text-2xl font-light tracking-wide">
           OASIS <span className="font-medium">EUROPE</span>
         </a>
 

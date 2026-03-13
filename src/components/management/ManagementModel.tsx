@@ -135,7 +135,7 @@ const ManagementModel = () => {
                 }`}
               >
                 <p className="label-sm text-accent mb-4">{step.number}</p>
-                <h3 className="font-display text-2xl md:text-3xl font-medium mb-6 text-foreground">
+                <h3 className="font-sans-pro text-2xl md:text-3xl font-medium mb-6 text-foreground">
                   {step.title}
                 </h3>
                 <ul className="space-y-3">
@@ -152,7 +152,7 @@ const ManagementModel = () => {
             ))}
           </div>
 
-          <p className="mt-12 italic font-display text-lg text-muted-foreground">
+          <p className="mt-12 italic font-sans-pro text-lg text-muted-foreground">
             You are not a listing agency. You are an asset manager.
           </p>
         </div>

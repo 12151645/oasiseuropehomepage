@@ -99,12 +99,12 @@ const CapitalModel = () => {
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-display text-sm tracking-wider transition-colors duration-300 ${
+                    <span className={`font-sans-pro text-sm tracking-wider transition-colors duration-300 ${
                       isActive ? "text-white/60" : "text-white/25"
                     }`}>
                       {step.number}
                     </span>
-                    <h3 className={`font-display font-medium transition-all duration-300 ${
+                    <h3 className={`font-sans-pro font-medium transition-all duration-300 ${
                       isActive ? "text-xl md:text-2xl text-white" : "text-lg text-white/50"
                     }`}>
                       {step.title}
@@ -121,7 +121,7 @@ const CapitalModel = () => {
                     </p>
                     <ul className="space-y-1.5 pl-10">
                       {step.highlights.map((h) => (
-                        <li key={h} className="text-sm text-white/40 italic font-display">
+                        <li key={h} className="text-sm text-white/40 italic font-sans-pro">
                           — {h}
                         </li>
                       ))}

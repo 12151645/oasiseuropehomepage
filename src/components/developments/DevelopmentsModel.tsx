@@ -58,7 +58,7 @@ const DevelopmentsModel = () => {
               style={{ transitionDelay: `${i * 150}ms` }}
             >
               <p className="label-sm text-accent-foreground mb-4">{step.number}</p>
-              <h3 className="font-display text-xl font-medium mb-4 text-foreground">
+              <h3 className="font-sans-pro text-xl font-medium mb-4 text-foreground">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground font-light leading-relaxed">
@@ -68,7 +68,7 @@ const DevelopmentsModel = () => {
           ))}
         </div>
 
-        <p className="mt-16 text-center italic font-display text-lg text-foreground/70">
+        <p className="mt-16 text-center italic font-sans-pro text-lg text-foreground/70">
           We do not simply manage construction. We manage outcomes.
         </p>
       </div>

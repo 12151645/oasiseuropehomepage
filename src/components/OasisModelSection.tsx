@@ -71,7 +71,7 @@ const OasisModelSection = () => {
               {/* Step Number */}
               <p className="label-sm text-accent mb-6">0{i + 1}</p>
               
-              <h3 className="font-display text-lg font-medium mb-1 text-foreground">
+              <h3 className="font-sans-pro text-lg font-medium mb-1 text-foreground">
                 {step.label}
               </h3>
               <p className="text-sm text-muted-foreground font-medium mb-4">

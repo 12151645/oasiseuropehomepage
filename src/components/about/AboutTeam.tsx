@@ -69,7 +69,7 @@ const AboutTeam = () => {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <h3 className="font-display text-lg text-foreground mb-1">
+                <h3 className="font-sans-pro text-lg text-foreground mb-1">
                   {member.name}
                 </h3>
                 <p className="label-sm text-muted-foreground mb-3">
@@ -82,7 +82,7 @@ const AboutTeam = () => {
             ))}
           </div>
 
-          <p className="font-display text-lg italic text-foreground/70">
+          <p className="font-sans-pro text-lg italic text-foreground/70">
             A curated network of professionals, working as one.
           </p>
         </div>
