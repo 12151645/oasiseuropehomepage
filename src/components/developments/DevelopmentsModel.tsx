@@ -58,7 +58,7 @@ const DevelopmentsModel = () => {
               style={{ transitionDelay: `${i * 150}ms` }}
             >
               <p className="label-sm text-accent-foreground mb-4">{step.number}</p>
-              <h3 className="font-display text-xl font-medium mb-4 text-foreground">
+              <h3 className="font-sans-pro text-xl font-medium mb-4 text-foreground">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground font-light leading-relaxed">
