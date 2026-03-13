@@ -99,7 +99,7 @@ const CapitalModel = () => {
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-display text-sm tracking-wider transition-colors duration-300 ${
+                    <span className={`font-sans-pro text-sm tracking-wider transition-colors duration-300 ${
                       isActive ? "text-white/60" : "text-white/25"
                     }`}>
                       {step.number}
