@@ -15,7 +15,7 @@ const DevelopmentsHero = () => {
 
       <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
-          className={`label-sm font-lora text-primary-foreground/70 mb-6 transition-all duration-1000 ${
+          className={`label-sm text-primary-foreground/70 mb-6 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
