@@ -12,7 +12,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <p className="text-xs text-primary-foreground/30 italic font-display">
+          <p className="text-xs text-primary-foreground/30 italic font-sans-pro">
             Private Consultations by Appointment Only
           </p>
 
