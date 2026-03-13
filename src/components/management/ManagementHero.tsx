@@ -26,7 +26,7 @@ const ManagementHero = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Hospitality Asset Management
+          Rental Management
         </h1>
 
         <p
