@@ -61,7 +61,7 @@ const AdvisoryExitStrategy = () => {
             </div>
           </div>
 
-          <p className="mt-10 font-display text-lg italic text-foreground/70">
+          <p className="mt-10 font-sans-pro text-lg italic text-foreground/70">
             Private Consultations by Appointment Only.
           </p>
         </div>

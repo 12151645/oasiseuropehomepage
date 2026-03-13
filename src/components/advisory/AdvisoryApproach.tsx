@@ -77,7 +77,7 @@ const AdvisoryApproach = () => {
                       <Icon size={18} strokeWidth={1.3} className="text-foreground/70" />
                     </div>
                     <div>
-                      <h3 className="font-display text-lg font-medium text-foreground mb-2">
+                      <h3 className="font-sans-pro text-lg font-medium text-foreground mb-2">
                         {pillar.title}
                       </h3>
                       <p className="text-sm text-muted-foreground font-light leading-relaxed">

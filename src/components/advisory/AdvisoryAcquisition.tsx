@@ -62,7 +62,7 @@ const AdvisoryAcquisition = () => {
               </p>
             </div>
             <div>
-              <p className="font-display text-3xl font-light text-foreground">120+</p>
+              <p className="font-sans-pro text-3xl font-light text-foreground">120+</p>
               <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
                 Acquisitions Advised
               </p>

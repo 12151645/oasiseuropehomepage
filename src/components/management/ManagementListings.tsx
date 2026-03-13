@@ -109,7 +109,7 @@ const ManagementListings = () => {
                 <span>{listing.size}</span>
               </div>
 
-              <p className="font-display text-lg font-medium text-foreground">
+              <p className="font-sans-pro text-lg font-medium text-foreground">
                 {listing.price}
               </p>
             </a>

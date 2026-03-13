@@ -152,7 +152,7 @@ const ManagementModel = () => {
             ))}
           </div>
 
-          <p className="mt-12 italic font-display text-lg text-muted-foreground">
+          <p className="mt-12 italic font-sans-pro text-lg text-muted-foreground">
             You are not a listing agency. You are an asset manager.
           </p>
         </div>

@@ -121,7 +121,7 @@ const CapitalModel = () => {
                     </p>
                     <ul className="space-y-1.5 pl-10">
                       {step.highlights.map((h) => (
-                        <li key={h} className="text-sm text-white/40 italic font-display">
+                        <li key={h} className="text-sm text-white/40 italic font-sans-pro">
                           — {h}
                         </li>
                       ))}

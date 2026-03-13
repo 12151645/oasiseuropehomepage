@@ -56,7 +56,7 @@ const CapitalPositioning = () => {
             </p>
           </div>
 
-          <p className="mt-10 italic font-display text-xl text-foreground">
+          <p className="mt-10 italic font-sans-pro text-xl text-foreground">
             We are the smart choice.
           </p>
         </div>

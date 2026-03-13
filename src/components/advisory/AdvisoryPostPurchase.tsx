@@ -70,7 +70,7 @@ const AdvisoryPostPurchase = () => {
                 <div className="inline-flex items-center justify-center w-12 h-12 mb-6">
                   <Icon size={24} className="text-accent" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-display text-xl font-medium mb-4 text-foreground">
+                <h3 className="font-sans-pro text-xl font-medium mb-4 text-foreground">
                   {service.title}
                 </h3>
                 <p className="text-sm text-muted-foreground font-light leading-relaxed">

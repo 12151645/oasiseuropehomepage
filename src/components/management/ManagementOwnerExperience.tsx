@@ -73,7 +73,7 @@ const ManagementOwnerExperience = () => {
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
                 <Icon size={40} className="text-foreground mb-5" strokeWidth={1.2} />
-                <h3 className="font-display text-lg font-semibold text-foreground mb-3">
+                <h3 className="font-sans-pro text-lg font-semibold text-foreground mb-3">
                   {service.title}
                 </h3>
                 <p className="text-sm text-muted-foreground font-light leading-relaxed">

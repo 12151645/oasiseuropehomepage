@@ -34,7 +34,7 @@ const ManagementPositioning = () => {
           <div className="space-y-8 mb-12">
             {stats.map((stat) => (
               <div key={stat.label} className="border-b border-border pb-6">
-                <p className="font-display text-4xl md:text-5xl font-light text-foreground mb-2">
+                <p className="font-sans-pro text-4xl md:text-5xl font-light text-foreground mb-2">
                   {stat.value}
                 </p>
                 <p className="text-sm text-muted-foreground uppercase tracking-wider">

@@ -63,7 +63,7 @@ const NewsSection = () => {
             >
               <span className="label-sm text-accent text-xs">{item.tag}</span>
               <p className="text-xs text-muted-foreground mt-1 mb-4">{item.date}</p>
-              <h3 className="font-display text-xl font-medium mb-3 group-hover:text-accent transition-colors">
+              <h3 className="font-sans-pro text-xl font-medium mb-3 group-hover:text-accent transition-colors">
                 {item.title}
               </h3>
               <p className="text-sm text-muted-foreground font-light leading-relaxed">

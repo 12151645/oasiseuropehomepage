@@ -82,7 +82,7 @@ const AboutTeam = () => {
             ))}
           </div>
 
-          <p className="font-display text-lg italic text-foreground/70">
+          <p className="font-sans-pro text-lg italic text-foreground/70">
             A curated network of professionals, working as one.
           </p>
         </div>
