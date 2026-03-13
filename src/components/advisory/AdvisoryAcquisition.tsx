@@ -56,7 +56,7 @@ const AdvisoryAcquisition = () => {
 
           <div className="grid grid-cols-2 gap-6 mt-12 pt-8 border-t border-border">
             <div>
-              <p className="font-display text-3xl font-light text-foreground">€500M+</p>
+              <p className="font-sans-pro text-3xl font-light text-foreground">€500M+</p>
               <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
                 Transaction Volume
               </p>
