@@ -99,8 +99,10 @@ The homepage consists of **8 sections** in this order:
 Group (full-width, position: fixed, z-index: 50)
 ├── Group (inner container, flex, justify-between, align-center)
 │   ├── Site Title / Text: "OASIS EUROPE" 
-│   │   Font: Source Sans Pro, 24px, weight 300
-│   │   "EUROPE" = weight 500
+│   │   Font: Source Sans Pro
+│   │   Mobile: 20px (text-xl), Desktop (md+): 24px (text-2xl)
+│   │   Weight: 300 (light), "EUROPE" = weight 500 (medium)
+│   │   Color: inherits from page (dark text on scrolled, light on hero)
 │   └── Navigation Block
 │       Links: Management | Developments | Capital | Advisory | About Us
 │       Font: Source Sans 3, 12-14px, weight 500, UPPERCASE, letter-spacing: 0.2em
@@ -110,6 +112,9 @@ Group (full-width, position: fixed, z-index: 50)
 **Behavior:**
 - Transparent background initially, padding: 24px vertical
 - On scroll (>50px): background `#F9F7F3` at 95% opacity, blur backdrop, bottom border `#E7E1D8`, padding: 16px vertical
+
+**IMPORTANT — Text contrast on hero:**
+When the navbar is transparent (before scroll), it overlays the dark hero image. The navbar text colors must remain legible against both light and dark backgrounds. The current implementation relies on the page background being dark at the hero. Consider using JS to toggle a `.navbar-light` class when the navbar overlaps dark sections, switching text to `#F9F7F3`.
 
 ---
 
