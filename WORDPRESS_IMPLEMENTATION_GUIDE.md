@@ -278,7 +278,7 @@ Group (section)
 │   ├── Group
 │   │   ├── Paragraph: "Latest" (label-sm)
 │   │   └── Heading H2: "News" (heading-lg)
-│   └── Link: "View All →" (label-sm, hidden on mobile)
+│   └── Link: "View All" + ArrowRight SVG icon (14px) (label-sm, flex, align-center, gap 8px, hidden on mobile)
 └── Columns Block (3 columns, gap: 1px, bg: #E7E1D8)
     ├── Card 1 (bg: #F9F7F3, padding 32-40px)
     │   ├── Paragraph: "Development" (label-sm, color #D3C09B, 12px)
