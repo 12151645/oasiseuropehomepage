@@ -287,6 +287,7 @@ Group (section)
     │   ├── Paragraph: "Development" (label-sm, color #D3C09B, 12px)
     │   ├── Paragraph: "March 2026" (12px, muted)
     │   ├── Heading H3: title (Source Sans Pro, 20px, weight 500)
+    │   │   Hover: color changes to accent (#D3C09B) with transition
     │   └── Paragraph: excerpt (14px, weight 300, relaxed)
     ├── Card 2
     └── Card 3
