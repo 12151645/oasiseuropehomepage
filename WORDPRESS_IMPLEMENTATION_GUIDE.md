@@ -170,19 +170,24 @@ Group (section)
 │   ├── Paragraph: "The Oasis Model" (label-sm style)
 │   └── Heading H2: "One Ecosystem. Total Control."
 │       Cormorant Garamond, 36/48/60px, weight 300
-├── Columns Block (5 columns, equal width, no gap — use 1px border between)
-│   ├── Column 1: Acquire
-│   │   Padding: 32px
-│   │   Border: 1px solid #E7E1D8
+├── Group (flex row on desktop, flex column on mobile, gap: 0)
+│   ├── Link wrapper (flex: 1, position: relative, padding: 32px, border: 1px solid #E7E1D8)
+│   │   Hover: background rgba(235,229,220, 0.5)
 │   │   ├── Paragraph: "01" (label-sm, color #D3C09B, mb 24px)
 │   │   ├── Heading H3: "Acquire" (Source Sans Pro, 18px, weight 500)
-│   │   ├── Paragraph: "Buy & Sales Advisory" (14px, muted, weight 500)
-│   │   └── Paragraph: description (14px, weight 300, line-height relaxed)
-│   ├── Column 2: Transform (same structure)
-│   ├── Column 3: Optimize
-│   ├── Column 4: Structure
-│   └── Column 5: Exit
-│   Hover state: background rgba(235,229,220, 0.5)
+│   │   ├── Paragraph: "Buy & Sales Advisory" (14px, muted, weight 500, mb 16px)
+│   │   ├── Paragraph: description (14px, weight 300, line-height relaxed, mb 24px)
+│   │   ├── Group (hover-reveal, opacity 0 → 1 on hover, flex, align-center, gap 8px)
+│   │   │   ├── Span: "Explore" (12px, uppercase, tracking wider)
+│   │   │   └── ArrowRight icon (14px)
+│   │   └── **Connector Arrow** (desktop only, hidden on mobile):
+│   │       Positioned: absolute, right: 0, top: 50%, translate(50%, -50%), z-index: 10
+│   │       ArrowRight icon (16px, color #D3C09B)
+│   │       NOT shown on the last column
+│   ├── Column 2: Transform (same structure, with connector arrow)
+│   ├── Column 3: Optimize (same structure, with connector arrow)
+│   ├── Column 4: Structure (same structure, with connector arrow)
+│   └── Column 5: Exit (same structure, NO connector arrow)
 ```
 
 ---
