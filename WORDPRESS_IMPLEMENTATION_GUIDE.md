@@ -528,3 +528,230 @@ h1, h2, h3, h4, h5, h6 {
 | Warm Black | rgb(28, 26, 23) | `#1C1A17` |
 | Gold | rgb(204, 173, 112) | `#CCAD70` |
 | Primary Foreground | rgb(249, 247, 243) | `#F9F7F3` |
+
+---
+
+## 12. Copy-Paste Content — All Sections
+
+Below is the exact text content for every homepage section. Copy directly into WordPress.
+
+---
+
+### 12.1 Navbar
+
+**Logo:** `OASIS EUROPE` ("OASIS" light weight, "EUROPE" medium weight)
+
+**Nav Links:**
+- Management
+- Developments
+- Capital
+- Advisory
+- About Us
+
+---
+
+### 12.2 Hero Section
+
+**Label:**
+```
+Management · Development · Private Capital · Advisory · Brands
+```
+
+**Heading (H1):**
+```
+Asset Management,
+Reimagined.
+```
+
+**Body:**
+```
+An all-inclusive asset management platform for international property owners and investors in Marbella. We transform luxury real estate into structured investment vehicles — combining hospitality performance, strategic design and capital structuring under one ecosystem.
+```
+
+**Buttons:**
+- `Explore Our Ecosystem`
+- `Schedule a Private Consultation`
+
+**Stats:**
+| Value | Label |
+|-------|-------|
+| €120M+ | Management Value |
+| 42 | Projects Managed |
+| €65M+ | Capital Deployed |
+| 28% | Avg. ROI |
+| 12 | Assets in Development |
+
+---
+
+### 12.3 Oasis Model Section
+
+**Label:** `The Oasis Model`
+**Heading (H2):** `One Ecosystem. Total Control.`
+
+**Step 1:**
+- Number: `01`
+- Title: `Acquire`
+- Subtitle: `Buy & Sales Advisory`
+- Description: `Strategic acquisition and sales advisory for luxury real estate in prime Marbella locations.`
+
+**Step 2:**
+- Number: `02`
+- Title: `Transform`
+- Subtitle: `Project Management`
+- Description: `End-to-end design and development management, transforming properties into exceptional assets.`
+
+**Step 3:**
+- Number: `03`
+- Title: `Optimize`
+- Subtitle: `Rental Management`
+- Description: `Hospitality-grade operations maximizing yield through RNTLS Ibiza and Marbella platforms.`
+
+**Step 4:**
+- Number: `04`
+- Title: `Structure`
+- Subtitle: `Investment Platform`
+- Description: `Institutional-grade capital structuring for high-net-worth property portfolios.`
+
+**Step 5:**
+- Number: `05`
+- Title: `Exit`
+- Subtitle: `Brands`
+- Description: `Curated brand portfolio and strategic positioning for maximum asset value at exit.`
+
+**Hover link text (all steps):** `Explore →`
+
+---
+
+### 12.4 Positioning Section
+
+**Label:** `Our Position`
+
+**Heading (H2):**
+```
+We are not brokers.
+We are asset architects.
+```
+*(Second line "We are asset architects." is italic)*
+
+**Body:**
+```
+Oasis Europe manages the full lifecycle of luxury real estate — from acquisition and transformation to rental performance and structured exit.
+```
+
+**Image alt text:** `Mediterranean architectural detail`
+
+---
+
+### 12.5a Rental Division
+
+**Label:** `Rental Division`
+**Heading (H2):** `Hospitality-Driven Yield.`
+
+**Body:**
+```
+Through RNTLS Ibiza and Marbella operations, we transform properties into high-performing hospitality assets.
+```
+
+**Button:** `View Rental Division`
+
+**Image alt text:** `Luxury rental villa`
+
+---
+
+### 12.5b The Marbella Collection
+
+**Label:** `The Marbella Collection`
+**Heading (H2):** `The Exceptional Only.`
+
+**Body:**
+```
+A highly curated portfolio launching 2027.
+```
+
+**Button:** `Request Early Access`
+
+---
+
+### 12.6 Why Us Section
+
+**Label:** `Why Us`
+**Heading (H2):** `Why Partners Choose Us`
+
+**Card 1:**
+- Number: `01`
+- Title: `All in One Platform`
+- Description: `Oasis Europe offers an all-in-one platform that integrates management, development, scaling, and operations, creating a unified ecosystem for managing every stage of the investment lifecycle.`
+
+**Card 2:**
+- Number: `02`
+- Title: `Integrated Value Creation`
+- Description: `A comprehensive approach covering acquisition, development, hospitality operations, and asset management — minimizing intermediaries and enhancing long-term value.`
+
+**Card 3:**
+- Number: `03`
+- Title: `Full Transparency`
+- Description: `We adhere to governance standards for institutional investment, ensuring investors receive full reporting, independent valuations, and clear updates throughout the process.`
+
+**Card 4:**
+- Number: `04`
+- Title: `Aligned Capital`
+- Description: `Each investment is designed to synchronize capital, strategy, and the objectives of long-term partners, ensuring disciplined governance and alignment during the investment lifecycle.`
+
+---
+
+### 12.7 News Section
+
+**Label:** `Latest`
+**Heading (H2):** `News`
+**Header link:** `View All` (with arrow icon)
+
+**Article 1:**
+- Tag: `Development`
+- Date: `March 2026`
+- Title: `New Luxury Development Announced in La Zagaleta`
+- Excerpt: `A landmark 12-unit residential development bringing Oasis Europe's design philosophy to one of Marbella's most exclusive enclaves.`
+
+**Article 2:**
+- Tag: `Capital`
+- Date: `February 2026`
+- Title: `€25M Fund Close for Marbella Hospitality Portfolio`
+- Excerpt: `Successfully closed our latest fund targeting high-yield hospitality assets across the Costa del Sol.`
+
+**Article 3:**
+- Tag: `Brands`
+- Date: `January 2026`
+- Title: `RNTLS Expands Operations to Marbella`
+- Excerpt: `Following success in Ibiza, RNTLS brings its hospitality-grade rental management to the Marbella market.`
+
+---
+
+### 12.8 CTA Section
+
+**Label:** `Get in Touch`
+**Heading (H2):** `Where Your Investment Begins`
+
+**Body:**
+```
+Whether you're looking to invest, develop, list a property, or simply learn more about what we do — we'd like to hear from you.
+```
+
+**Button:** `Book an Appointment`
+
+---
+
+### 12.9 Footer
+
+**Logo:** `OASIS EUROPE`
+**Location line:** `Marbella · Costa del Sol · Ibiza`
+**Tagline:** `Private Consultations by Appointment Only`
+
+**Social links:**
+- LinkedIn
+- Instagram
+
+**Legal links:**
+- Legal
+- Privacy
+- Terms
+
+**Copyright:** `© [current year] Oasis Europe`
