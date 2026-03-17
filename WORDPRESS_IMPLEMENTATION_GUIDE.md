@@ -99,8 +99,10 @@ The homepage consists of **8 sections** in this order:
 Group (full-width, position: fixed, z-index: 50)
 ├── Group (inner container, flex, justify-between, align-center)
 │   ├── Site Title / Text: "OASIS EUROPE" 
-│   │   Font: Source Sans Pro, 24px, weight 300
-│   │   "EUROPE" = weight 500
+│   │   Font: Source Sans Pro
+│   │   Mobile: 20px (text-xl), Desktop (md+): 24px (text-2xl)
+│   │   Weight: 300 (light), "EUROPE" = weight 500 (medium)
+│   │   Color: inherits from page (dark text on scrolled, light on hero)
 │   └── Navigation Block
 │       Links: Management | Developments | Capital | Advisory | About Us
 │       Font: Source Sans 3, 12-14px, weight 500, UPPERCASE, letter-spacing: 0.2em
@@ -110,6 +112,9 @@ Group (full-width, position: fixed, z-index: 50)
 **Behavior:**
 - Transparent background initially, padding: 24px vertical
 - On scroll (>50px): background `#F9F7F3` at 95% opacity, blur backdrop, bottom border `#E7E1D8`, padding: 16px vertical
+
+**IMPORTANT — Text contrast on hero:**
+When the navbar is transparent (before scroll), it overlays the dark hero image. The navbar text colors must remain legible against both light and dark backgrounds. The current implementation relies on the page background being dark at the hero. Consider using JS to toggle a `.navbar-light` class when the navbar overlaps dark sections, switching text to `#F9F7F3`.
 
 ---
 
@@ -136,11 +141,14 @@ Cover Block (min-height: 100vh, background-image: hero-villa.jpg)
 │   │   Max-width: 672px
 │   │   Margin-bottom: 40px
 │   ├── Buttons Group (flex, gap 16px, margin-bottom 64px)
-│   │   ├── Button: "Explore Our Ecosystem"
+│   │   ├── Button: "Explore Our Ecosystem" (variant: hero-light)
 │   │   │   BG: #F9F7F3, Text: #2A2722, hover: rgba(249,247,243,0.9)
-│   │   └── Button: "Schedule a Private Consultation"
-│   │       Border: rgba(249,247,243, 0.4), Text: #F9F7F3
-│   │       Hover: BG #F9F7F3, Text: #2A2722
+│   │   │   Size: lg (height 44px, px 32px)
+│   │   └── Button: "Schedule a Private Consultation" (variant: hero-outline with overrides)
+│   │       Border: rgba(249,247,243, 0.4) — NOTE: uses className override `border-sand/40`
+│   │       Text: #F9F7F3 (override: `text-sand`)
+│   │       Hover: BG #F9F7F3 (`hover:bg-sand`), Text: #2A2722 (`hover:text-foreground`)
+│   │       Size: lg (height 44px, px 32px)
 │   └── Group (Stats bar, grid 2-col mobile / 5-col desktop)
 │       Border-top: 1px solid rgba(249,247,243, 0.2), padding-top: 40px
 │       ├── Stat: "€120M+" / "Management Value"
@@ -165,19 +173,24 @@ Group (section)
 │   ├── Paragraph: "The Oasis Model" (label-sm style)
 │   └── Heading H2: "One Ecosystem. Total Control."
 │       Cormorant Garamond, 36/48/60px, weight 300
-├── Columns Block (5 columns, equal width, no gap — use 1px border between)
-│   ├── Column 1: Acquire
-│   │   Padding: 32px
-│   │   Border: 1px solid #E7E1D8
+├── Group (flex row on desktop, flex column on mobile, gap: 0)
+│   ├── Link wrapper (flex: 1, position: relative, padding: 32px, border: 1px solid #E7E1D8)
+│   │   Hover: background rgba(235,229,220, 0.5)
 │   │   ├── Paragraph: "01" (label-sm, color #D3C09B, mb 24px)
 │   │   ├── Heading H3: "Acquire" (Source Sans Pro, 18px, weight 500)
-│   │   ├── Paragraph: "Buy & Sales Advisory" (14px, muted, weight 500)
-│   │   └── Paragraph: description (14px, weight 300, line-height relaxed)
-│   ├── Column 2: Transform (same structure)
-│   ├── Column 3: Optimize
-│   ├── Column 4: Structure
-│   └── Column 5: Exit
-│   Hover state: background rgba(235,229,220, 0.5)
+│   │   ├── Paragraph: "Buy & Sales Advisory" (14px, muted, weight 500, mb 16px)
+│   │   ├── Paragraph: description (14px, weight 300, line-height relaxed, mb 24px)
+│   │   ├── Group (hover-reveal, opacity 0 → 1 on hover, flex, align-center, gap 8px)
+│   │   │   ├── Span: "Explore" (12px, uppercase, tracking wider)
+│   │   │   └── ArrowRight icon (14px)
+│   │   └── **Connector Arrow** (desktop only, hidden on mobile):
+│   │       Positioned: absolute, right: 0, top: 50%, translate(50%, -50%), z-index: 10
+│   │       ArrowRight icon (16px, color #D3C09B)
+│   │       NOT shown on the last column
+│   ├── Column 2: Transform (same structure, with connector arrow)
+│   ├── Column 3: Optimize (same structure, with connector arrow)
+│   ├── Column 4: Structure (same structure, with connector arrow)
+│   └── Column 5: Exit (same structure, NO connector arrow)
 ```
 
 ---
@@ -268,12 +281,13 @@ Group (section)
 │   ├── Group
 │   │   ├── Paragraph: "Latest" (label-sm)
 │   │   └── Heading H2: "News" (heading-lg)
-│   └── Link: "View All →" (label-sm, hidden on mobile)
+│   └── Link: "View All" + ArrowRight SVG icon (14px) (label-sm, flex, align-center, gap 8px, hidden on mobile)
 └── Columns Block (3 columns, gap: 1px, bg: #E7E1D8)
     ├── Card 1 (bg: #F9F7F3, padding 32-40px)
     │   ├── Paragraph: "Development" (label-sm, color #D3C09B, 12px)
     │   ├── Paragraph: "March 2026" (12px, muted)
     │   ├── Heading H3: title (Source Sans Pro, 20px, weight 500)
+    │   │   Hover: color changes to accent (#D3C09B) with transition
     │   └── Paragraph: excerpt (14px, weight 300, relaxed)
     ├── Card 2
     └── Card 3
@@ -320,7 +334,8 @@ Group (full-width, bg: #2A2722)
 └── Group (flex, margin-top 32px)
     ├── Link: "Legal" | "Privacy" | "Terms"
     │   12px, color rgba(249,247,243, 0.3)
-    └── Text: "© 2026 Oasis Europe" (color rgba(249,247,243, 0.2))
+    └── Text: "© [dynamic year] Oasis Europe" (color rgba(249,247,243, 0.2))
+        NOTE: Use JavaScript `new Date().getFullYear()` or a WordPress shortcode to render the current year dynamically
 ```
 
 ---
