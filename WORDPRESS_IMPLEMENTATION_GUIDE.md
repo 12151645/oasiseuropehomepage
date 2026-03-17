@@ -333,7 +333,8 @@ Group (full-width, bg: #2A2722)
 └── Group (flex, margin-top 32px)
     ├── Link: "Legal" | "Privacy" | "Terms"
     │   12px, color rgba(249,247,243, 0.3)
-    └── Text: "© 2026 Oasis Europe" (color rgba(249,247,243, 0.2))
+    └── Text: "© [dynamic year] Oasis Europe" (color rgba(249,247,243, 0.2))
+        NOTE: Use JavaScript `new Date().getFullYear()` or a WordPress shortcode to render the current year dynamically
 ```
 
 ---
