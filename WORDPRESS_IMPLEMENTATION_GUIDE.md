@@ -141,11 +141,14 @@ Cover Block (min-height: 100vh, background-image: hero-villa.jpg)
 │   │   Max-width: 672px
 │   │   Margin-bottom: 40px
 │   ├── Buttons Group (flex, gap 16px, margin-bottom 64px)
-│   │   ├── Button: "Explore Our Ecosystem"
+│   │   ├── Button: "Explore Our Ecosystem" (variant: hero-light)
 │   │   │   BG: #F9F7F3, Text: #2A2722, hover: rgba(249,247,243,0.9)
-│   │   └── Button: "Schedule a Private Consultation"
-│   │       Border: rgba(249,247,243, 0.4), Text: #F9F7F3
-│   │       Hover: BG #F9F7F3, Text: #2A2722
+│   │   │   Size: lg (height 44px, px 32px)
+│   │   └── Button: "Schedule a Private Consultation" (variant: hero-outline with overrides)
+│   │       Border: rgba(249,247,243, 0.4) — NOTE: uses className override `border-sand/40`
+│   │       Text: #F9F7F3 (override: `text-sand`)
+│   │       Hover: BG #F9F7F3 (`hover:bg-sand`), Text: #2A2722 (`hover:text-foreground`)
+│   │       Size: lg (height 44px, px 32px)
 │   └── Group (Stats bar, grid 2-col mobile / 5-col desktop)
 │       Border-top: 1px solid rgba(249,247,243, 0.2), padding-top: 40px
 │       ├── Stat: "€120M+" / "Management Value"
