@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oasis Europe — Complete WordPress Implementation Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F9F7F3;
+    --fg: #2A2722;
+    --muted: #7A756A;
+    --accent: #D3C09B;
+    --border: #E7E1D8;
+    --secondary: #EBE5DC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: var(--fg);
+    background: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 32px;
+  }
+
+  /* Print styles */
+  @media print {
+    body { padding: 0; font-size: 10pt; max-width: none; }
+    .no-print { display: none !important; }
+    h1, h2, h3 { page-break-after: avoid; }
+    table, pre, .section-block { page-break-inside: avoid; }
+    .page-break { page-break-before: always; }
+  }
+
+  /* Print button */
+  .print-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--fg);
+    color: var(--sand);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  .print-bar button {
+    background: var(--sand);
+    color: var(--fg);
+    border: none;
+    padding: 8px 24px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .print-bar button:hover { opacity: 0.9; }
+
+  /* Title page */
+  .title-page {
+    text-align: center;
+    padding: 100px 0 60px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+  .title-page h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 42pt;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--fg);
+  }
+  .title-page .subtitle {
+    font-size: 14pt;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .title-page .meta {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+
+  /* TOC */
+  .toc {
+    margin-bottom: 48px;
+    padding: 32px;
+    background: var(--sand);
+    border-radius: 4px;
+  }
+  .toc h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 18pt;
+    margin-bottom: 20px;
+  }
+  .toc ol { padding-left: 20px; }
+  .toc li {
+    margin-bottom: 6px;
+    font-weight: 400;
+    color: var(--fg);
+  }
+  .toc li a { color: var(--fg); text-decoration: none; }
+  .toc li a:hover { color: var(--accent); }
+
+  /* Section headings */
+  h2.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 26pt;
+    margin: 56px 0 8px;
+    padding-top: 32px;
+    border-top: 2px solid var(--fg);
+    line-height: 1.15;
+  }
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 16pt;
+    margin: 36px 0 12px;
+    color: var(--fg);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h4 {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 20px 0 8px;
+    color: var(--muted);
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 10pt;
+  }
+  th {
+    background: var(--fg);
+    color: var(--sand);
+    text-align: left;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--sand); }
+
+  /* Code blocks */
+  pre {
+    background: #1C1A17;
+    color: #e8e2d8;
+    padding: 16px 20px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    margin: 12px 0 20px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+  code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 9.5pt;
+    background: var(--secondary);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+  pre code { background: none; padding: 0; }
+
+  /* Content blocks */
+  .section-block {
+    background: var(--sand);
+    padding: 20px 24px;
+    border-radius: 4px;
+    margin: 12px 0 20px;
+    border-left: 3px solid var(--accent);
+  }
+  .section-block p { margin-bottom: 4px; }
+
+  /* Color swatches */
+  .swatch {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-right: 6px;
+    border: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 8px 0 16px; padding-left: 24px; }
+  li { margin-bottom: 4px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+</style>
+</head>
+<body>
+
+<!-- Print Bar -->
+<div class="print-bar no-print">
+  <span>OASIS EUROPE — WordPress Implementation Guide</span>
+  <button onclick="window.print()">Save as PDF</button>
+</div>
+
+<!-- TITLE PAGE -->
+<div class="title-page">
+  <p class="meta">WordPress Implementation Guide</p>
+  <h1>Oasis Europe</h1>
+  <p class="subtitle">Complete WordPress Implementation Guide<br>Homepage · Management · Developments · Capital · Advisory</p>
+  <p class="meta" style="margin-top:24px">Confidential · March 2026</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#s1">Global Settings</a> — Typography, Colors, Buttons, Animations, Breakpoints</li>
+    <li><a href="#s2">Homepage</a> — Navbar, Hero, Oasis Model, Positioning, Rental, Why Us, News, CTA, Footer</li>
+    <li><a href="#s3">Management Page</a> — Hero, Positioning, Model, Philosophy, Listings, Owner Experience, Testimonials, CTA</li>
+    <li><a href="#s4">Developments Page</a> — Hero, Positioning, Model, Objectives, Showcase, CTA</li>
+    <li><a href="#s5">Capital Page</a> — Hero, Positioning, Model, Expectations, Location, CTA</li>
+    <li><a href="#s6">Advisory Page</a> — Hero, Approach, Acquisition, Post-Purchase, Exit Strategy, CTA</li>
+    <li><a href="#s7">Global CSS &amp; JavaScript</a> — Stylesheets, Scroll Animations, Navbar, Image Specs</li>
+  </ol>
+</div>
+
+<!-- ============================== -->
+<!-- SECTION 1: GLOBAL SETTINGS     -->
+<!-- ============================== -->
+<h2 class="section-title" id="s1">1. Global Settings</h2>
+
+<h3>1.1 Container &amp; Spacing</h3>
+<ul>
+  <li><strong>Max container width:</strong> 1400px (centered)</li>
+  <li><strong>Section horizontal padding:</strong> Mobile: 24px · Tablet (768px+): 48px · Desktop (1024px+): 80px · Large (1280px+): 112px</li>
+  <li><strong>Border radius (all buttons):</strong> 4px</li>
+</ul>
+
+<h3>1.2 Typography</h3>
+<table>
+  <tr><th>Role</th><th>Font</th><th>Google Fonts Import</th></tr>
+  <tr><td>Headings</td><td><strong>Cormorant Garamond</strong> (serif)</td><td><code>Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400</code></td></tr>
+  <tr><td>Body</td><td><strong>Source Sans 3</strong> (sans-serif)</td><td><code>Source+Sans+3:wght@300;400;600;700</code></td></tr>
+  <tr><td>UI / Labels / Stats</td><td><strong>Source Sans Pro</strong> (sans-serif)</td><td><code>Source+Sans+Pro:wght@300;400;600;700</code></td></tr>
+</table>
+
+<h4>Type Scale</h4>
+<table>
+  <tr><th>Class</th><th>Mobile</th><th>Tablet (md)</th><th>Desktop (lg)</th><th>Weight</th><th>Line Height</th></tr>
+  <tr><td><code>heading-xl</code></td><td>48px</td><td>60px</td><td>72px</td><td>300</td><td>1.1</td></tr>
+  <tr><td><code>heading-lg</code></td><td>36px</td><td>48px</td><td>60px</td><td>300</td><td>1.15</td></tr>
+  <tr><td><code>heading-md</code></td><td>24px</td><td>30px</td><td>30px</td><td>300</td><td>1.2</td></tr>
+  <tr><td><code>body-lg</code></td><td>16px</td><td>18px</td><td>—</td><td>300</td><td>1.625</td></tr>
+  <tr><td><code>label-sm</code></td><td>12px</td><td>14px</td><td>—</td><td>500, UPPERCASE, tracking 0.2em</td><td>—</td></tr>
+</table>
+
+<h3>1.3 Color Palette</h3>
+<table>
+  <tr><th>Token</th><th>Hex</th><th>Usage</th></tr>
+  <tr><td><span class="swatch" style="background:#F9F7F3"></span><code>background / sand</code></td><td>#F9F7F3</td><td>Page background, light text on dark</td></tr>
+  <tr><td><span class="swatch" style="background:#2A2722"></span><code>foreground / primary</code></td><td>#2A2722</td><td>Primary text, dark overlays</td></tr>
+  <tr><td><span class="swatch" style="background:#EBE5DC"></span><code>secondary</code></td><td>#EBE5DC</td><td>Alternate section backgrounds</td></tr>
+  <tr><td><span class="swatch" style="background:#7A756A"></span><code>muted-foreground</code></td><td>#7A756A</td><td>Secondary text</td></tr>
+  <tr><td><span class="swatch" style="background:#D3C09B"></span><code>accent</code></td><td>#D3C09B</td><td>Gold accent, step numbers</td></tr>
+  <tr><td><span class="swatch" style="background:#E7E1D8"></span><code>border</code></td><td>#E7E1D8</td><td>Borders, dividers</td></tr>
+  <tr><td><span class="swatch" style="background:#1C1A17"></span><code>warm-black</code></td><td>#1C1A17</td><td>Deep dark sections</td></tr>
+  <tr><td><span class="swatch" style="background:#CCAD70"></span><code>gold</code></td><td>#CCAD70</td><td>Gold highlights</td></tr>
+  <tr><td><span class="swatch" style="background:#3A4032"></span><code>capital</code></td><td>#3A4032</td><td>Capital page dark green</td></tr>
+  <tr><td><span class="swatch" style="background:#272727"></span><code>developments</code></td><td>#272727</td><td>Developments page dark</td></tr>
+  <tr><td><span class="swatch" style="background:#EDE6DD"></span><code>advisory</code></td><td>#EDE6DD</td><td>Advisory page warm beige</td></tr>
+</table>
+
+<h3>1.4 Button Specifications</h3>
+<p>All buttons: height 44px, padding 0 32px, border-radius 4px, Source Sans 3, 14px, weight 500, UPPERCASE, letter-spacing 0.15em.</p>
+<table>
+  <tr><th>Variant</th><th>Background</th><th>Text</th><th>Border</th><th>Hover</th></tr>
+  <tr><td><code>primary</code></td><td>#2A2722</td><td>#F9F7F3</td><td>none</td><td>opacity 90%</td></tr>
+  <tr><td><code>outline</code></td><td>transparent</td><td>#2A2722</td><td>1px #2A2722</td><td>fill #2A2722, text #F9F7F3</td></tr>
+  <tr><td><code>light</code></td><td>#F9F7F3</td><td>#2A2722</td><td>none</td><td>opacity 90%</td></tr>
+  <tr><td><code>dark</code></td><td>#1C1A17</td><td>#F9F7F3</td><td>none</td><td>opacity 90%</td></tr>
+</table>
+
+<h3>1.5 Animations</h3>
+<p>All sections use <strong>scroll-triggered fade-in</strong>: translate-Y 24px → 0, opacity 0 → 1, 800–1000ms ease-out. Stagger 150ms between items. Trigger at 20–30% intersection.</p>
+
+<h3>1.6 Responsive Breakpoints</h3>
+<table>
+  <tr><th>Breakpoint</th><th>Width</th><th>Key Changes</th></tr>
+  <tr><td>Mobile</td><td>&lt; 768px</td><td>Single column, heading-xl=48px, padding 24px, hamburger nav</td></tr>
+  <tr><td>Tablet (md)</td><td>768px+</td><td>2-col grids, heading-xl=60px, padding 48px</td></tr>
+  <tr><td>Desktop (lg)</td><td>1024px+</td><td>Full layouts, heading-xl=72px, padding 80px</td></tr>
+  <tr><td>Large (xl)</td><td>1280px+</td><td>Padding 112px</td></tr>
+</table>
+
+<!-- ============================== -->
+<!-- SECTION 2: HOMEPAGE            -->
+<!-- ============================== -->
+<h2 class="section-title page-break" id="s2">2. Homepage</h2>
+<p><strong>Route:</strong> <code>/</code><br>
+<strong>Section Order:</strong> Navbar → Hero → Oasis Model → Positioning → Rental &amp; Collection → Why Us → News → CTA → Footer</p>
+
+<h3>2.1 Navbar (Shared — All Pages)</h3>
+<h4>WordPress Block</h4>
+<pre><code>Group (full-width, position: fixed, z-index: 50)
+├── Group (inner, flex, justify-between, align-center)
+│   ├── "OASIS EUROPE" — Source Sans Pro, 20-24px, "OASIS" weight 300, "EUROPE" weight 500
+│   └── Nav Links: Management | Developments | Capital | Advisory | About Us
+│       Source Sans 3, 12-14px, weight 500, UPPERCASE, tracking 0.2em
+│       Color: #7A756A, hover: #2A2722</code></pre>
+<p><strong>Behavior:</strong> Transparent initially (py 24px). On scroll &gt;50px: bg <code>#F9F7F3</code> at 95% opacity, backdrop-blur, border-bottom <code>#E7E1D8</code>, py 16px.</p>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Logo:</strong> OASIS EUROPE</p>
+  <p><strong>Links:</strong> Management | Developments | Capital | Advisory | About Us</p>
+</div>
+
+<h3>2.2 Hero Section</h3>
+<h4>WordPress Block</h4>
+<pre><code>Cover Block (100vh, hero-villa.jpg)
+├── Gradient: linear-gradient(to top, rgba(42,39,34,0.8), rgba(42,39,34,0.3), rgba(42,39,34,0.1))
+├── Group (max-width 896px, pb 48-80px)
+│   ├── Label (label-sm, rgba(249,247,243,0.7), mb 24px)
+│   ├── H1 (heading-xl, #F9F7F3, mb 32px)
+│   ├── Body (body-lg, rgba(249,247,243,0.8), max-w 672px, mb 40px)
+│   ├── Buttons (flex, gap 16px, mb 64px)
+│   │   ├── "Explore Our Ecosystem" — bg #F9F7F3, text #2A2722
+│   │   └── "Schedule a Private Consultation" — border rgba(249,247,243,0.4), text #F9F7F3
+│   └── Stats (grid 2-col mobile / 5-col desktop, border-top rgba(249,247,243,0.2), pt 40px)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Management · Development · Private Capital · Advisory · Brands</p>
+  <p><strong>H1:</strong> Asset Management, Reimagined.</p>
+  <p><strong>Body:</strong> An all-inclusive asset management platform for international property owners and investors in Marbella. We transform luxury real estate into structured investment vehicles — combining hospitality performance, strategic design and capital structuring under one ecosystem.</p>
+  <p><strong>Button 1:</strong> Explore Our Ecosystem</p>
+  <p><strong>Button 2:</strong> Schedule a Private Consultation</p>
+</div>
+<table>
+  <tr><th>Stat Value</th><th>Stat Label</th></tr>
+  <tr><td>€120M+</td><td>Management Value</td></tr>
+  <tr><td>42</td><td>Projects Managed</td></tr>
+  <tr><td>€65M+</td><td>Capital Deployed</td></tr>
+  <tr><td>28%</td><td>Avg. ROI</td></tr>
+  <tr><td>12</td><td>Assets in Development</td></tr>
+</table>
+
+<h3>2.3 Oasis Model Section</h3>
+<h4>WordPress Block</h4>
+<pre><code>Group (section, bg #F9F7F3, py 96-128px)
+├── Header (text-center, mb 64-80px)
+│   ├── Label: label-sm
+│   └── H2: heading-lg
+├── Group (flex-row desktop, flex-col mobile, gap 0)
+│   └── 5 Columns, each:
+│       ├── "01" (label-sm, color #D3C09B, mb 24px)
+│       ├── H3 title (Source Sans Pro, 18px, weight 500)
+│       ├── Subtitle (14px, muted, weight 500, mb 16px)
+│       ├── Description (14px, weight 300, relaxed)
+│       ├── Hover-reveal: "Explore →" (opacity 0→1)
+│       └── Connector arrow between columns (desktop only, #D3C09B)
+│       Border: 1px solid #E7E1D8, padding 32px
+│       Hover: bg rgba(235,229,220,0.5)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> The Oasis Model</p>
+  <p><strong>H2:</strong> One Ecosystem. Total Control.</p>
+</div>
+<table>
+  <tr><th>#</th><th>Title</th><th>Subtitle</th><th>Description</th></tr>
+  <tr><td>01</td><td>Acquire</td><td>Buy &amp; Sales Advisory</td><td>Strategic acquisition and sales advisory for luxury real estate in prime Marbella locations.</td></tr>
+  <tr><td>02</td><td>Transform</td><td>Project Management</td><td>End-to-end design and development management, transforming properties into exceptional assets.</td></tr>
+  <tr><td>03</td><td>Optimize</td><td>Rental Management</td><td>Hospitality-grade operations maximizing yield through RNTLS Ibiza and Marbella platforms.</td></tr>
+  <tr><td>04</td><td>Structure</td><td>Investment Platform</td><td>Institutional-grade capital structuring for high-net-worth property portfolios.</td></tr>
+  <tr><td>05</td><td>Exit</td><td>Brands</td><td>Curated brand portfolio and strategic positioning for maximum asset value at exit.</td></tr>
+</table>
+
+<h3>2.4 Positioning Section</h3>
+<h4>WordPress Block</h4>
+<pre><code>Columns (2, no gap, full-width, bg #EBE5DC, min-h 70vh)
+├── Column 1 (text, vertically centered, py 80px, section-padding)
+│   ├── Label: label-sm, mb 32px
+│   ├── H2: heading-lg (second line italic)
+│   └── Body: body-lg, max-w 512px
+└── Column 2 (image: architectural-detail.jpg, object-cover, full height)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Our Position</p>
+  <p><strong>H2:</strong> We are not brokers.<br><em>We are asset architects.</em></p>
+  <p><strong>Body:</strong> Oasis Europe manages the full lifecycle of luxury real estate — from acquisition and transformation to rental performance and structured exit.</p>
+</div>
+
+<h3>2.5a Rental Division</h3>
+<pre><code>Cover (min-height 60vh, image: rental-villa.jpg, content at bottom)
+├── Gradient: linear-gradient(to top, rgba(42,39,34,0.7), rgba(42,39,34,0.2), transparent)
+├── Group (pb 64-80px)
+│   ├── Label (label-sm, rgba(249,247,243,0.6))
+│   ├── H2 (heading-lg, #F9F7F3)
+│   ├── Body (rgba(249,247,243,0.7), max-w 576px)
+│   └── Button: bg #F9F7F3, text #2A2722</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Rental Division</p>
+  <p><strong>H2:</strong> Hospitality-Driven Yield.</p>
+  <p><strong>Body:</strong> Through RNTLS Ibiza and Marbella operations, we transform properties into high-performing hospitality assets.</p>
+  <p><strong>Button:</strong> View Rental Division</p>
+</div>
+
+<h3>2.5b The Marbella Collection</h3>
+<pre><code>Group (full-width, bg #1C1A17, py 96-128px, text-center)
+├── Label (label-sm, rgba(204,173,112,0.7))
+├── H2 (heading-xl, #F9F7F3)
+├── Body (rgba(249,247,243,0.5), max-w 512px)
+└── Button: border rgba(249,247,243,0.3), text #F9F7F3, hover: bg #F9F7F3 text #1C1A17</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> The Marbella Collection</p>
+  <p><strong>H2:</strong> The Exceptional Only.</p>
+  <p><strong>Body:</strong> A highly curated portfolio launching 2027.</p>
+  <p><strong>Button:</strong> Request Early Access</p>
+</div>
+
+<h3>2.6 Why Us Section</h3>
+<pre><code>Group (bg #EBE5DC, py 96-128px)
+├── Header (mb 64px): Label + H2
+└── Grid (2×2, gap 1px, bg #E7E1D8 for gap lines)
+    └── Each cell: bg #EBE5DC, padding 40-48px
+        ├── Number (label-sm, #D3C09B)
+        ├── H3 (Cormorant Garamond, 24-30px, weight 300)
+        └── Body (body-lg)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Why Us &nbsp;·&nbsp; <strong>H2:</strong> Why Partners Choose Us</p>
+</div>
+<table>
+  <tr><th>#</th><th>Title</th><th>Description</th></tr>
+  <tr><td>01</td><td>All in One Platform</td><td>Oasis Europe offers an all-in-one platform that integrates management, development, scaling, and operations, creating a unified ecosystem for managing every stage of the investment lifecycle.</td></tr>
+  <tr><td>02</td><td>Integrated Value Creation</td><td>A comprehensive approach covering acquisition, development, hospitality operations, and asset management — minimizing intermediaries and enhancing long-term value.</td></tr>
+  <tr><td>03</td><td>Full Transparency</td><td>We adhere to governance standards for institutional investment, ensuring investors receive full reporting, independent valuations, and clear updates throughout the process.</td></tr>
+  <tr><td>04</td><td>Aligned Capital</td><td>Each investment is designed to synchronize capital, strategy, and the objectives of long-term partners, ensuring disciplined governance and alignment during the investment lifecycle.</td></tr>
+</table>
+
+<h3>2.7 News Section</h3>
+<pre><code>Group (bg #F9F7F3, py 96-128px)
+├── Header (flex space-between, mb 64px): Label + H2 + "View All →"
+└── Grid (3-col, gap 1px, bg #E7E1D8)
+    └── Card (bg #F9F7F3, padding 32-40px, hover: bg rgba(235,229,220,0.5))
+        ├── Tag (label-sm, #D3C09B, 12px)
+        ├── Date (12px, muted)
+        ├── H3 (Source Sans Pro, 20px, weight 500, hover: #D3C09B)
+        └── Excerpt (14px, weight 300, relaxed)</code></pre>
+<table>
+  <tr><th>Tag</th><th>Date</th><th>Title</th><th>Excerpt</th></tr>
+  <tr><td>Development</td><td>March 2026</td><td>New Luxury Development Announced in La Zagaleta</td><td>A landmark 12-unit residential development bringing Oasis Europe's design philosophy to one of Marbella's most exclusive enclaves.</td></tr>
+  <tr><td>Capital</td><td>February 2026</td><td>€25M Fund Close for Marbella Hospitality Portfolio</td><td>Successfully closed our latest fund targeting high-yield hospitality assets across the Costa del Sol.</td></tr>
+  <tr><td>Brands</td><td>January 2026</td><td>RNTLS Expands Operations to Marbella</td><td>Following success in Ibiza, RNTLS brings its hospitality-grade rental management to the Marbella market.</td></tr>
+</table>
+
+<h3>2.8 CTA Section</h3>
+<pre><code>Group (bg #EBE5DC, py 80-96px, text-center)
+├── Label: label-sm
+├── H2: heading-lg
+├── Body (body-lg, max-w 576px, centered)
+└── Button: bg #2A2722, text #F9F7F3</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Get in Touch</p>
+  <p><strong>H2:</strong> Where Your Investment Begins</p>
+  <p><strong>Body:</strong> Whether you're looking to invest, develop, list a property, or simply learn more about what we do — we'd like to hear from you.</p>
+  <p><strong>Button:</strong> Book an Appointment</p>
+</div>
+
+<h3>2.9 Footer (Shared — All Pages)</h3>
+<pre><code>Group (bg #2A2722, py 64px)
+├── Row (flex, justify-between, mb 48px)
+│   ├── "OASIS EUROPE" (Source Sans Pro, 20px, weight 300, #F9F7F3)
+│   └── "Marbella · Costa del Sol · Ibiza" (12px, UPPERCASE, rgba(249,247,243,0.4))
+├── Separator (border-top rgba(249,247,243,0.1), pt 32px)
+│   ├── "Private Consultations by Appointment Only" (12px, italic, rgba(249,247,243,0.3))
+│   └── Links: LinkedIn | Instagram (12px, UPPERCASE, rgba(249,247,243,0.4))
+└── Row (mt 32px)
+    ├── Legal | Privacy | Terms (12px, rgba(249,247,243,0.3))
+    └── © [year] Oasis Europe (rgba(249,247,243,0.2))</code></pre>
+
+<!-- ============================== -->
+<!-- SECTION 3: MANAGEMENT          -->
+<!-- ============================== -->
+<h2 class="section-title page-break" id="s3">3. Management Page</h2>
+<p><strong>Route:</strong> <code>/management</code><br>
+<strong>Section Order:</strong> Navbar → Hero → Positioning → Model → Philosophy → Listings → Owner Experience → Testimonials → CTA → Footer</p>
+
+<h3>3.1 Management Hero</h3>
+<pre><code>Section (bg #EBE5DC, min-h 70vh, flex center, text-center)
+├── Label (label-sm, 50% opacity)
+├── H1 (heading-xl)
+├── Subtitle (Source Sans Pro, 20-24px, font-light)
+│   "A property is more than a listing." + line break + italic "It is a performing asset."
+├── Body (body-lg, 70% opacity, max-w 672px)
+└── Bottom-right absolute link: "List Your Property →"</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Management &nbsp;·&nbsp; <strong>H1:</strong> Rental Management</p>
+  <p><strong>Subtitle:</strong> A property is more than a listing. <em>It is a performing asset.</em></p>
+  <p><strong>Body:</strong> Oasis Europe manages luxury villas and apartments through a performance-driven hospitality model combining dynamic pricing systems, global distribution, hotel-level guest experience, and full operational oversight.</p>
+  <p><strong>Link:</strong> List Your Property →</p>
+</div>
+
+<h3>3.2 Management Positioning</h3>
+<pre><code>Grid (2 columns lg+, 1 col mobile, bg #F9F7F3)
+├── Left — Content (section-padding, vertically centered)
+│   ├── Stats (border-bottom each)
+│   │   Value: Source Sans Pro 36-48px font-light
+│   │   Label: 14px UPPERCASE tracking-wider
+│   ├── Distribution note (14px, muted)
+│   └── Operations note (14px, muted)
+└── Right — Image (management-villa.jpg, object-cover, full height, min-h 400px mobile)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Stats:</strong> 45+ Luxury Properties Managed · 8 Years of Operations · 32% Avg. Annual Revenue Growth</p>
+  <p>Global distribution across Airbnb Luxe, VRBO, Booking, direct network</p>
+  <p>Dedicated operations team in Marbella &amp; Ibiza</p>
+</div>
+
+<h3>3.3 Management Model</h3>
+<pre><code>Grid (2 columns, bg #EBE5DC, min-h 80vh)
+├── Left — Image with dark overlay (40% black)
+│   ├── Label: "The Oasis Model"
+│   ├── H2: heading-lg
+│   └── Body text
+└── Right — Auto-rotating step carousel (4s per step)
+    ├── Progress indicators (active: 40px wide, inactive: 20px, transition 500ms)
+    └── Step content (numbered)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> The Oasis Model &nbsp;·&nbsp; <strong>H2:</strong> A Structured Management System</p>
+  <p><strong>Body:</strong> Unlike traditional agencies, Oasis Europe operates through a structured asset management model designed to maximise long-term property performance.</p>
+</div>
+<table>
+  <tr><th>#</th><th>Title</th><th>Sub-items</th></tr>
+  <tr><td>01</td><td>Property Evaluation</td><td>Revenue potential analysis · Market positioning · Operational feasibility</td></tr>
+  <tr><td>02</td><td>Asset Optimisation</td><td>Interior improvement recommendations · Professional photography · Luxury brand positioning</td></tr>
+  <tr><td>03</td><td>Revenue Performance</td><td>Dynamic pricing algorithms · Multi-platform distribution · Demand forecasting</td></tr>
+  <tr><td>04</td><td>Full Hospitality Operations</td><td>Guest relations · Housekeeping coordination · Maintenance oversight · Monthly owner reporting</td></tr>
+</table>
+<p><em>Tagline: You are not a listing agency. You are an asset manager.</em></p>
+
+<h3>3.4 Management Philosophy</h3>
+<pre><code>Group (bg #F9F7F3, py 96-128px)
+├── Header: Label + H2 (centered)
+└── Grid (1-col mobile, 2-col md, 4-col lg, gap 8-10)
+    └── Card (text-center)
+        ├── Icon (24px, #D3C09B, strokeWidth 1.5)
+        ├── H3 (Source Sans Pro, 20px, weight 500)
+        └── Body (14px, muted, font-light, relaxed)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Performance Philosophy &nbsp;·&nbsp; <strong>H2:</strong> A Different Standard of Management</p>
+</div>
+<table>
+  <tr><th>Icon</th><th>Title</th><th>Description</th></tr>
+  <tr><td>Lightbulb</td><td>Innovation</td><td>Advanced pricing technology and demand analysis maximise seasonal revenue.</td></tr>
+  <tr><td>BarChart3</td><td>Structure</td><td>Clear reporting, defined operational processes, and transparent performance metrics.</td></tr>
+  <tr><td>Palette</td><td>Design Intelligence</td><td>Strategic design improvements that increase both rental value and property equity.</td></tr>
+  <tr><td>Lock</td><td>Discretion</td><td>Trusted by international owners seeking professional and confidential asset management.</td></tr>
+</table>
+
+<h3>3.5 Management Listings</h3>
+<pre><code>Group (bg #F9F7F3)
+├── Header row: Label + H2 + "View All Properties →" (right-aligned desktop)
+└── Grid (3 columns, gap 24px)
+    └── Card
+        ├── Image (aspect-ratio 3:2, hover scale 105% / 700ms)
+        ├── Tag badge (absolute top-left, bg #F9F7F3/90 backdrop-blur, 10px UPPERCASE)
+        ├── Title (Source Sans Pro, 20px, weight 500)
+        ├── Location (14px, muted)
+        ├── Specs row (12px, UPPERCASE, tracking-wider, 1px dividers)
+        └── Price (Source Sans Pro, 18px, weight 500)</code></pre>
+<table>
+  <tr><th>Property</th><th>Tag</th><th>Location</th><th>Beds</th><th>Baths</th><th>Size</th><th>Price</th></tr>
+  <tr><td>Villa Serena</td><td>New Listing</td><td>La Zagaleta, Marbella</td><td>6</td><td>7</td><td>1,250 m²</td><td>€8,500 / night</td></tr>
+  <tr><td>Casa del Mar</td><td>Editor's Pick</td><td>Es Cubells, Ibiza</td><td>5</td><td>5</td><td>980 m²</td><td>€6,200 / night</td></tr>
+  <tr><td>Villa Horizonte</td><td>Top Performer</td><td>Sierra Blanca, Marbella</td><td>7</td><td>8</td><td>1,400 m²</td><td>€12,000 / night</td></tr>
+</table>
+
+<h3>3.6 Management Owner Experience</h3>
+<pre><code>Group (bg #EBE5DC)
+├── Header: Label + H2
+└── Grid (1-col mobile, 2-col md, 3-col lg, gap 8-10)
+    └── Card: Icon (40px) + H3 + Body</code></pre>
+<div class="section-block"><h4>Content</h4><p><strong>Label:</strong> Owner Experience &nbsp;·&nbsp; <strong>H2:</strong> Effortless Ownership</p></div>
+<table>
+  <tr><th>Icon</th><th>Title</th><th>Description</th></tr>
+  <tr><td>Home</td><td>Property Marketing</td><td>We optimise the interior to create stunning pictures and showcase the holiday home on all major platforms.</td></tr>
+  <tr><td>Key</td><td>Booking Management</td><td>We are online at any time to respond, handle and take care of all services related to the booking of our guests.</td></tr>
+  <tr><td>Wrench</td><td>Property Management</td><td>Our team takes excellent care of all our homes. This guarantees a high quality experience to both guests and owners.</td></tr>
+  <tr><td>Clock</td><td>Great Response Rate</td><td>Our response rate ensures clients are kept satisfied and positive during their stay.</td></tr>
+  <tr><td>PieChart</td><td>Smart Teams</td><td>We have excellent connections with well-established local cleaning teams, laundry services and maintenance personnel.</td></tr>
+  <tr><td>FileText</td><td>We Are Compliant</td><td>Our company is committed to be compliant and operate within all current local rules and regulations.</td></tr>
+</table>
+
+<h3>3.7 Management Testimonials</h3>
+<pre><code>Cover (image: cta-villa.jpg, 60% overlay, auto-rotate 5s)
+├── Label (label-sm, white/60%)
+├── Quote (Source Sans Pro, 24-30px, font-light, italic, white)
+├── Attribution (14px, white/60%, UPPERCASE): "Author — Location"
+└── Navigation dots (8px, active: white scale 125%, inactive: white/30%)</code></pre>
+<table>
+  <tr><th>Quote</th><th>Author</th><th>Location</th></tr>
+  <tr><td>"Oasis Europe transformed our villa into a high-performing asset while maintaining the highest standards of hospitality."</td><td>Property Owner</td><td>Marbella</td></tr>
+  <tr><td>"The structured approach to revenue management delivered results far beyond what we experienced with traditional agencies."</td><td>International Investor</td><td>Costa del Sol</td></tr>
+  <tr><td>"Complete transparency, exceptional guest reviews, and consistent performance reporting. Exactly what we needed."</td><td>Villa Owner</td><td>Ibiza</td></tr>
+  <tr><td>"Their attention to design and positioning elevated our property to an entirely different market segment."</td><td>Portfolio Owner</td><td>Marbella</td></tr>
+</table>
+
+<h3>3.8 Management CTA</h3>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Body:</strong> Join a network of international property owners who trust Oasis Europe to manage their assets.</p>
+  <p><strong>Button 1:</strong> List Your Property → &nbsp;·&nbsp; <strong>Button 2:</strong> Download Owner Brochure</p>
+</div>
+
+<!-- ============================== -->
+<!-- SECTION 4: DEVELOPMENTS        -->
+<!-- ============================== -->
+<h2 class="section-title page-break" id="s4">4. Developments Page</h2>
+<p><strong>Route:</strong> <code>/developments</code><br>
+<strong>Section Order:</strong> Navbar → Hero → Positioning → Model → Objectives → Showcase → CTA → Footer</p>
+
+<h3>4.1 Developments Hero</h3>
+<pre><code>Section (bg #272727, min-h 80vh, flex center, text-center)
+├── Label (label-sm, 70% opacity)
+├── H1 (heading-xl, #F9F7F3)
+├── Subtitle (Source Sans Pro, 20-24px, font-light, 80% opacity)
+│   Body text + line break + italic tagline
+└── Bottom-right absolute link: "Start Your Project →" (50% opacity, hover full)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Project Management &nbsp;·&nbsp; <strong>H1:</strong> Developments</p>
+  <p><strong>Body:</strong> Oasis Europe Project Management oversees high-end renovations and repositioning projects to deliver a finished product that enhances value, performance and long-term positioning.</p>
+  <p><em>We do not simply manage construction. We manage outcomes.</em></p>
+  <p><strong>Link:</strong> Start Your Project →</p>
+</div>
+
+<h3>4.2 Developments Positioning</h3>
+<pre><code>Grid (2 columns, bg #F9F7F3)
+├── Left — Content: Label + H2 + Lead + Body + Tagline (italic)
+└── Right — Image (villa-marbesa-56.jpg, object-cover, full height)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Starting Point &nbsp;·&nbsp; <strong>H2:</strong> How Do We Start?</p>
+  <p><strong>Lead:</strong> Every project begins with a clear objective.</p>
+  <p><strong>Body:</strong> Is the project a personal lifestyle upgrade? Designed to increase rental performance? A strategic resale or long-term capital appreciation? The strategy determines the scope.</p>
+  <p><em>Design decisions are guided by purpose — not preference alone.</em></p>
+</div>
+
+<h3>4.3 Developments Model</h3>
+<pre><code>Group (bg rgb(249,249,249))
+├── Header (centered): Label + H2
+├── Grid (1-col mobile, 2-col md, 4-col lg, gap 6-8)
+│   └── Step: Number + H3 + Body
+└── Tagline (italic, centered, mt 48px)</code></pre>
+<div class="section-block"><h4>Content</h4><p><strong>Label:</strong> The Development Process &nbsp;·&nbsp; <strong>H2:</strong> From Vision to Completion</p></div>
+<table>
+  <tr><th>#</th><th>Title</th><th>Description</th></tr>
+  <tr><td>01</td><td>Project Evaluation</td><td>We assess the property's current condition, potential improvements and market positioning. Before any work begins, the objective is defined.</td></tr>
+  <tr><td>02</td><td>Concept &amp; Planning</td><td>Once aligned, we develop a structured renovation plan. Every element is considered in relation to value, performance and the owner's expectation.</td></tr>
+  <tr><td>03</td><td>Budget &amp; Cost Control</td><td>We prepare a detailed renovation framework. Execution without budget control erodes value. Structure protects margin.</td></tr>
+  <tr><td>04</td><td>Execution Oversight</td><td>Oasis Europe manages the project on-site. Our role is to ensure the finished result meets both design standards and financial expectations.</td></tr>
+</table>
+<p><em>Tagline: We do not simply manage construction. We manage outcomes.</em></p>
+
+<h3>4.4 Developments Objectives</h3>
+<pre><code>Grid (2 columns, bg rgb(247,247,247), min-h 85vh)
+├── Left — Image (villa-marbesa-57.jpg, object-cover, full height)
+└── Right — Content
+    ├── Label + H2 + Subtext
+    └── Accordion items (icon-circle pattern)
+        └── Item (border-top + last:border-bottom, py 28px)
+            ├── Icon circle (40px, rounded-full, bg foreground/5)
+            └── Text: H3 + Body</code></pre>
+<div class="section-block"><h4>Content</h4>
+  <p><strong>Label:</strong> Project Objectives &nbsp;·&nbsp; <strong>H2:</strong> What Is Your Objective?</p>
+  <p><strong>Subtext:</strong> The strategy determines the scope. Every project begins with a clear objective.</p>
+</div>
+<table>
+  <tr><th>Icon</th><th>Title</th><th>Description</th></tr>
+  <tr><td>Home</td><td>Rental-Orientated Renovation</td><td>Through our ecosystem, including our Rental Management service, we understand guest expectations, layout preferences, durability standards and yield optimization factors.</td></tr>
+  <tr><td>TrendingUp</td><td>Resale-Orientated Transformation</td><td>When the objective is resale, we position the property strategically within its competitive set. The goal is to deliver a fully turnkey asset that commands premium positioning at exit.</td></tr>
+  <tr><td>Gem</td><td>Value-Driven Transformation</td><td>Our renovation philosophy is grounded in market logic. We align transformation with the expectations of high-end buyers. The result is a property positioned at the top of its segment.</td></tr>
+</table>
+
+<h3>4.5 Developments Showcase</h3>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Our Philosophy &nbsp;·&nbsp; <strong>H2:</strong> Design With Market Logic</p>
+  <p><strong>Body 1:</strong> Every element is considered in relation to value, performance and the owner's expectation. Execution without budget control erodes value.</p>
+  <p><strong>Body 2:</strong> Structure protects margin. We prepare a detailed renovation framework and manage the project on-site to ensure the finished result meets both design standards and financial expectations.</p>
+  <p><em>We create a tailored plan for every individual project.</em></p>
+</div>
+
+<h3>4.6 Developments CTA</h3>
+<pre><code>Cover (image: dev-cta-bg.jpg, 60% overlay, min-h 60vh, flex center, text-center)
+├── Label (label-sm, 50% opacity)
+├── H2 (heading-lg, #F9F7F3)
+├── Body (70% opacity)
+└── Buttons (flex-wrap, centered, gap 16px)
+    ├── "Start Your Project →" (bg #F9F7F3, text #2A2722)
+    └── "Learn More" (outline, border rgba(249,247,243,0.3))</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Project Management &nbsp;·&nbsp; <strong>H2:</strong> Interested in Our Services?</p>
+  <p><strong>Body:</strong> We create a tailored plan for every individual project.</p>
+  <p><strong>Button 1:</strong> Start Your Project → &nbsp;·&nbsp; <strong>Button 2:</strong> Learn More</p>
+</div>
+
+<!-- ============================== -->
+<!-- SECTION 5: CAPITAL             -->
+<!-- ============================== -->
+<h2 class="section-title page-break" id="s5">5. Capital Page</h2>
+<p><strong>Route:</strong> <code>/capital</code><br>
+<strong>Section Order:</strong> Navbar → Hero → Positioning → Model → Expectations → Location → CTA → Footer</p>
+
+<h3>5.1 Capital Hero</h3>
+<pre><code>Section (bg #3A4032, min-h 85vh, flex center, text-center)
+├── Label (label-sm, 60% opacity)
+├── H1 (heading-xl, warm cream hsl(40,30%,95%))
+└── Body (80% opacity, max-w 672px)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Investment Fund &nbsp;·&nbsp; <strong>H1:</strong> Private Capital</p>
+  <p><strong>Body:</strong> The Oasis Europe Private Investment Fund provides structured access to high-end residential real estate projects in prime Mediterranean locations. The model is straightforward and each project follows a defined lifecycle with professional oversight from acquisition through exit.</p>
+</div>
+
+<h3>5.2 Capital Positioning</h3>
+<pre><code>Grid (2 columns, bg #F9F7F3)
+├── Left — Image (architectural-detail.jpg, object-cover, full height)
+└── Right — Content: Label + H2 + Body ×3 + Tagline (italic)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> The Concept &nbsp;·&nbsp; <strong>H2:</strong> The Model</p>
+  <p><strong>Body 1:</strong> The model is straightforward. Invest in a curated project. Acquire a prime villa below optimised value. Transform it into a premium turnkey residence. Sell strategically at enhanced market positioning.</p>
+  <p><strong>Body 2:</strong> Each project is structured as a Private Investment Fund — providing a transparent and professionally managed investment framework. From acquisition to return generation, we oversee the entire lifecycle of the investment.</p>
+  <p><strong>Body 3:</strong> Beyond sourcing the property, we manage all operational and financial aspects to optimise performance, maintain quality standards, and ensure consistent income. With a hands-off approach and full transparency, Oasis Europe enables investors to participate in professionally managed real estate projects focused on solid returns.</p>
+  <p><em>We are the smart choice.</em></p>
+</div>
+
+<h3>5.3 Capital Model (Interactive Accordion)</h3>
+<pre><code>Group (bg rgb(58,64,50), py 24-32)
+├── Header (centered): Label (white/50%) + H2 (white)
+└── Grid (2 columns on desktop)
+    ├── Left — Interactive accordion (click to expand, image changes on desktop)
+    │   └── Item (border-t white/10, py 20-32px)
+    │       ├── Number (14px, tracking-wider) — Active: white/60, Inactive: white/25
+    │       ├── Title — Active: text-xl-2xl white, Inactive: text-lg white/50
+    │       ├── Description (visible when active)
+    │       └── Highlights (italic, preceded by "— ", white/40)
+    └── Right — Image (crossfade 700ms, 10% black overlay)</code></pre>
+<div class="section-block"><h4>Content</h4><p><strong>Label:</strong> Investment Process &nbsp;·&nbsp; <strong>H2:</strong> How It Works</p></div>
+<table>
+  <tr><th>#</th><th>Title</th><th>Description</th><th>Highlights</th><th>Image</th></tr>
+  <tr><td>01</td><td>Capital Participation</td><td>Investors participate in a dedicated project vehicle. Capital is committed at the start of the project and deployed toward acquisition and transformation.</td><td>No interim interest obligations · Returns realised at exit</td><td>capital-hero.jpg</td></tr>
+  <tr><td>02</td><td>Acquisition</td><td>Oasis Europe identifies and secures high-end villas in internationally recognised residential zones. Each property is carefully selected.</td><td>Only projects with clear upside proceed · Full legal &amp; technical due diligence</td><td>capital-acquisition.jpg</td></tr>
+  <tr><td>03</td><td>Transformation</td><td>Following acquisition, the property is repositioned into a fully turnkey luxury residence.</td><td>Direct execution by Oasis Europe · Cost control &amp; timeline oversight</td><td>capital-transformation.jpg</td></tr>
+  <tr><td>04</td><td>Market Positioning &amp; Sale</td><td>Once completed, the property is strategically introduced to the global buyer market.</td><td>Strategic global market introduction · Structured exit process</td><td>capital-location.jpg</td></tr>
+</table>
+
+<h3>5.4 Capital Expectations</h3>
+<pre><code>Group (bg #EBE5DC)
+├── Header: Label + H2 (centered)
+└── Grid (1-col mobile, 2-col md, 4-col lg)
+    └── Card (text-center)
+        ├── Icon container (48px circle, border #E7E1D8, rounded-full)
+        │   └── Icon (24px, #D3C09B)
+        ├── H3 (Source Sans Pro, 20px, weight 500)
+        └── Body (14px, muted, font-light)</code></pre>
+<div class="section-block"><h4>Content</h4><p><strong>Label:</strong> Investor Experience &nbsp;·&nbsp; <strong>H2:</strong> What Investors Can Expect</p></div>
+<table>
+  <tr><th>Icon</th><th>Title</th><th>Description</th></tr>
+  <tr><td>Shield</td><td>Professional Oversight</td><td>Oasis Europe manages the entire lifecycle — acquisition, project execution, budget control, market positioning, and sales.</td></tr>
+  <tr><td>FileText</td><td>Transparent Reporting</td><td>Investors receive regular progress updates, construction reporting, financial summaries, and clear timeline communication.</td></tr>
+  <tr><td>Clock</td><td>Defined Time Horizon</td><td>Projects are structured with a limited development and sales horizon. The strategy is controlled transformation, not long-term land holding.</td></tr>
+  <tr><td>TrendingUp</td><td>Aligned Incentives</td><td>Management compensation includes a performance component tied to successful project completion and sale.</td></tr>
+</table>
+
+<h3>5.5 Capital Location</h3>
+<pre><code>Cover (image: capital-prime-location.png, overlay #3A4032/70, centered)
+├── Label (50% opacity)
+├── H2 (heading-lg)
+├── Body 1 (80% opacity)
+└── Body 2 (70% opacity)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Prime Location &nbsp;·&nbsp; <strong>H2:</strong> Costa Del Sol</p>
+  <p><strong>Body 1:</strong> Marbella has a rich history and a fantastic climate, making it one of the most sought-after real estate investment areas in Europe. Together with Estepona and Benahavis, the area is known as the Golden Triangle.</p>
+  <p><strong>Body 2:</strong> The real estate market is highly active, with new urbanisations and high-end properties being developed by renowned architects, taking inspiration from areas such as Dubai and Beverly Hills — transforming the region into a modern paradise and providing an excellent opportunity for real estate investment.</p>
+</div>
+
+<h3>5.6 Capital CTA</h3>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Private Capital &nbsp;·&nbsp; <strong>H2:</strong> Interested in Investing?</p>
+  <p><strong>Body:</strong> Contact us for more information about our Private Investment Fund and current investment opportunities.</p>
+  <p><strong>Button 1:</strong> Contact Us → (mailto: stefano@oasiseurope.nl) &nbsp;·&nbsp; <strong>Button 2:</strong> Download Investor Brochure</p>
+</div>
+
+<!-- ============================== -->
+<!-- SECTION 6: ADVISORY            -->
+<!-- ============================== -->
+<h2 class="section-title page-break" id="s6">6. Advisory Page</h2>
+<p><strong>Route:</strong> <code>/advisory</code><br>
+<strong>Section Order:</strong> Navbar → Hero → Approach → Acquisition → Post-Purchase → Exit Strategy → CTA → Footer</p>
+
+<h3>6.1 Advisory Hero</h3>
+<pre><code>Section (bg #EDE6DD, min-h 75vh, flex center, text-center)
+├── Label (label-sm, 50% opacity)
+├── H1 (heading-xl, dark warm brown hsl(25,15%,20%))
+└── Body (70% opacity, max-w 672px)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Transaction &nbsp;·&nbsp; <strong>H1:</strong> Asset Advisory</p>
+  <p><strong>Body:</strong> Oasis Europe provides Strategic Asset Advisory for private investors and property owners seeking structured oversight across the full lifecycle of a luxury asset. We ensure that each acquisition and exit is guided by structure, intelligence and long-term value creation.</p>
+</div>
+
+<h3>6.2 Advisory Approach</h3>
+<pre><code>Grid (2 columns, bg rgb(250,248,245), min-h 85vh)
+├── Left — Content: Label + H2 + Subtext + Accordion items
+└── Right — Image (advisory-approach.jpg, object-cover, full height)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Our Approach &nbsp;·&nbsp; <strong>H2:</strong> Independent Advisory, Uncompromised Standards</p>
+  <p><strong>Subtext:</strong> Our advisory is built on four pillars that ensure every decision is informed, protected, and optimised.</p>
+</div>
+<table>
+  <tr><th>Icon</th><th>Title</th><th>Description</th></tr>
+  <tr><td>Search</td><td>Market Intelligence</td><td>Deep analysis of micro-markets, comparable transactions, and emerging opportunities across the Golden Triangle.</td></tr>
+  <tr><td>Shield</td><td>Due Diligence</td><td>Comprehensive legal, fiscal, and structural review of every asset before any commitment is made.</td></tr>
+  <tr><td>TrendingUp</td><td>Value Optimisation</td><td>Strategic positioning and timing to ensure maximum value capture on both acquisition and exit.</td></tr>
+  <tr><td>Handshake</td><td>Trusted Network</td><td>Access to off-market opportunities and a curated network of legal, fiscal, and design professionals.</td></tr>
+</table>
+
+<h3>6.3 Advisory Acquisition</h3>
+<pre><code>Grid (2 columns, bg #F9F7F3)
+├── Left — Image (advisory-acquisition.jpg, object-cover, full height)
+└── Right — Content: Label + H2 (italic) + Body + Taglines + Stats</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Purchase Management &nbsp;·&nbsp; <strong>H2:</strong> Intelligent <em>Acquisition</em></p>
+  <p><strong>Body:</strong> Entering the Marbella market requires more than identifying a beautiful property. We guide clients through structured acquisition decisions grounded in data and market intelligence.</p>
+  <p><em>We do not operate as traditional brokers.</em></p>
+  <p><em>We act as independent long-term asset advisors.</em></p>
+  <p><strong>Stats:</strong> €500M+ Transaction Volume · 120+ Acquisitions Advised</p>
+</div>
+
+<h3>6.4 Advisory Post-Purchase</h3>
+<pre><code>Group (bg rgb(250,248,245), centered)
+├── Header: Label + H2 (italic) + Subtext
+└── Grid (1-col mobile, 3-col lg, gap 8-10)
+    └── Card (text-center): Icon (24px, #D3C09B) + H3 + Body</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> After Purchase &nbsp;·&nbsp; <strong>H2:</strong> Post-Acquisition <em>Management</em></p>
+  <p><strong>Subtext:</strong> Our advisory doesn't end at closing. We accompany owners through the critical post-purchase phase — ensuring the property is set up, protected, and performing from the start.</p>
+</div>
+<table>
+  <tr><th>Icon</th><th>Title</th><th>Description</th></tr>
+  <tr><td>Settings</td><td>Property Setup &amp; Onboarding</td><td>From furnishing coordination to utility setup, we ensure your property is fully operational and guest-ready from day one.</td></tr>
+  <tr><td>ShieldCheck</td><td>Ongoing Asset Protection</td><td>We oversee maintenance schedules, insurance reviews, and compliance requirements to safeguard your investment long-term.</td></tr>
+  <tr><td>BarChart3</td><td>Performance Monitoring</td><td>Regular reporting on rental yield, occupancy rates, and market positioning keeps you informed and in control of your asset.</td></tr>
+</table>
+
+<h3>6.5 Advisory Exit Strategy</h3>
+<pre><code>Grid (2 columns, bg #EBE5DC)
+├── Left — Content: Label + H2 (italic) + Body + Bullet list + Tagline
+└── Right — Image (advisory-exit.jpg, object-cover, full height)</code></pre>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Sales Management &nbsp;·&nbsp; <strong>H2:</strong> Exit <em>Strategy</em></p>
+  <p><strong>Body:</strong> Selling luxury property in Marbella requires more than listing exposure. It requires positioning. We oversee the transaction through to completion — and can advise on reinvestment.</p>
+  <ul>
+    <li>Strategic market positioning and timing analysis</li>
+    <li>Targeted buyer network and off-market opportunities</li>
+    <li>Full transaction management from valuation to closing</li>
+    <li>Reinvestment advisory and portfolio restructuring</li>
+  </ul>
+  <p><em>Private Consultations by Appointment Only.</em></p>
+</div>
+
+<h3>6.6 Advisory CTA</h3>
+<div class="section-block">
+  <h4>Content</h4>
+  <p><strong>Label:</strong> Asset Advisory &nbsp;·&nbsp; <strong>H2:</strong> Interested in Our Services?</p>
+  <p><strong>Body:</strong> We manage the purchase and sales process from start to finish. Contact us for a private consultation.</p>
+  <p><strong>Button:</strong> Contact Us → (mailto: info@oasiseurope.nl)</p>
+</div>
+
+<!-- ============================== -->
+<!-- SECTION 7: GLOBAL CSS & JS     -->
+<!-- ============================== -->
+<h2 class="section-title page-break" id="s7">7. Global CSS &amp; JavaScript</h2>
+
+<h3>7.1 Custom CSS</h3>
+<pre><code>/* === Global Resets === */
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 300;
+  background-color: #F9F7F3;
+  color: #2A2722;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  text-transform: none;
+}
+
+/* === Label Utility === */
+.label-sm {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+@media (min-width: 768px) {
+  .label-sm { font-size: 14px; }
+}
+
+/* === Section Padding === */
+.section-padding {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 768px)  { .section-padding { padding-left: 48px;  padding-right: 48px;  } }
+@media (min-width: 1024px) { .section-padding { padding-left: 80px;  padding-right: 80px;  } }
+@media (min-width: 1280px) { .section-padding { padding-left: 112px; padding-right: 112px; } }
+
+/* === Button Base === */
+.btn-oasis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 32px;
+  border-radius: 4px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-oasis-primary { background: #2A2722; color: #F9F7F3; }
+.btn-oasis-primary:hover { opacity: 0.9; }
+.btn-oasis-outline { background: transparent; border: 1px solid #2A2722; color: #2A2722; }
+.btn-oasis-outline:hover { background: #2A2722; color: #F9F7F3; }
+.btn-oasis-light { background: #F9F7F3; color: #2A2722; }
+.btn-oasis-light:hover { opacity: 0.9; }
+
+/* === Grid Gap Lines === */
+.grid-gap-lines { background-color: #E7E1D8; gap: 1px; }
+.grid-gap-lines > * { background-color: #F9F7F3; }
+
+/* === Scroll Animation === */
+.aos-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.aos-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}</code></pre>
+
+<h3>7.2 Scroll Animation JavaScript</h3>
+<pre><code>document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  document.querySelectorAll('.aos-fade-up').forEach((el) => {
+    observer.observe(el);
+  });
+});</code></pre>
+
+<h3>7.3 Navbar Scroll Behavior JavaScript</h3>
+<pre><code>document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  });
+});</code></pre>
+<pre><code>.navbar {
+  background: transparent;
+  padding: 24px 0;
+  transition: all 0.3s ease;
+}
+.navbar-scrolled {
+  background: rgba(249, 247, 243, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #E7E1D8;
+  padding: 16px 0;
+}</code></pre>
+
+<h3>7.4 Image Specifications</h3>
+<table>
+  <tr><th>Image</th><th>Recommended Size</th><th>Object Fit</th></tr>
+  <tr><td>hero-villa.jpg</td><td>1920×1080px</td><td>cover</td></tr>
+  <tr><td>architectural-detail.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>rental-villa.jpg</td><td>1920×1080px</td><td>cover</td></tr>
+  <tr><td>management-villa.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>villa-marbesa-56.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>villa-marbesa-57.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>cta-villa.jpg</td><td>1920×1080px</td><td>cover</td></tr>
+  <tr><td>dev-cta-bg.jpg</td><td>1920×1080px</td><td>cover</td></tr>
+  <tr><td>advisory-approach.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>advisory-acquisition.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>advisory-exit.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>capital-prime-location.png</td><td>1920×1080px</td><td>cover</td></tr>
+  <tr><td>capital-acquisition.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>capital-transformation.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>capital-location.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>capital-hero.jpg</td><td>800×1200px</td><td>cover</td></tr>
+  <tr><td>listing-1/2/3.jpg</td><td>800×533px (3:2)</td><td>cover</td></tr>
+</table>
+
+<h3>7.5 Recommended WordPress Setup</h3>
+<ul>
+  <li><strong>Theme:</strong> Blank block theme (FSE) or stripped GeneratePress/Kadence</li>
+  <li><strong>Plugins:</strong>
+    <ol>
+      <li>Custom Fonts — Google Fonts loader</li>
+      <li>AOS or custom JS — Scroll animations</li>
+      <li>Safe SVG — If using SVG logos</li>
+    </ol>
+  </li>
+</ul>
+
+<h3>7.6 Quick Color Reference</h3>
+<table>
+  <tr><th>Name</th><th>Swatch</th><th>Hex</th></tr>
+  <tr><td>Background / Sand</td><td><span class="swatch" style="background:#F9F7F3"></span></td><td>#F9F7F3</td></tr>
+  <tr><td>Foreground / Primary</td><td><span class="swatch" style="background:#2A2722"></span></td><td>#2A2722</td></tr>
+  <tr><td>Secondary</td><td><span class="swatch" style="background:#EBE5DC"></span></td><td>#EBE5DC</td></tr>
+  <tr><td>Muted Text</td><td><span class="swatch" style="background:#7A756A"></span></td><td>#7A756A</td></tr>
+  <tr><td>Accent / Gold</td><td><span class="swatch" style="background:#D3C09B"></span></td><td>#D3C09B</td></tr>
+  <tr><td>Border</td><td><span class="swatch" style="background:#E7E1D8"></span></td><td>#E7E1D8</td></tr>
+  <tr><td>Warm Black</td><td><span class="swatch" style="background:#1C1A17"></span></td><td>#1C1A17</td></tr>
+  <tr><td>Gold</td><td><span class="swatch" style="background:#CCAD70"></span></td><td>#CCAD70</td></tr>
+  <tr><td>Capital BG</td><td><span class="swatch" style="background:#3A4032"></span></td><td>#3A4032</td></tr>
+  <tr><td>Developments BG</td><td><span class="swatch" style="background:#272727"></span></td><td>#272727</td></tr>
+  <tr><td>Advisory BG</td><td><span class="swatch" style="background:#EDE6DD"></span></td><td>#EDE6DD</td></tr>
+</table>
+
+<hr>
+<p style="text-align:center; color:var(--muted); font-size:10pt; margin-top:48px;">
+  <em>Oasis Europe — WordPress Implementation Guide · Confidential · March 2026</em>
+</p>
+
+</body>
+</html>
