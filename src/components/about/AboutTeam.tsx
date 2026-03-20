@@ -39,7 +39,7 @@ const AboutTeam = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-6">Our Team</p>
-          <h2 className="heading-lg text-foreground mb-8">
+          <h2 className="heading-lg font-lora text-foreground mb-8">
             Local Expertise,
             <br />
             <em className="italic font-light">Global Standards</em>
