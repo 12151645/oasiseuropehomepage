@@ -46,7 +46,7 @@ const ManagementPhilosophy = () => {
       <div className="section-padding">
         <div className="text-center mb-16 md:mb-20">
           <p className="label-sm text-muted-foreground mb-4">Performance Philosophy</p>
-          <h2 className="heading-lg">A Different Standard of Management</h2>
+          <h2 className="heading-lg font-lora">A Different Standard of Management</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
