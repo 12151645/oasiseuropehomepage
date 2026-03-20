@@ -58,7 +58,7 @@ const ManagementOwnerExperience = () => {
       <div className="section-padding">
         <div className="mb-16">
           <p className="label-sm text-muted-foreground mb-4">Owner Experience</p>
-          <h2 className="heading-lg">Effortless Ownership</h2>
+          <h2 className="heading-lg font-lora">Effortless Ownership</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
