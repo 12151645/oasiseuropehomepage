@@ -52,7 +52,7 @@ const AdvisoryApproach = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-4">Our Approach</p>
-          <h2 className="heading-lg text-foreground mb-4">
+          <h2 className="heading-lg font-lora text-foreground mb-4">
             Independent Advisory,
             <br />
             Uncompromised Standards
