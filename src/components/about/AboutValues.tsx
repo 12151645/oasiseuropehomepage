@@ -50,7 +50,7 @@ const AboutValues = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-4">Our Values</p>
-          <h2 className="heading-lg text-foreground">
+          <h2 className="heading-lg font-lora text-foreground">
             What Guides Us
           </h2>
         </div>
