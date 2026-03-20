@@ -5,7 +5,7 @@ const CapitalCTA = () => {
     <section className="py-24 md:py-32 bg-background">
       <div className="section-padding max-w-3xl mx-auto text-center">
         <p className="label-sm text-muted-foreground mb-4">Private Capital</p>
-        <h2 className="heading-lg text-foreground mb-6">
+        <h2 className="heading-lg font-lora text-foreground mb-6">
           Interested in Investing?
         </h2>
         <p className="body-lg text-muted-foreground mb-12 leading-relaxed">

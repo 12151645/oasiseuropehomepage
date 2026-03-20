@@ -53,7 +53,7 @@ const HeroSection = () => {
           </h1>
 
           <p
-            className={`body-lg text-sand/80 max-w-2xl mb-10 transition-all duration-1000 delay-400 ${
+            className={`text-sm md:text-base font-body font-light leading-relaxed text-sand/80 max-w-2xl mb-10 transition-all duration-1000 delay-400 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
