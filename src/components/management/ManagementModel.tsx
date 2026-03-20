@@ -93,7 +93,7 @@ const ManagementModel = () => {
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 flex flex-col justify-end h-full section-padding py-16 lg:py-24">
             <p className="label-sm text-white/70 mb-4">The Oasis Model</p>
-            <h2 className="heading-lg text-white mb-6">A Structured Management System</h2>
+            <h2 className="heading-lg font-lora text-white mb-6">A Structured Management System</h2>
             <p className="body-lg text-white/70 max-w-lg">
               Unlike traditional agencies, Oasis Europe operates through a structured
               asset management model designed to maximise long-term property performance.
