@@ -28,7 +28,7 @@ const AboutStory = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-4">Who We Are</p>
-          <h2 className="heading-lg text-foreground mb-8">
+          <h2 className="heading-lg font-lora text-foreground mb-8">
             Built on the Ground,
             <br />
             <em className="italic font-light">Driven by Strategy</em>

@@ -14,7 +14,7 @@ const DevelopmentsCTA = () => {
 
       <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto text-center">
         <p className="label-sm text-primary-foreground/50 mb-4">Project Management</p>
-        <h2 className="heading-lg text-primary-foreground mb-6">Interested in Our Services?</h2>
+        <h2 className="heading-lg font-lora text-primary-foreground mb-6">Interested in Our Services?</h2>
         <p className="body-lg text-primary-foreground/70 mb-12 leading-relaxed">
           We create a tailored plan for every individual project.
         </p>

@@ -49,7 +49,7 @@ const AdvisoryAcquisition = () => {
             <p className="font-lora text-base italic text-foreground/80">
               We do not operate as traditional brokers.
             </p>
-            <p className="font-sans-pro text-lg italic text-foreground/80">
+            <p className="font-lora text-base italic text-foreground/80">
               We act as independent long-term asset advisors.
             </p>
           </div>

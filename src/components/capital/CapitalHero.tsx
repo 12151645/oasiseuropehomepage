@@ -29,7 +29,7 @@ const CapitalHero = () => {
         </h1>
 
         <p
-          className={`body-lg text-capital-foreground/80 max-w-xl mx-auto transition-all duration-1000 delay-[400ms] ${
+          className={`text-sm md:text-base font-body font-light leading-relaxed text-capital-foreground/80 max-w-xl mx-auto transition-all duration-1000 delay-[400ms] ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >

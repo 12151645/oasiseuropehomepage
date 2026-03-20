@@ -5,7 +5,7 @@ const ManagementCTA = () => {
   return (
     <section className="py-24 md:py-32 bg-secondary">
       <div className="section-padding max-w-3xl mx-auto text-center">
-        <p className="body-lg text-muted-foreground mb-12 leading-relaxed">
+        <p className="font-lora text-base text-muted-foreground mb-12 leading-relaxed">
           Join a network of international property owners who trust Oasis Europe
           to manage their assets.
         </p>
