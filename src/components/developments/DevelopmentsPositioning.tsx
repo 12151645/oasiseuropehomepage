@@ -25,7 +25,7 @@ const ManagementPositioning = () => {
         >
           <p className="label-sm text-muted-foreground mb-8">Starting Point</p>
 
-          <h2 className="heading-lg mb-8">How Do We Start?</h2>
+          <h2 className="heading-lg font-lora mb-8">How Do We Start?</h2>
 
           <div className="space-y-5 text-sm text-muted-foreground font-light leading-relaxed">
             <p className="body-lg text-foreground font-normal">
