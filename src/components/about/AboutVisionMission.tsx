@@ -28,7 +28,7 @@ const AboutVisionMission = () => {
               <Eye size={24} className="text-accent" strokeWidth={1.5} />
             </div>
             <p className="label-sm text-muted-foreground mb-4">Our Vision</p>
-            <h2 className="heading-lg text-foreground mb-6">
+            <h2 className="heading-lg font-lora text-foreground mb-6">
               Redefining Luxury
               <br />
               <em className="italic font-light">Property Ownership</em>
