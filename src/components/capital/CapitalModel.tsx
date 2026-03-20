@@ -75,7 +75,7 @@ const CapitalModel = () => {
         }`}
       >
         <p className="label-sm text-white/50 mb-4">Investment Process</p>
-        <h2 className="heading-lg text-white">How It Works</h2>
+        <h2 className="heading-lg font-lora text-white">How It Works</h2>
       </div>
 
       <div className="section-padding pb-24 md:pb-32">
