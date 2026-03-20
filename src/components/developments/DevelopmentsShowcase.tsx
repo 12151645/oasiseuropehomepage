@@ -22,7 +22,7 @@ const DevelopmentsShowcase = () => {
       >
         <p className="label-sm text-muted-foreground mb-8">Our Philosophy</p>
 
-        <h2 className="heading-lg text-foreground mb-8">
+        <h2 className="heading-lg font-lora text-foreground mb-8">
           Design With Market Logic
         </h2>
 
