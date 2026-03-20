@@ -29,7 +29,7 @@ const CapitalLocation = () => {
           }`}
         >
           <p className="label-sm text-capital-foreground/50 mb-6">Prime Location</p>
-          <h2 className="heading-lg text-capital-foreground mb-8">Costa Del Sol</h2>
+          <h2 className="heading-lg font-lora text-capital-foreground mb-8">Costa Del Sol</h2>
           <p className="body-lg text-capital-foreground/80 mb-6 leading-relaxed">
             Marbella has a rich history and a fantastic climate, making it one of the most
             sought-after real estate investment areas in Europe. Together with Estepona and

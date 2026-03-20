@@ -35,7 +35,7 @@ const CapitalPositioning = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-6">The Concept</p>
-          <h2 className="heading-lg text-foreground mb-8">The Model</h2>
+          <h2 className="heading-lg font-lora text-foreground mb-8">The Model</h2>
 
           <div className="space-y-5 text-base text-muted-foreground font-light leading-relaxed">
             <p>
@@ -56,7 +56,7 @@ const CapitalPositioning = () => {
             </p>
           </div>
 
-          <p className="mt-10 italic font-sans-pro text-xl text-foreground">
+          <p className="mt-10 italic font-lora text-lg text-foreground">
             We are the smart choice.
           </p>
         </div>

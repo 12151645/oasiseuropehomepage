@@ -93,7 +93,7 @@ const ManagementModel = () => {
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 flex flex-col justify-end h-full section-padding py-16 lg:py-24">
             <p className="label-sm text-white/70 mb-4">The Oasis Model</p>
-            <h2 className="heading-lg text-white mb-6">A Structured Management System</h2>
+            <h2 className="heading-lg font-lora text-white mb-6">A Structured Management System</h2>
             <p className="body-lg text-white/70 max-w-lg">
               Unlike traditional agencies, Oasis Europe operates through a structured
               asset management model designed to maximise long-term property performance.
@@ -135,7 +135,7 @@ const ManagementModel = () => {
                 }`}
               >
                 <p className="label-sm text-accent mb-4">{step.number}</p>
-                <h3 className="font-sans-pro text-2xl md:text-3xl font-medium mb-6 text-foreground">
+                <h3 className="font-lora text-2xl md:text-3xl font-medium mb-6 text-foreground">
                   {step.title}
                 </h3>
                 <ul className="space-y-3">
@@ -152,7 +152,7 @@ const ManagementModel = () => {
             ))}
           </div>
 
-          <p className="mt-12 italic font-sans-pro text-lg text-muted-foreground">
+          <p className="mt-12 italic font-lora text-base text-muted-foreground">
             You are not a listing agency. You are an asset manager.
           </p>
         </div>

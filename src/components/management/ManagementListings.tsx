@@ -58,7 +58,7 @@ const ManagementListings = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
           <div>
             <p className="label-sm text-muted-foreground mb-4">Featured Properties</p>
-            <h2 className="heading-lg">Our Latest & Most Exceptional</h2>
+            <h2 className="heading-lg font-lora">Our Latest & Most Exceptional</h2>
           </div>
           <a
             href="#"
@@ -94,7 +94,7 @@ const ManagementListings = () => {
               </div>
 
               {/* Details */}
-              <h3 className="font-sans-pro text-xl font-medium text-foreground mb-1">
+              <h3 className="font-lora text-xl font-medium text-foreground mb-1">
                 {listing.title}
               </h3>
               <p className="text-sm text-muted-foreground mb-4">

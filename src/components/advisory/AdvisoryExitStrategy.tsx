@@ -24,7 +24,7 @@ const AdvisoryExitStrategy = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-6">Sales Management</p>
-          <h2 className="heading-lg text-foreground mb-8">
+          <h2 className="heading-lg font-lora text-foreground mb-8">
             Exit
             <br />
             <em className="italic font-light">Strategy</em>
@@ -61,7 +61,7 @@ const AdvisoryExitStrategy = () => {
             </div>
           </div>
 
-          <p className="mt-10 font-sans-pro text-lg italic text-foreground/70">
+          <p className="mt-10 font-lora text-base italic text-foreground/70">
             Private Consultations by Appointment Only.
           </p>
         </div>

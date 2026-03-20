@@ -30,7 +30,7 @@ const ManagementHero = () => {
         </h1>
 
         <p
-          className={`font-sans-pro text-xl md:text-2xl font-light text-muted-foreground mb-6 leading-relaxed transition-all duration-1000 delay-300 ${
+          className={`font-sans-pro text-lg md:text-xl font-light text-muted-foreground mb-6 leading-relaxed transition-all duration-1000 delay-300 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -40,7 +40,7 @@ const ManagementHero = () => {
         </p>
 
         <p
-          className={`body-lg text-muted-foreground max-w-xl mx-auto mb-10 transition-all duration-1000 delay-400 ${
+          className={`text-sm md:text-base font-body font-light leading-relaxed text-muted-foreground max-w-xl mx-auto mb-10 transition-all duration-1000 delay-400 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >

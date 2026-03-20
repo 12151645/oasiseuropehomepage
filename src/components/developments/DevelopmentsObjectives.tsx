@@ -57,7 +57,7 @@ const DevelopmentsObjectives = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-4">Project Objectives</p>
-          <h2 className="heading-lg text-foreground mb-4">What Is Your Objective?</h2>
+          <h2 className="heading-lg font-lora text-foreground mb-4">What Is Your Objective?</h2>
           <p className="text-sm text-muted-foreground font-light leading-relaxed mb-12 max-w-md">
             The strategy determines the scope. Every project begins with a clear objective.
           </p>
@@ -78,7 +78,7 @@ const DevelopmentsObjectives = () => {
                       <Icon size={18} strokeWidth={1.3} className="text-foreground/70" />
                     </div>
                     <div>
-                      <h3 className="font-sans-pro text-lg font-medium text-foreground mb-2">
+                      <h3 className="font-lora text-lg font-medium text-foreground mb-2">
                         {obj.title}
                       </h3>
                       <p className="text-sm text-muted-foreground font-light leading-relaxed">

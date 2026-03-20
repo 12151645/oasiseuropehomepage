@@ -39,7 +39,7 @@ const AboutTeam = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-6">Our Team</p>
-          <h2 className="heading-lg text-foreground mb-8">
+          <h2 className="heading-lg font-lora text-foreground mb-8">
             Local Expertise,
             <br />
             <em className="italic font-light">Global Standards</em>
@@ -69,7 +69,7 @@ const AboutTeam = () => {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <h3 className="font-sans-pro text-lg text-foreground mb-1">
+                <h3 className="font-lora text-lg text-foreground mb-1">
                   {member.name}
                 </h3>
                 <p className="label-sm text-muted-foreground mb-3">
@@ -82,7 +82,7 @@ const AboutTeam = () => {
             ))}
           </div>
 
-          <p className="font-sans-pro text-lg italic text-foreground/70">
+          <p className="font-lora text-base italic text-foreground/70">
             A curated network of professionals, working as one.
           </p>
         </div>

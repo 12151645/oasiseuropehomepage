@@ -29,7 +29,7 @@ const ManagementPositioning = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-8">Proven Performance</p>
+          <p className="label-sm font-sans-pro text-muted-foreground mb-8">Proven Performance</p>
 
           <div className="space-y-8 mb-12">
             {stats.map((stat) => (

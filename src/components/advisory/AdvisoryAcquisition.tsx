@@ -35,7 +35,7 @@ const AdvisoryAcquisition = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-6">Purchase Management</p>
-          <h2 className="heading-lg text-foreground mb-8">
+          <h2 className="heading-lg font-lora text-foreground mb-8">
             Intelligent
             <br />
             <em className="italic font-light">Acquisition</em>
@@ -46,10 +46,10 @@ const AdvisoryAcquisition = () => {
             decisions grounded in data and market intelligence.
           </p>
           <div className="space-y-4 mt-4">
-            <p className="font-sans-pro text-lg italic text-foreground/80">
+            <p className="font-lora text-base italic text-foreground/80">
               We do not operate as traditional brokers.
             </p>
-            <p className="font-sans-pro text-lg italic text-foreground/80">
+            <p className="font-lora text-base italic text-foreground/80">
               We act as independent long-term asset advisors.
             </p>
           </div>

@@ -45,7 +45,7 @@ const DevelopmentsModel = () => {
       <div className="section-padding">
         <div className="text-center mb-16 md:mb-20">
           <p className="label-sm text-muted-foreground mb-4">The Development Process</p>
-          <h2 className="heading-lg text-foreground">From Vision to Completion</h2>
+          <h2 className="heading-lg font-lora text-foreground">From Vision to Completion</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
@@ -58,7 +58,7 @@ const DevelopmentsModel = () => {
               style={{ transitionDelay: `${i * 150}ms` }}
             >
               <p className="label-sm text-accent-foreground mb-4">{step.number}</p>
-              <h3 className="font-sans-pro text-xl font-medium mb-4 text-foreground">
+              <h3 className="font-lora text-xl font-medium mb-4 text-foreground">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground font-light leading-relaxed">
@@ -68,7 +68,7 @@ const DevelopmentsModel = () => {
           ))}
         </div>
 
-        <p className="mt-16 text-center italic font-sans-pro text-lg text-foreground/70">
+        <p className="mt-16 text-center italic font-lora text-base text-foreground/70">
           We do not simply manage construction. We manage outcomes.
         </p>
       </div>

@@ -22,7 +22,7 @@ const DevelopmentsShowcase = () => {
       >
         <p className="label-sm text-muted-foreground mb-8">Our Philosophy</p>
 
-        <h2 className="heading-lg text-foreground mb-8">
+        <h2 className="heading-lg font-lora text-foreground mb-8">
           Design With Market Logic
         </h2>
 
@@ -37,7 +37,7 @@ const DevelopmentsShowcase = () => {
             framework and manage the project on-site to ensure the finished
             result meets both design standards and financial expectations.
           </p>
-          <p className="italic font-sans-pro text-lg text-foreground pt-2">
+          <p className="italic font-lora text-base text-foreground pt-2">
             We create a tailored plan for every individual project.
           </p>
         </div>

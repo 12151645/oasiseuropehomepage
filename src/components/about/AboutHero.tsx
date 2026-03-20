@@ -30,7 +30,7 @@ const AboutHero = () => {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
       >
-        <p className="body-lg text-muted-foreground leading-relaxed mb-10">
+        <p className="text-sm md:text-base font-body font-light leading-relaxed text-muted-foreground mb-10">
           We offer our clients an innovative combination of real estate
           investments and luxury rental strategies to generate a solid annual
           return. Dynamism is our team's energy and strong desire to make

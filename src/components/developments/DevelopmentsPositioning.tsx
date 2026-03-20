@@ -25,7 +25,7 @@ const ManagementPositioning = () => {
         >
           <p className="label-sm text-muted-foreground mb-8">Starting Point</p>
 
-          <h2 className="heading-lg mb-8">How Do We Start?</h2>
+          <h2 className="heading-lg font-lora mb-8">How Do We Start?</h2>
 
           <div className="space-y-5 text-sm text-muted-foreground font-light leading-relaxed">
             <p className="body-lg text-foreground font-normal">
@@ -36,7 +36,7 @@ const ManagementPositioning = () => {
               rental performance? A strategic resale or long-term capital
               appreciation? The strategy determines the scope.
             </p>
-            <p className="italic font-sans-pro text-lg text-foreground">
+            <p className="italic font-lora text-base text-foreground">
               Design decisions are guided by purpose — not preference alone.
             </p>
           </div>
