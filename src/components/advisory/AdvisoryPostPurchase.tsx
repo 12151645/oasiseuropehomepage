@@ -44,7 +44,7 @@ const AdvisoryPostPurchase = () => {
           }`}
         >
           <p className="label-sm text-muted-foreground mb-4">After Purchase</p>
-          <h2 className="heading-lg text-foreground mb-6">
+          <h2 className="heading-lg font-lora text-foreground mb-6">
             Post-Acquisition
             <br />
             <em className="italic font-light">Management</em>
