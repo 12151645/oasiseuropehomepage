@@ -46,7 +46,7 @@ const CapitalExpectations = () => {
       <div className="section-padding">
         <div className="text-center mb-16 md:mb-20">
           <p className="label-sm text-muted-foreground mb-4">Investor Experience</p>
-          <h2 className="heading-lg text-foreground">What Investors Can Expect</h2>
+          <h2 className="heading-lg font-lora text-foreground">What Investors Can Expect</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
