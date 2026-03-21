@@ -65,8 +65,6 @@ const CapitalModel = () => {
     return () => observer.disconnect();
   }, []);
 
-  const activeStep = steps[activeIndex];
-
   return (
     <section ref={ref} style={{ backgroundColor: 'rgb(58, 64, 50)' }}>
       <div
@@ -74,8 +72,8 @@ const CapitalModel = () => {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <p className="label-sm text-white/50 mb-4">Investment Process</p>
-        <h2 className="heading-lg font-lora text-white">How It Works</h2>
+        <p className="label-sm text-white/50 mb-6">Investment Process</p>
+        <h2 className="heading-lg text-white">How It Works</h2>
       </div>
 
       <div className="section-padding pb-24 md:pb-32">
@@ -99,12 +97,12 @@ const CapitalModel = () => {
                   }`}
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`font-sans-pro text-sm tracking-wider transition-colors duration-300 ${
+                    <span className={`text-sm tracking-[0.08em] transition-colors duration-300 ${
                       isActive ? "text-white/60" : "text-white/25"
                     }`}>
                       {step.number}
                     </span>
-                    <h3 className={`font-lora font-medium transition-all duration-300 ${
+                    <h3 className={`font-display font-medium transition-all duration-300 ${
                       isActive ? "text-xl md:text-2xl text-white" : "text-lg text-white/50"
                     }`}>
                       {step.title}
@@ -116,12 +114,12 @@ const CapitalModel = () => {
                       isActive ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <p className="text-sm text-white/60 font-light leading-relaxed pl-10 mb-4">
+                    <p className="text-sm text-white/60 font-light leading-[1.7] pl-10 mb-4">
                       {step.description}
                     </p>
                     <ul className="space-y-1.5 pl-10">
                       {step.highlights.map((h) => (
-                        <li key={h} className="text-sm text-white/40 italic font-sans-pro">
+                        <li key={h} className="text-sm text-white/40 italic">
                           — {h}
                         </li>
                       ))}

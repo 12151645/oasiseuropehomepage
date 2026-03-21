@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import villaMarbesa56 from "@/assets/villa-marbesa-56.jpg";
 
-const ManagementPositioning = () => {
+const DevelopmentsPositioning = () => {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -23,12 +23,12 @@ const ManagementPositioning = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-8">Starting Point</p>
+          <p className="label-sm mb-10">Starting Point</p>
 
-          <h2 className="heading-lg font-lora mb-8">How Do We Start?</h2>
+          <h2 className="heading-lg mb-8">How Do We Start?</h2>
 
-          <div className="space-y-5 text-sm text-muted-foreground font-light leading-relaxed">
-            <p className="body-lg text-foreground font-normal">
+          <div className="space-y-5 text-sm text-muted-foreground font-light leading-[1.7]">
+            <p className="text-base text-foreground font-normal">
               Every project begins with a clear objective.
             </p>
             <p>
@@ -36,7 +36,7 @@ const ManagementPositioning = () => {
               rental performance? A strategic resale or long-term capital
               appreciation? The strategy determines the scope.
             </p>
-            <p className="italic font-lora text-base text-foreground">
+            <p className="italic font-display text-base text-foreground">
               Design decisions are guided by purpose — not preference alone.
             </p>
           </div>
@@ -57,4 +57,4 @@ const ManagementPositioning = () => {
   );
 };
 
-export default ManagementPositioning;
+export default DevelopmentsPositioning;

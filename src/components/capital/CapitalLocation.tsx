@@ -15,7 +15,7 @@ const CapitalLocation = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative py-24 md:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-28 md:py-36 overflow-hidden">
       <img
         src={capitalLocation}
         alt="Costa del Sol coastline panoramic view"
@@ -28,14 +28,14 @@ const CapitalLocation = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-capital-foreground/50 mb-6">Prime Location</p>
-          <h2 className="heading-lg font-lora text-capital-foreground mb-8">Costa Del Sol</h2>
-          <p className="body-lg text-capital-foreground/80 mb-6 leading-relaxed">
+          <p className="label-sm text-capital-foreground/50 mb-8">Prime Location</p>
+          <h2 className="heading-lg text-capital-foreground mb-8">Costa Del Sol</h2>
+          <p className="body-md text-capital-foreground/80 mb-6 leading-[1.7]">
             Marbella has a rich history and a fantastic climate, making it one of the most
             sought-after real estate investment areas in Europe. Together with Estepona and
             Benahavis, the area is known as the Golden Triangle.
           </p>
-          <p className="body-lg text-capital-foreground/70 leading-relaxed">
+          <p className="body-md text-capital-foreground/70 leading-[1.7]">
             The real estate market is highly active, with new urbanisations and high-end
             properties being developed by renowned architects, taking inspiration from areas
             such as Dubai and Beverly Hills — transforming the region into a modern paradise
