@@ -30,7 +30,7 @@ const AboutHero = () => {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
       >
-        <p className="text-sm md:text-base font-body font-light leading-relaxed text-muted-foreground mb-10">
+        <p className="body-md mb-10">
           We offer our clients an innovative combination of real estate
           investments and luxury rental strategies to generate a solid annual
           return. Dynamism is our team's energy and strong desire to make
@@ -40,10 +40,10 @@ const AboutHero = () => {
         <div className="flex items-center gap-3 justify-start max-w-3xl mx-auto">
           <span className="w-6 h-px bg-foreground" />
           <div className="text-left">
-            <p className="font-sans-pro text-sm font-semibold text-foreground">
+            <p className="text-sm font-semibold text-foreground">
               Stefano van Tuyl
             </p>
-            <p className="text-xs text-muted-foreground tracking-wide uppercase">
+            <p className="text-xs text-muted-foreground tracking-[0.08em] uppercase">
               Owner and Founder
             </p>
           </div>

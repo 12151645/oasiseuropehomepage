@@ -23,13 +23,13 @@ const AdvisoryExitStrategy = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-6">Sales Management</p>
-          <h2 className="heading-lg font-lora text-foreground mb-8">
+          <p className="label-sm mb-8">Sales Management</p>
+          <h2 className="heading-lg text-foreground mb-8">
             Exit
             <br />
-            <em className="italic font-light">Strategy</em>
+            <em className="italic font-normal">Strategy</em>
           </h2>
-          <p className="body-lg text-muted-foreground mb-6 leading-relaxed">
+          <p className="body-lg mb-6 leading-[1.7]">
             Selling luxury property in Marbella requires more than listing
             exposure. It requires positioning. We oversee the transaction
             through to completion — and can advise on reinvestment.
@@ -61,7 +61,7 @@ const AdvisoryExitStrategy = () => {
             </div>
           </div>
 
-          <p className="mt-10 font-lora text-base italic text-foreground/70">
+          <p className="mt-10 font-display text-base italic text-foreground/70">
             Private Consultations by Appointment Only.
           </p>
         </div>

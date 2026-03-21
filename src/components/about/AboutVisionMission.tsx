@@ -27,13 +27,13 @@ const AboutVisionMission = () => {
             <div className="inline-flex items-center justify-center w-12 h-12 mb-6">
               <Eye size={24} className="text-accent" strokeWidth={1.5} />
             </div>
-            <p className="label-sm text-muted-foreground mb-4">Our Vision</p>
-            <h2 className="heading-lg font-lora text-foreground mb-6">
+            <p className="label-sm mb-6">Our Vision</p>
+            <h2 className="heading-lg text-foreground mb-6">
               Redefining Luxury
               <br />
-              <em className="italic font-light">Property Ownership</em>
+              <em className="italic font-normal">Property Ownership</em>
             </h2>
-            <p className="text-sm text-muted-foreground font-light leading-relaxed">
+            <p className="text-sm text-muted-foreground font-light leading-[1.7]">
               To become the reference point for structured luxury property
               ownership in Southern Europe — where every acquisition, renovation,
               and exit is guided by intelligence, transparency, and long-term
@@ -52,13 +52,13 @@ const AboutVisionMission = () => {
             <div className="inline-flex items-center justify-center w-12 h-12 mb-6">
               <Target size={24} className="text-accent" strokeWidth={1.5} />
             </div>
-            <p className="label-sm text-muted-foreground mb-4">Our Mission</p>
-            <h2 className="heading-lg font-lora text-foreground mb-6">
+            <p className="label-sm mb-6">Our Mission</p>
+            <h2 className="heading-lg text-foreground mb-6">
               Integrated Excellence
               <br />
-              <em className="italic font-light">at Every Stage</em>
+              <em className="italic font-normal">at Every Stage</em>
             </h2>
-            <p className="text-sm text-muted-foreground font-light leading-relaxed">
+            <p className="text-sm text-muted-foreground font-light leading-[1.7]">
               To provide private investors and property owners with a fully
               integrated ecosystem — from acquisition and development to
               management and exit — ensuring every asset reaches its full

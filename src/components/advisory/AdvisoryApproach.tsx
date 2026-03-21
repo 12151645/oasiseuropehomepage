@@ -51,13 +51,13 @@ const AdvisoryApproach = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-4">Our Approach</p>
-          <h2 className="heading-lg font-lora text-foreground mb-4">
+          <p className="label-sm mb-6">Our Approach</p>
+          <h2 className="heading-lg text-foreground mb-4">
             Independent Advisory,
             <br />
             Uncompromised Standards
           </h2>
-          <p className="text-sm text-muted-foreground font-light leading-relaxed mb-12 max-w-md">
+          <p className="text-sm text-muted-foreground font-light leading-[1.7] mb-12 max-w-md">
             Our advisory is built on four pillars that ensure every decision is informed, protected, and optimised.
           </p>
 
@@ -77,10 +77,10 @@ const AdvisoryApproach = () => {
                       <Icon size={18} strokeWidth={1.3} className="text-foreground/70" />
                     </div>
                     <div>
-                      <h3 className="font-lora text-lg font-medium text-foreground mb-2">
+                      <h3 className="text-lg font-medium text-foreground mb-2">
                         {pillar.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                      <p className="text-sm text-muted-foreground font-light leading-[1.7]">
                         {pillar.description}
                       </p>
                     </div>
