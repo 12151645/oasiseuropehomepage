@@ -72,11 +72,8 @@ const ManagementModel = () => {
     return () => clearInterval(intervalRef.current);
   }, [next]);
 
-  const activeStep = steps[current];
-
   return (
     <section ref={ref} className="bg-secondary">
-      {/* Split Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
         {/* Left - Image with Header overlay */}
         <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
@@ -92,9 +89,9 @@ const ManagementModel = () => {
           ))}
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 flex flex-col justify-end h-full section-padding py-16 lg:py-24">
-            <p className="label-sm text-white/70 mb-4">The Oasis Model</p>
-            <h2 className="heading-lg font-lora text-white mb-6">A Structured Management System</h2>
-            <p className="body-lg text-white/70 max-w-lg">
+            <p className="label-sm text-white/70 mb-6">The Oasis Model</p>
+            <h2 className="heading-lg text-white mb-6">A Structured Management System</h2>
+            <p className="body-md text-white/70 max-w-lg">
               Unlike traditional agencies, Oasis Europe operates through a structured
               asset management model designed to maximise long-term property performance.
             </p>
@@ -108,7 +105,7 @@ const ManagementModel = () => {
           }`}
         >
           {/* Step indicators */}
-          <div className="flex items-center gap-3 mb-10">
+          <div className="flex items-center gap-3 mb-12">
             {steps.map((step, i) => (
               <button
                 key={i}
@@ -134,15 +131,15 @@ const ManagementModel = () => {
                     : "opacity-0 translate-y-4 absolute inset-0 pointer-events-none"
                 }`}
               >
-                <p className="label-sm text-accent mb-4">{step.number}</p>
-                <h3 className="font-lora text-2xl md:text-3xl font-medium mb-6 text-foreground">
+                <p className="label-sm text-accent mb-6">{step.number}</p>
+                <h3 className="text-2xl md:text-3xl font-medium mb-6 text-foreground tracking-[-0.01em]">
                   {step.title}
                 </h3>
                 <ul className="space-y-3">
                   {step.items.map((item) => (
                     <li
                       key={item}
-                      className="text-sm text-muted-foreground font-light leading-relaxed"
+                      className="text-sm text-muted-foreground font-light leading-[1.7]"
                     >
                       {item}
                     </li>
@@ -152,7 +149,7 @@ const ManagementModel = () => {
             ))}
           </div>
 
-          <p className="mt-12 italic font-lora text-base text-muted-foreground">
+          <p className="mt-12 italic font-display text-base text-muted-foreground">
             You are not a listing agency. You are an asset manager.
           </p>
         </div>

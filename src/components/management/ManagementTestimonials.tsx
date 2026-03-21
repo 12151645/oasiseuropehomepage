@@ -53,7 +53,7 @@ const ManagementTestimonials = () => {
   }, [next]);
 
   return (
-    <section ref={ref} className="relative py-24 md:py-32 overflow-hidden">
+    <section ref={ref} className="relative py-28 md:py-36 overflow-hidden">
       <img
         src={ctaVilla}
         alt="Luxury Mediterranean villa"
@@ -76,10 +76,10 @@ const ManagementTestimonials = () => {
                   i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
                 }`}
               >
-                <blockquote className="font-lora text-xl md:text-2xl font-light italic leading-relaxed text-primary-foreground mb-8">
+                <blockquote className="font-display text-xl md:text-2xl font-normal italic leading-[1.5] text-primary-foreground mb-8">
                   "{t.quote}"
                 </blockquote>
-                <p className="text-sm text-primary-foreground/60 uppercase tracking-wider">
+                <p className="text-sm text-primary-foreground/60 uppercase tracking-[0.08em]">
                   {t.author} — {t.location}
                 </p>
               </div>

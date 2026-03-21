@@ -14,7 +14,7 @@ const ManagementHero = () => {
     <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center bg-secondary">
       <div className="section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
-          className={`label-sm text-muted-foreground mb-6 transition-all duration-1000 ${
+          className={`label-sm mb-8 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -30,17 +30,17 @@ const ManagementHero = () => {
         </h1>
 
         <p
-          className={`font-sans-pro text-lg md:text-xl font-light text-muted-foreground mb-6 leading-relaxed transition-all duration-1000 delay-300 ${
+          className={`text-lg md:text-xl font-light text-muted-foreground mb-6 leading-[1.6] transition-all duration-1000 delay-300 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
           A property is more than a listing.
           <br />
-          <em className="italic">It is a performing asset.</em>
+          <em className="italic font-display">It is a performing asset.</em>
         </p>
 
         <p
-          className={`text-sm md:text-base font-body font-light leading-relaxed text-muted-foreground max-w-xl mx-auto mb-10 transition-all duration-1000 delay-400 ${
+          className={`body-md max-w-xl mx-auto mb-10 transition-all duration-1000 delay-400 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -51,14 +51,13 @@ const ManagementHero = () => {
 
       </div>
 
-      {/* Discrete arrow at bottom right */}
       <a
         href="#contact"
         className={`absolute bottom-8 right-8 md:bottom-12 md:right-12 flex items-center gap-2 text-muted-foreground/50 hover:text-foreground transition-all duration-1000 delay-500 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
-        <span className="text-xs uppercase tracking-[0.15em] font-body">List Your Property</span>
+        <span className="text-xs uppercase tracking-[0.08em]">List Your Property</span>
         <ArrowRight size={16} strokeWidth={1.5} />
       </a>
     </section>

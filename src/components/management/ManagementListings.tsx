@@ -53,12 +53,12 @@ const ManagementListings = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background">
+    <section ref={ref} className="py-28 md:py-36 bg-background">
       <div className="section-padding">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-20">
           <div>
-            <p className="label-sm text-muted-foreground mb-4">Featured Properties</p>
-            <h2 className="heading-lg font-lora">Our Latest & Most Exceptional</h2>
+            <p className="label-sm mb-6">Featured Properties</p>
+            <h2 className="heading-lg">Our Latest & Most Exceptional</h2>
           </div>
           <a
             href="#"
@@ -88,20 +88,20 @@ const ManagementListings = () => {
                   alt={listing.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-foreground text-[10px] uppercase tracking-[0.2em] font-medium px-3 py-1.5">
+                <span className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-foreground text-[10px] uppercase tracking-[0.15em] font-medium px-3 py-1.5">
                   {listing.tag}
                 </span>
               </div>
 
               {/* Details */}
-              <h3 className="font-lora text-xl font-medium text-foreground mb-1">
+              <h3 className="text-xl font-medium text-foreground mb-1">
                 {listing.title}
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
                 {listing.location}
               </p>
 
-              <div className="flex items-center gap-4 text-xs text-muted-foreground uppercase tracking-wider mb-4">
+              <div className="flex items-center gap-4 text-xs text-muted-foreground uppercase tracking-[0.08em] mb-4">
                 <span>{listing.beds} Beds</span>
                 <span className="w-px h-3 bg-border" />
                 <span>{listing.baths} Baths</span>
@@ -109,7 +109,7 @@ const ManagementListings = () => {
                 <span>{listing.size}</span>
               </div>
 
-              <p className="font-sans-pro text-lg font-medium text-foreground">
+              <p className="text-lg font-medium text-foreground">
                 {listing.price}
               </p>
             </a>
