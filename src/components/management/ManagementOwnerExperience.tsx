@@ -54,11 +54,11 @@ const ManagementOwnerExperience = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-secondary">
+    <section ref={ref} className="py-28 md:py-36 bg-secondary">
       <div className="section-padding">
-        <div className="mb-16">
-          <p className="label-sm text-muted-foreground mb-4">Owner Experience</p>
-          <h2 className="heading-lg font-lora">Effortless Ownership</h2>
+        <div className="mb-20">
+          <p className="label-sm mb-6">Owner Experience</p>
+          <h2 className="heading-lg">Effortless Ownership</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
@@ -73,10 +73,10 @@ const ManagementOwnerExperience = () => {
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
                 <Icon size={40} className="text-foreground mb-5" strokeWidth={1.2} />
-                <h3 className="font-lora text-lg font-semibold text-foreground mb-3">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   {service.title}
                 </h3>
-                <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                <p className="text-sm text-muted-foreground font-light leading-[1.7]">
                   {service.description}
                 </p>
               </div>

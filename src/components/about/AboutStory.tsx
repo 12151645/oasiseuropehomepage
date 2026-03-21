@@ -15,7 +15,7 @@ const AboutStory = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative py-24 md:py-32">
+    <section ref={ref} className="relative py-28 md:py-36">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${aboutStoryBg})` }}
@@ -27,25 +27,25 @@ const AboutStory = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-4">Who We Are</p>
-          <h2 className="heading-lg font-lora text-foreground mb-8">
+          <p className="label-sm mb-6">Who We Are</p>
+          <h2 className="heading-lg text-foreground mb-8">
             Built on the Ground,
             <br />
-            <em className="italic font-light">Driven by Strategy</em>
+            <em className="italic font-normal">Driven by Strategy</em>
           </h2>
-          <p className="body-lg text-muted-foreground leading-relaxed mb-8">
+          <p className="body-lg leading-[1.7] mb-8">
             Oasis Europe was founded with a singular conviction: luxury property
             in Southern Spain deserves the same level of strategic oversight as
             any institutional asset class. What began as a boutique advisory
             practice has grown into a fully integrated property group.
           </p>
-          <p className="body-lg text-muted-foreground leading-relaxed mb-8">
+          <p className="body-lg leading-[1.7] mb-8">
             Today, we operate across four interconnected verticals — Management,
             Developments, Capital, and Advisory — giving our clients a cohesive
             ecosystem where every decision is informed by market intelligence,
             operational experience, and long-term thinking.
           </p>
-          <p className="body-lg text-muted-foreground leading-relaxed">
+          <p className="body-lg leading-[1.7]">
             Based in Marbella's Golden Triangle, we combine deep local
             knowledge with the discipline of structured asset management.
             Every property we touch benefits from this dual perspective.

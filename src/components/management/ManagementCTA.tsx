@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react";
 
 const ManagementCTA = () => {
   return (
-    <section className="py-24 md:py-32 bg-secondary">
+    <section className="py-28 md:py-36 bg-secondary">
       <div className="section-padding max-w-3xl mx-auto text-center">
-        <p className="font-lora text-base text-muted-foreground mb-12 leading-relaxed">
+        <p className="body-md mb-12 leading-[1.7]">
           Join a network of international property owners who trust Oasis Europe
           to manage their assets.
         </p>

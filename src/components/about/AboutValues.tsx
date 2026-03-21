@@ -42,15 +42,15 @@ const AboutValues = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background">
+    <section ref={ref} className="py-28 md:py-36 bg-background">
       <div className="section-padding">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-20 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-4">Our Values</p>
-          <h2 className="heading-lg font-lora text-foreground">
+          <p className="label-sm mb-6">Our Values</p>
+          <h2 className="heading-lg text-foreground">
             What Guides Us
           </h2>
         </div>
@@ -69,10 +69,10 @@ const AboutValues = () => {
                 <div className="inline-flex items-center justify-center w-12 h-12 mb-6">
                   <Icon size={24} className="text-accent" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-lora text-xl font-medium mb-4 text-foreground">
+                <h3 className="text-xl font-medium mb-4 text-foreground">
                   {value.title}
                 </h3>
-                <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                <p className="text-sm text-muted-foreground font-light leading-[1.7]">
                   {value.description}
                 </p>
               </div>

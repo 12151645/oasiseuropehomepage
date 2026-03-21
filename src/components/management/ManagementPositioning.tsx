@@ -29,22 +29,22 @@ const ManagementPositioning = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm font-sans-pro text-muted-foreground mb-8">Proven Performance</p>
+          <p className="label-sm mb-10">Proven Performance</p>
 
           <div className="space-y-8 mb-12">
             {stats.map((stat) => (
               <div key={stat.label} className="border-b border-border pb-6">
-                <p className="font-sans-pro text-4xl md:text-5xl font-light text-foreground mb-2">
+                <p className="text-4xl md:text-5xl font-light text-foreground mb-2">
                   {stat.value}
                 </p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">
+                <p className="text-xs text-muted-foreground uppercase tracking-[0.08em]">
                   {stat.label}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="space-y-3 text-sm text-muted-foreground font-light leading-relaxed">
+          <div className="space-y-3 text-sm text-muted-foreground font-light leading-[1.7]">
             <p>Global distribution across Airbnb Luxe, VRBO, Booking, direct network</p>
             <p>Dedicated operations team in Marbella & Ibiza</p>
           </div>

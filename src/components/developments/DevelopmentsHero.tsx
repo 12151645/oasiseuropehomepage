@@ -15,7 +15,7 @@ const DevelopmentsHero = () => {
 
       <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
-          className={`label-sm text-primary-foreground/70 mb-6 transition-all duration-1000 ${
+          className={`label-sm text-primary-foreground/70 mb-8 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -31,7 +31,7 @@ const DevelopmentsHero = () => {
         </h1>
 
         <p
-          className={`font-sans-pro text-lg md:text-xl font-light text-primary-foreground/80 mb-10 leading-relaxed transition-all duration-1000 delay-300 ${
+          className={`text-lg md:text-xl font-light text-primary-foreground/80 mb-10 leading-[1.6] transition-all duration-1000 delay-300 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
@@ -39,7 +39,7 @@ const DevelopmentsHero = () => {
           repositioning projects to deliver a finished product that enhances
           value, performance and long-term positioning.
           <br />
-          <em className="italic">We do not simply manage construction. We manage outcomes.</em>
+          <em className="italic font-display">We do not simply manage construction. We manage outcomes.</em>
         </p>
       </div>
 
@@ -49,7 +49,7 @@ const DevelopmentsHero = () => {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
-        <span className="text-xs uppercase tracking-[0.15em] font-body">Start Your Project</span>
+        <span className="text-xs uppercase tracking-[0.08em]">Start Your Project</span>
         <ArrowRight size={16} strokeWidth={1.5} />
       </a>
     </section>

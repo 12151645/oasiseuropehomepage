@@ -36,16 +36,16 @@ const NewsSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background">
+    <section ref={ref} className="py-28 md:py-36 bg-background">
       <div className="section-padding">
-        <div className="flex items-end justify-between mb-16">
+        <div className="flex items-end justify-between mb-20">
           <div>
-            <p className="label-sm text-muted-foreground mb-4">Latest</p>
+            <p className="label-sm mb-6">Latest</p>
             <h2 className="heading-lg">News</h2>
           </div>
           <a
             href="#"
-            className="hidden md:flex items-center gap-2 label-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="hidden md:flex items-center gap-2 label-sm hover:text-foreground transition-colors"
           >
             View All <ArrowRight size={14} />
           </a>
@@ -61,12 +61,12 @@ const NewsSection = () => {
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <span className="label-sm text-accent text-xs">{item.tag}</span>
+              <span className="label-sm text-accent">{item.tag}</span>
               <p className="text-xs text-muted-foreground mt-1 mb-4">{item.date}</p>
-              <h3 className="font-sans-pro text-xl font-medium mb-3 group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-medium mb-3 group-hover:text-accent transition-colors">
                 {item.title}
               </h3>
-              <p className="text-sm text-muted-foreground font-light leading-relaxed">
+              <p className="text-sm text-muted-foreground font-light leading-[1.7]">
                 {item.excerpt}
               </p>
             </a>

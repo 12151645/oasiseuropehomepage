@@ -42,11 +42,11 @@ const CapitalExpectations = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-secondary">
+    <section ref={ref} className="py-28 md:py-36 bg-secondary">
       <div className="section-padding">
-        <div className="text-center mb-16 md:mb-20">
-          <p className="label-sm text-muted-foreground mb-4">Investor Experience</p>
-          <h2 className="heading-lg font-lora text-foreground">What Investors Can Expect</h2>
+        <div className="text-center mb-20 md:mb-24">
+          <p className="label-sm mb-6">Investor Experience</p>
+          <h2 className="heading-lg text-foreground">What Investors Can Expect</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -63,10 +63,10 @@ const CapitalExpectations = () => {
                 <div className="inline-flex items-center justify-center w-12 h-12 mb-6 border border-border rounded-full">
                   <Icon size={22} className="text-accent" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-lora text-xl font-medium mb-4 text-foreground">
+                <h3 className="text-xl font-medium mb-4 text-foreground">
                   {pillar.title}
                 </h3>
-                <p className="text-sm text-muted-foreground font-light leading-relaxed">
+                <p className="text-sm text-muted-foreground font-light leading-[1.7]">
                   {pillar.description}
                 </p>
               </div>

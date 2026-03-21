@@ -28,7 +28,7 @@ const Navbar = () => {
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <a href="/" className="font-sans-pro text-xl md:text-2xl font-light tracking-wide">
+        <a href="/" className="text-xl md:text-2xl font-light tracking-wide">
           OASIS <span className="font-medium">EUROPE</span>
         </a>
 
@@ -38,7 +38,7 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className="label-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="label-sm hover:text-foreground transition-colors duration-300"
             >
               {item.label}
             </a>
@@ -63,7 +63,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="label-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="label-sm hover:text-foreground transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}

@@ -13,7 +13,7 @@ const CapitalHero = () => {
       <div className="absolute inset-0 bg-capital" />
       <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
-          className={`label-sm text-capital-foreground/60 mb-6 transition-all duration-1000 ${
+          className={`label-sm text-capital-foreground/60 mb-8 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -29,7 +29,7 @@ const CapitalHero = () => {
         </h1>
 
         <p
-          className={`text-sm md:text-base font-body font-light leading-relaxed text-capital-foreground/80 max-w-xl mx-auto transition-all duration-1000 delay-[400ms] ${
+          className={`body-md text-capital-foreground/80 max-w-xl mx-auto transition-all duration-1000 delay-[400ms] ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >

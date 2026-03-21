@@ -34,36 +34,36 @@ const AdvisoryAcquisition = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-6">Purchase Management</p>
-          <h2 className="heading-lg font-lora text-foreground mb-8">
+          <p className="label-sm mb-8">Purchase Management</p>
+          <h2 className="heading-lg text-foreground mb-8">
             Intelligent
             <br />
-            <em className="italic font-light">Acquisition</em>
+            <em className="italic font-normal">Acquisition</em>
           </h2>
-          <p className="body-lg text-muted-foreground mb-6 leading-relaxed">
+          <p className="body-lg mb-6 leading-[1.7]">
             Entering the Marbella market requires more than identifying a
             beautiful property. We guide clients through structured acquisition
             decisions grounded in data and market intelligence.
           </p>
           <div className="space-y-4 mt-4">
-            <p className="font-lora text-base italic text-foreground/80">
+            <p className="font-display text-base italic text-foreground/80">
               We do not operate as traditional brokers.
             </p>
-            <p className="font-lora text-base italic text-foreground/80">
+            <p className="font-display text-base italic text-foreground/80">
               We act as independent long-term asset advisors.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-6 mt-12 pt-8 border-t border-border">
             <div>
-              <p className="font-sans-pro text-3xl font-light text-foreground">€500M+</p>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
+              <p className="text-3xl font-light text-foreground">€500M+</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-[0.08em] mt-1">
                 Transaction Volume
               </p>
             </div>
             <div>
-              <p className="font-sans-pro text-3xl font-light text-foreground">120+</p>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
+              <p className="text-3xl font-light text-foreground">120+</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-[0.08em] mt-1">
                 Acquisitions Advised
               </p>
             </div>

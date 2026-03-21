@@ -41,11 +41,11 @@ const DevelopmentsModel = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32" style={{ backgroundColor: 'rgb(249, 249, 249)' }}>
+    <section ref={ref} className="py-28 md:py-36" style={{ backgroundColor: 'rgb(249, 249, 249)' }}>
       <div className="section-padding">
-        <div className="text-center mb-16 md:mb-20">
-          <p className="label-sm text-muted-foreground mb-4">The Development Process</p>
-          <h2 className="heading-lg font-lora text-foreground">From Vision to Completion</h2>
+        <div className="text-center mb-20 md:mb-24">
+          <p className="label-sm mb-6">The Development Process</p>
+          <h2 className="heading-lg text-foreground">From Vision to Completion</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
@@ -57,18 +57,18 @@ const DevelopmentsModel = () => {
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <p className="label-sm text-accent-foreground mb-4">{step.number}</p>
-              <h3 className="font-lora text-xl font-medium mb-4 text-foreground">
+              <p className="label-sm text-accent-foreground mb-6">{step.number}</p>
+              <h3 className="text-xl font-medium mb-4 text-foreground">
                 {step.title}
               </h3>
-              <p className="text-sm text-muted-foreground font-light leading-relaxed">
+              <p className="text-sm text-muted-foreground font-light leading-[1.7]">
                 {step.description}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="mt-16 text-center italic font-lora text-base text-foreground/70">
+        <p className="mt-20 text-center italic font-display text-base text-foreground/70">
           We do not simply manage construction. We manage outcomes.
         </p>
       </div>

@@ -38,13 +38,13 @@ const AboutTeam = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-6">Our Team</p>
-          <h2 className="heading-lg font-lora text-foreground mb-8">
+          <p className="label-sm mb-8">Our Team</p>
+          <h2 className="heading-lg text-foreground mb-8">
             Local Expertise,
             <br />
-            <em className="italic font-light">Global Standards</em>
+            <em className="italic font-normal">Global Standards</em>
           </h2>
-          <p className="body-lg text-muted-foreground mb-10 leading-relaxed">
+          <p className="body-lg mb-10 leading-[1.7]">
             Our team brings together decades of experience across real estate,
             finance, design, and hospitality. Based full-time in Marbella, we
             operate with the proximity that only local presence can provide.
@@ -69,20 +69,20 @@ const AboutTeam = () => {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <h3 className="font-lora text-lg text-foreground mb-1">
+                <h3 className="text-lg text-foreground mb-1 font-medium">
                   {member.name}
                 </h3>
-                <p className="label-sm text-muted-foreground mb-3">
+                <p className="label-sm mb-3">
                   {member.role}
                 </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-[1.7]">
                   {member.bio}
                 </p>
               </div>
             ))}
           </div>
 
-          <p className="font-lora text-base italic text-foreground/70">
+          <p className="font-display text-base italic text-foreground/70">
             A curated network of professionals, working as one.
           </p>
         </div>

@@ -34,10 +34,10 @@ const CapitalPositioning = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-6">The Concept</p>
-          <h2 className="heading-lg font-lora text-foreground mb-8">The Model</h2>
+          <p className="label-sm mb-8">The Concept</p>
+          <h2 className="heading-lg text-foreground mb-8">The Model</h2>
 
-          <div className="space-y-5 text-base text-muted-foreground font-light leading-relaxed">
+          <div className="space-y-5 text-base text-muted-foreground font-light leading-[1.7]">
             <p>
               The model is straightforward. Invest in a curated project. Acquire a prime
               villa below optimised value. Transform it into a premium turnkey residence.
@@ -56,7 +56,7 @@ const CapitalPositioning = () => {
             </p>
           </div>
 
-          <p className="mt-10 italic font-lora text-lg text-foreground">
+          <p className="mt-10 italic font-display text-lg text-foreground">
             We are the smart choice.
           </p>
         </div>
