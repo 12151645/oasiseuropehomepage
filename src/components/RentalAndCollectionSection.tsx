@@ -37,9 +37,9 @@ const RentalAndCollectionSection = () => {
             visible1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-sand/60 mb-4">Rental Division</p>
+          <p className="label-sm text-sand/60 mb-6">Rental Division</p>
           <h2 className="heading-lg text-sand mb-4">Hospitality-Driven Yield.</h2>
-          <p className="body-lg text-sand/70 max-w-xl mb-8">
+          <p className="body-md text-sand/70 max-w-xl mb-8">
             Through RNTLS Ibiza and Marbella operations, we transform properties 
             into high-performing hospitality assets.
           </p>
@@ -50,15 +50,15 @@ const RentalAndCollectionSection = () => {
       </section>
 
       {/* The Marbella Collection */}
-      <section ref={ref2} className="bg-warm-black py-24 md:py-32">
+      <section ref={ref2} className="bg-warm-black py-28 md:py-36">
         <div
           className={`section-padding text-center transition-all duration-1000 ${
             visible2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-gold/70 mb-6">The Marbella Collection</p>
+          <p className="label-sm text-gold/70 mb-8">The Marbella Collection</p>
           <h2 className="heading-xl text-sand mb-6">The Exceptional Only.</h2>
-          <p className="body-lg text-sand/50 max-w-lg mx-auto mb-10">
+          <p className="body-md text-sand/50 max-w-lg mx-auto mb-10">
             A highly curated portfolio launching 2027.
           </p>
           <Button

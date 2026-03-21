@@ -53,7 +53,7 @@ const HeroSection = () => {
           </h1>
 
           <p
-            className={`text-sm md:text-base font-body font-light leading-relaxed text-sand/80 max-w-2xl mb-10 transition-all duration-1000 delay-400 ${
+            className={`body-md text-sand/80 max-w-2xl mb-10 transition-all duration-1000 delay-400 ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
@@ -89,10 +89,10 @@ const HeroSection = () => {
         >
           {stats.map((stat) => (
             <div key={stat.label}>
-              <p className="font-sans-pro text-2xl md:text-3xl font-light text-sand">
+              <p className="text-2xl md:text-3xl font-light text-sand">
                 {stat.value}
               </p>
-              <p className="text-xs text-sand/50 uppercase tracking-wider mt-1">
+              <p className="text-xs text-sand/50 uppercase tracking-[0.08em] mt-1">
                 {stat.label}
               </p>
             </div>

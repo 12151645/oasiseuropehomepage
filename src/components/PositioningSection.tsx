@@ -23,13 +23,13 @@ const PositioningSection = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-muted-foreground mb-8">Our Position</p>
+          <p className="label-sm mb-10">Our Position</p>
           <h2 className="heading-lg mb-8">
             We are not brokers.
             <br />
-            <em className="italic">We are asset architects.</em>
+            <em className="italic font-normal">We are asset architects.</em>
           </h2>
-          <p className="body-lg text-muted-foreground max-w-lg">
+          <p className="body-lg max-w-lg">
             Oasis Europe manages the full lifecycle of luxury real estate — from 
             acquisition and transformation to rental performance and structured exit.
           </p>

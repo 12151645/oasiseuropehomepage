@@ -48,11 +48,11 @@ const OasisModelSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background">
+    <section ref={ref} className="py-28 md:py-36 bg-background">
       <div className="section-padding">
-        <div className="text-center mb-16 md:mb-20">
-          <p className="label-sm text-muted-foreground mb-4">The Oasis Model</p>
-          <h2 className="heading-lg mb-4">One Ecosystem. Total Control.</h2>
+        <div className="text-center mb-20 md:mb-24">
+          <p className="label-sm mb-6">The Oasis Model</p>
+          <h2 className="heading-lg">One Ecosystem. Total Control.</h2>
         </div>
 
         {/* Horizontal Flow */}
@@ -71,18 +71,18 @@ const OasisModelSection = () => {
               {/* Step Number */}
               <p className="label-sm text-accent mb-6">0{i + 1}</p>
               
-              <h3 className="font-sans-pro text-lg font-medium mb-1 text-foreground">
+              <h3 className="text-lg font-medium mb-1 text-foreground">
                 {step.label}
               </h3>
               <p className="text-sm text-muted-foreground font-medium mb-4">
                 {step.title}
               </p>
-              <p className="text-sm text-muted-foreground font-light leading-relaxed mb-6">
+              <p className="text-sm text-muted-foreground font-light leading-[1.7] mb-6">
                 {step.description}
               </p>
 
               <div className="flex items-center gap-2 text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-xs uppercase tracking-wider">Explore</span>
+                <span className="text-xs uppercase tracking-[0.08em]">Explore</span>
                 <ArrowRight size={14} />
               </div>
 

@@ -3,26 +3,25 @@ const Footer = () => {
     <footer className="py-16 bg-foreground">
       <div className="section-padding">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
-          <a href="/" className="font-sans-pro text-xl font-light tracking-wide text-primary-foreground">
+          <a href="/" className="text-xl font-light tracking-wide text-primary-foreground">
             OASIS <span className="font-medium">EUROPE</span>
           </a>
-          <p className="text-xs text-primary-foreground/40 uppercase tracking-wider">
+          <p className="text-xs text-primary-foreground/40 uppercase tracking-[0.08em]">
             Marbella · Costa del Sol · Ibiza
           </p>
         </div>
 
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <p className="text-xs text-primary-foreground/30 italic font-sans-pro">
+          <p className="text-xs text-primary-foreground/30 italic">
             Private Consultations by Appointment Only
           </p>
 
           <div className="flex items-center gap-6">
-            {/* Social Icons */}
             {["LinkedIn", "Instagram"].map((social) => (
               <a
                 key={social}
                 href="#"
-                className="text-xs text-primary-foreground/40 uppercase tracking-wider hover:text-primary-foreground/70 transition-colors"
+                className="text-xs text-primary-foreground/40 uppercase tracking-[0.08em] hover:text-primary-foreground/70 transition-colors"
               >
                 {social}
               </a>

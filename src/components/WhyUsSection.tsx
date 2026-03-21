@@ -37,10 +37,10 @@ const WhyUsSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-secondary">
+    <section ref={ref} className="py-28 md:py-36 bg-secondary">
       <div className="section-padding">
-        <div className="mb-16">
-          <p className="label-sm text-muted-foreground mb-4">Why Us</p>
+        <div className="mb-20">
+          <p className="label-sm mb-6">Why Us</p>
           <h2 className="heading-lg">Why Partners Choose Us</h2>
         </div>
 
@@ -53,9 +53,9 @@ const WhyUsSection = () => {
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <p className="label-sm text-accent mb-4">0{i + 1}</p>
+              <p className="label-sm text-accent mb-6">0{i + 1}</p>
               <h3 className="heading-md mb-4">{reason.title}</h3>
-              <p className="body-lg text-muted-foreground">{reason.description}</p>
+              <p className="body-lg">{reason.description}</p>
             </div>
           ))}
         </div>
