@@ -11,7 +11,7 @@ const DevelopmentsHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] flex flex-col justify-center items-center text-center overflow-hidden bg-developments">
+    <section className="relative min-h-[65vh] flex flex-col justify-center items-center text-center overflow-hidden bg-developments">
 
       <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
@@ -31,7 +31,7 @@ const DevelopmentsHero = () => {
         </h1>
 
         <p
-          className={`text-lg md:text-xl font-light text-primary-foreground/80 mb-10 leading-[1.6] transition-all duration-1000 delay-300 ${
+          className={`text-sm md:text-base font-light text-primary-foreground/80 mb-10 leading-[1.7] transition-all duration-1000 delay-300 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
