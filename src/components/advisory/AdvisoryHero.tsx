@@ -9,7 +9,7 @@ const AdvisoryHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[75vh] flex flex-col justify-center items-center text-center bg-advisory">
+    <section className="relative min-h-[60vh] flex flex-col justify-center items-center text-center bg-advisory">
       <div className="section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
           className={`label-sm text-advisory-foreground/50 mb-8 transition-all duration-1000 ${

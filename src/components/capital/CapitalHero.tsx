@@ -9,7 +9,7 @@ const CapitalHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[85vh] flex flex-col justify-center items-center text-center">
+    <section className="relative min-h-[65vh] flex flex-col justify-center items-center text-center">
       <div className="absolute inset-0 bg-capital" />
       <div className="relative z-10 section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p

@@ -10,7 +10,7 @@ const AboutHero = () => {
   }, []);
 
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center items-center text-center bg-background pt-32 pb-20">
+    <section className="min-h-[60vh] flex flex-col justify-center items-center text-center bg-background pt-32 pb-20">
       {/* Logo */}
       <div
         className={`mb-16 transition-all duration-1000 ${

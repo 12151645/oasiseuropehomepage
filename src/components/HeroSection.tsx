@@ -49,7 +49,7 @@ const HeroSection = () => {
           >
             Asset Management,
             <br />
-            Reimagined.
+            <em className="italic">Reimagined.</em>
           </h1>
 
           <p
