@@ -11,7 +11,7 @@ const ManagementHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center bg-secondary">
+    <section className="relative min-h-[60vh] flex flex-col justify-center items-center text-center bg-secondary">
       <div className="section-padding py-24 md:py-32 max-w-3xl mx-auto">
         <p
           className={`label-sm mb-8 transition-all duration-1000 ${
