@@ -1,20 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import newsDevelopment from "@/assets/news-development.jpg";
+import newsCapital from "@/assets/news-capital.jpg";
+import newsRntls from "@/assets/news-rntls.jpg";
 
 const newsItems = [
   {
+    image: newsDevelopment,
     tag: "Development",
     title: "New Luxury Development Announced in La Zagaleta",
     date: "March 2026",
     excerpt: "A landmark 12-unit residential development bringing Oasis Europe's design philosophy to one of Marbella's most exclusive enclaves.",
   },
   {
+    image: newsCapital,
     tag: "Capital",
     title: "€25M Fund Close for Marbella Hospitality Portfolio",
     date: "February 2026",
     excerpt: "Successfully closed our latest fund targeting high-yield hospitality assets across the Costa del Sol.",
   },
   {
+    image: newsRntls,
     tag: "Brands",
     title: "RNTLS Expands Operations to Marbella",
     date: "January 2026",
@@ -56,19 +62,28 @@ const NewsSection = () => {
             <a
               key={item.title}
               href="#"
-              className={`group bg-background p-8 md:p-10 hover:bg-secondary/50 transition-all duration-700 ${
+              className={`group bg-background hover:bg-secondary/50 transition-all duration-700 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <span className="label-sm text-accent">{item.tag}</span>
-              <p className="text-xs text-muted-foreground mt-1 mb-4">{item.date}</p>
-              <h3 className="text-xl font-medium mb-3 group-hover:text-accent transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-sm text-muted-foreground font-light leading-[1.7]">
-                {item.excerpt}
-              </p>
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-8 md:p-10">
+                <span className="label-sm text-accent">{item.tag}</span>
+                <p className="text-xs text-muted-foreground mt-1 mb-4">{item.date}</p>
+                <h3 className="text-xl font-medium mb-3 group-hover:text-accent transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground font-light leading-[1.7]">
+                  {item.excerpt}
+                </p>
+              </div>
             </a>
           ))}
         </div>
