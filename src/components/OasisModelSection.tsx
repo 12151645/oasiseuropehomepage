@@ -4,32 +4,32 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     label: "Acquire",
-    title: "Buy & Sales Advisory",
-    description: "Strategic acquisition and sales advisory for luxury real estate in prime Marbella locations.",
+    description: "Access and secure high-potential real estate opportunities in prime locations.",
+    tags: "Investment Advisory · Deal Sourcing · Acquisition Management · Due Diligence",
     link: "#",
   },
   {
     label: "Transform",
-    title: "Project Management",
-    description: "End-to-end design and development management, transforming properties into exceptional assets.",
+    description: "Reposition properties into refined, high-performing assets.",
+    tags: "Project Management · Development Management · Design & Architecture · Asset Repositioning",
     link: "#",
   },
   {
     label: "Optimize",
-    title: "Rental Management",
-    description: "Hospitality-grade operations maximizing yield through RNTLS Ibiza and Marbella platforms.",
+    description: "Maximize income and desirability through operations, rentals, and brand positioning.",
+    tags: "Rental Management · Revenue Management · Hospitality Operations · Asset positioning and exposure",
     link: "#",
   },
   {
     label: "Structure",
-    title: "Investment Platform",
-    description: "Institutional-grade capital structuring for high-net-worth property portfolios.",
+    description: "Engineer capital structures that enhance returns and protect downside.",
+    tags: "Investment Structuring · Capital Advisory · Financial Modeling · Portfolio Structuring",
     link: "#",
   },
   {
     label: "Exit",
-    title: "Brands",
-    description: "Curated brand portfolio and strategic positioning for maximum asset value at exit.",
+    description: "Execute strategic dispositions to realize full asset value.",
+    tags: "Asset Advisory · Disposition Strategy · Sales Execution · Buyer Representation",
     link: "#",
   },
 ];
