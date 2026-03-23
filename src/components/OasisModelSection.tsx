@@ -74,11 +74,11 @@ const OasisModelSection = () => {
               <h3 className="text-lg font-medium mb-1 text-foreground">
                 {step.label}
               </h3>
-              <p className="text-sm text-muted-foreground font-medium mb-4">
-                {step.title}
-              </p>
-              <p className="text-sm text-muted-foreground font-light leading-[1.7] mb-6">
+              <p className="text-sm text-muted-foreground font-light leading-[1.7] mb-3">
                 {step.description}
+              </p>
+              <p className="text-xs text-muted-foreground/60 leading-[1.6]">
+                {step.tags}
               </p>
 
               <div className="flex items-center gap-2 text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
