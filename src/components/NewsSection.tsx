@@ -1,20 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import newsDevelopment from "@/assets/news-development.jpg";
+import newsCapital from "@/assets/news-capital.jpg";
+import newsRntls from "@/assets/news-rntls.jpg";
 
 const newsItems = [
   {
+    image: newsDevelopment,
     tag: "Development",
     title: "New Luxury Development Announced in La Zagaleta",
     date: "March 2026",
     excerpt: "A landmark 12-unit residential development bringing Oasis Europe's design philosophy to one of Marbella's most exclusive enclaves.",
   },
   {
+    image: newsCapital,
     tag: "Capital",
     title: "€25M Fund Close for Marbella Hospitality Portfolio",
     date: "February 2026",
     excerpt: "Successfully closed our latest fund targeting high-yield hospitality assets across the Costa del Sol.",
   },
   {
+    image: newsRntls,
     tag: "Brands",
     title: "RNTLS Expands Operations to Marbella",
     date: "January 2026",
