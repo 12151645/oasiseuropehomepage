@@ -66,6 +66,7 @@ const Navbar = () => {
                 key={item.label}
                 href={item.href}
                 className="label-sm hover:text-foreground transition-colors"
+                style={{ color: 'hsl(40, 30%, 95%)' }}
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}
