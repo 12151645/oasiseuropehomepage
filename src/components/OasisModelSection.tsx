@@ -4,32 +4,32 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     label: "Acquire",
-    title: "Buy & Sales Advisory",
-    description: "Strategic acquisition and sales advisory for luxury real estate in prime Marbella locations.",
+    description: "Access and secure high-potential real estate opportunities in prime locations.",
+    tags: "Investment Advisory · Deal Sourcing · Acquisition Management · Due Diligence",
     link: "#",
   },
   {
     label: "Transform",
-    title: "Project Management",
-    description: "End-to-end design and development management, transforming properties into exceptional assets.",
+    description: "Reposition properties into refined, high-performing assets.",
+    tags: "Project Management · Development Management · Design & Architecture · Asset Repositioning",
     link: "#",
   },
   {
     label: "Optimize",
-    title: "Rental Management",
-    description: "Hospitality-grade operations maximizing yield through RNTLS Ibiza and Marbella platforms.",
+    description: "Maximize income and desirability through operations, rentals, and brand positioning.",
+    tags: "Rental Management · Revenue Management · Hospitality Operations · Asset positioning and exposure",
     link: "#",
   },
   {
     label: "Structure",
-    title: "Investment Platform",
-    description: "Institutional-grade capital structuring for high-net-worth property portfolios.",
+    description: "Engineer capital structures that enhance returns and protect downside.",
+    tags: "Investment Structuring · Capital Advisory · Financial Modeling · Portfolio Structuring",
     link: "#",
   },
   {
     label: "Exit",
-    title: "Brands",
-    description: "Curated brand portfolio and strategic positioning for maximum asset value at exit.",
+    description: "Execute strategic dispositions to realize full asset value.",
+    tags: "Asset Advisory · Disposition Strategy · Sales Execution · Buyer Representation",
     link: "#",
   },
 ];
@@ -74,11 +74,11 @@ const OasisModelSection = () => {
               <h3 className="text-lg font-medium mb-1 text-foreground">
                 {step.label}
               </h3>
-              <p className="text-sm text-muted-foreground font-medium mb-4">
-                {step.title}
-              </p>
-              <p className="text-sm text-muted-foreground font-light leading-[1.7] mb-6">
+              <p className="text-sm text-muted-foreground font-light leading-[1.7] mb-3">
                 {step.description}
+              </p>
+              <p className="text-xs text-muted-foreground/60 leading-[1.6]">
+                {step.tags}
               </p>
 
               <div className="flex items-center gap-2 text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
