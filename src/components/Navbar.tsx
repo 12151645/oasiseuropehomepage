@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import oasisLogo from "@/assets/oasis-logo.svg";
 
 const navItems = [
   { label: "Management", href: "/management" },
-  { label: "Developments", href: "/developments" },
-  { label: "Capital", href: "/capital" },
   { label: "Advisory", href: "/advisory" },
+  { label: "Private Capital", href: "/capital" },
+  { label: "Development", href: "/developments" },
   { label: "About Us", href: "/about" },
 ];
 
