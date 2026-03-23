@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import oasisLogo from "@/assets/oasis-logo.svg";
 
 const navItems = [
   { label: "Management", href: "/management" },
-  { label: "Developments", href: "/developments" },
-  { label: "Capital", href: "/capital" },
   { label: "Advisory", href: "/advisory" },
+  { label: "Private Capital", href: "/capital" },
+  { label: "Development", href: "/developments" },
   { label: "About Us", href: "/about" },
 ];
 
@@ -28,8 +29,17 @@ const Navbar = () => {
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <a href="/" className="text-xl md:text-2xl font-light tracking-wide">
-          OASIS <span className="font-medium">EUROPE</span>
+        <a href="/" className="flex items-center">
+          <img
+            src={oasisLogo}
+            alt="Oasis Europe"
+            className="h-5 md:h-6 w-auto transition-all duration-500"
+            style={{
+              filter: scrolled
+                ? 'brightness(0) sepia(0.3) saturate(0.5)'
+                : 'brightness(0) invert(0.9) sepia(0.2) saturate(0.4) hue-rotate(15deg)',
+            }}
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -38,7 +48,11 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className="label-sm hover:text-foreground transition-colors duration-300"
+              className={`label-sm transition-colors duration-300 ${
+                scrolled
+                  ? "text-foreground/70 hover:text-foreground"
+                  : "text-capital-foreground/80 hover:text-capital-foreground"
+              }`}
             >
               {item.label}
             </a>
@@ -47,7 +61,9 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden"
+          className={`lg:hidden transition-colors duration-300 ${
+            scrolled ? "text-foreground" : "text-capital-foreground"
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -63,7 +79,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="label-sm hover:text-foreground transition-colors"
+                className="label-sm text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}
