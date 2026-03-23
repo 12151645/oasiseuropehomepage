@@ -29,8 +29,8 @@ const Navbar = () => {
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <a href="/" className="text-xl md:text-2xl font-light tracking-wide">
-          OASIS <span className="font-medium">EUROPE</span>
+        <a href="/" className="flex items-center">
+          <img src={oasisLogo} alt="Oasis Europe" className="h-5 md:h-6 w-auto" style={{ filter: 'brightness(0) invert(0.85) sepia(0.3) saturate(0.5) hue-rotate(15deg)' }} />
         </a>
 
         {/* Desktop Nav */}
