@@ -40,6 +40,7 @@ const Navbar = () => {
               key={item.label}
               href={item.href}
               className="label-sm hover:text-foreground transition-colors duration-300"
+              style={{ color: 'hsl(40, 30%, 95%)' }}
             >
               {item.label}
             </a>
