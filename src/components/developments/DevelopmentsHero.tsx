@@ -31,15 +31,21 @@ const DevelopmentsHero = () => {
         </h1>
 
         <p
-          className={`text-sm md:text-base font-light text-primary-foreground/80 mb-10 leading-[1.7] transition-all duration-1000 delay-300 ${
+          className={`italic font-display text-sm md:text-base text-primary-foreground/70 mb-8 transition-all duration-1000 delay-300 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          We do not simply manage construction. We manage outcomes.
+        </p>
+
+        <p
+          className={`text-sm md:text-base font-light text-primary-foreground/80 leading-[1.7] transition-all duration-1000 delay-[400ms] ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
           Oasis Europe Project Management oversees high-end renovations and
           repositioning projects to deliver a finished product that enhances
           value, performance and long-term positioning.
-          <br />
-          <em className="italic font-display">We do not simply manage construction. We manage outcomes.</em>
         </p>
       </div>
 
