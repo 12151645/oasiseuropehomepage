@@ -16,7 +16,7 @@ const DevelopmentsPositioning = () => {
 
   return (
     <section ref={ref} className="bg-background">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[85vh]">
         {/* Left - Content */}
         <div
           className={`flex flex-col justify-center section-padding py-20 lg:py-32 transition-all duration-1000 ${
