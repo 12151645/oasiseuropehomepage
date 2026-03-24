@@ -10,7 +10,7 @@ const navItems = [
   { label: "About Us", href: "/about" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ dark = false }: { dark?: boolean }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -35,7 +35,7 @@ const Navbar = () => {
             alt="Oasis Europe"
             className="h-5 md:h-6 w-auto transition-all duration-500"
             style={{
-              filter: scrolled
+              filter: scrolled || dark
                 ? 'brightness(0) sepia(0.3) saturate(0.5)'
                 : 'brightness(0) invert(0.9) sepia(0.2) saturate(0.4) hue-rotate(15deg)',
             }}
@@ -51,7 +51,7 @@ const Navbar = () => {
               className={`label-sm transition-colors duration-300 ${
                 scrolled
                   ? "text-foreground/70 hover:text-foreground"
-                  : "text-capital-foreground/80 hover:text-capital-foreground"
+                  : dark ? "text-foreground/80 hover:text-foreground" : "text-capital-foreground/80 hover:text-capital-foreground"
               }`}
             >
               {item.label}
@@ -62,7 +62,7 @@ const Navbar = () => {
         {/* Mobile Toggle */}
         <button
           className={`lg:hidden transition-colors duration-300 ${
-            scrolled ? "text-foreground" : "text-capital-foreground"
+            scrolled ? "text-foreground" : dark ? "text-foreground" : "text-capital-foreground"
           }`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
