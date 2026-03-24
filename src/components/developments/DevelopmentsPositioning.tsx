@@ -23,18 +23,11 @@ const DevelopmentsPositioning = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm mb-10">Starting Point</p>
-
           <h2 className="heading-lg mb-8">How Do We Start?</h2>
 
-          <div className="space-y-5 text-sm text-muted-foreground font-light leading-[1.7]">
-            <p className="text-base text-foreground font-normal">
-              Every project begins with a clear objective.
-            </p>
+          <div className="space-y-6 text-sm text-muted-foreground font-light leading-[1.7]">
             <p>
-              Is the project a personal lifestyle upgrade? Designed to increase
-              rental performance? A strategic resale or long-term capital
-              appreciation? The strategy determines the scope.
+              Every project starts with a defined objective, whether it's enhancing personal lifestyle, improving rental performance, or aiming for strategic resale or long-term capital appreciation, which influences the overall strategy and scope.
             </p>
             <p className="italic font-display text-base text-foreground">
               Design decisions are guided by purpose — not preference alone.
