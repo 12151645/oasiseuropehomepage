@@ -12,7 +12,7 @@ import ManagementCTA from "@/components/management/ManagementCTA";
 const Management = () => {
   return (
     <main className="overflow-x-hidden">
-      <Navbar />
+      <Navbar dark />
       <ManagementHero />
       <ManagementPositioning />
       <ManagementModel />

@@ -27,7 +27,7 @@ const DevelopmentsPositioning = () => {
 
           <div className="space-y-6 text-sm text-muted-foreground font-light leading-[1.7]">
             <p>
-              Every project starts with a defined objective, whether it's enhancing personal lifestyle, improving rental performance, or aiming for strategic resale or long-term capital appreciation, which influences the overall strategy and scope.
+              Every project starts with a defined objective, whether it's enhancing personal lifestyle, improving rental performance, or aiming for strategic resale or long-term capital appreciation. These objectives significantly influence the overall strategy and scope of the project.
             </p>
             <p className="italic font-display text-base text-foreground">
               Design decisions are guided by purpose — not preference alone.

@@ -10,7 +10,7 @@ import AdvisoryCTA from "@/components/advisory/AdvisoryCTA";
 const Advisory = () => {
   return (
     <main className="overflow-x-hidden">
-      <Navbar />
+      <Navbar dark />
       <AdvisoryHero />
       <AdvisoryApproach />
       <AdvisoryAcquisition />

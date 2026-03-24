@@ -35,7 +35,7 @@ const Navbar = ({ dark = false }: { dark?: boolean }) => {
             alt="Oasis Europe"
             className="h-5 md:h-6 w-auto transition-all duration-500"
             style={{
-              filter: scrolled
+              filter: scrolled || dark
                 ? 'brightness(0) sepia(0.3) saturate(0.5)'
                 : 'brightness(0) invert(0.9) sepia(0.2) saturate(0.4) hue-rotate(15deg)',
             }}
