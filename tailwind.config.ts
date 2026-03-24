@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         display: ['"Lora"', 'serif'],
         body: ['"Source Sans Pro"', 'sans-serif'],
+        gourmand: ['"Gourmand"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
