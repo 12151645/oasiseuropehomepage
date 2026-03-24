@@ -44,7 +44,7 @@ const AdvisoryApproach = () => {
 
   return (
     <section ref={ref} style={{ backgroundColor: 'rgb(250, 248, 245)' }}>
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[85vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[60vh]">
         {/* Left - Content */}
         <div
           className={`flex flex-col justify-center section-padding py-20 lg:py-28 transition-all duration-1000 ${
@@ -57,42 +57,13 @@ const AdvisoryApproach = () => {
             <br />
             Uncompromised Standards
           </h2>
-          <p className="text-sm text-muted-foreground font-light leading-[1.7] mb-12 max-w-md">
+          <p className="text-sm text-muted-foreground font-light leading-[1.7] max-w-md">
             Our advisory is built on four pillars that ensure every decision is informed, protected, and optimised.
           </p>
-
-          <div className="space-y-0">
-            {pillars.map((pillar, i) => {
-              const Icon = pillar.icon;
-              return (
-                <div
-                  key={pillar.title}
-                  className={`group border-t border-border last:border-b py-7 transition-all duration-700 ${
-                    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-                  }`}
-                  style={{ transitionDelay: `${300 + i * 150}ms` }}
-                >
-                  <div className="flex items-start gap-5">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-foreground/5 flex items-center justify-center mt-0.5">
-                      <Icon size={18} strokeWidth={1.3} className="text-foreground/70" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-medium text-foreground mb-2">
-                        {pillar.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground font-light leading-[1.7]">
-                        {pillar.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
 
         {/* Right - Image */}
-        <div className="relative min-h-[450px] lg:min-h-full overflow-hidden">
+        <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
           <img
             src={approachImage}
             alt="Modern architectural interior"
@@ -100,6 +71,34 @@ const AdvisoryApproach = () => {
               visible ? "opacity-100 scale-100" : "opacity-0 scale-105"
             }`}
           />
+        </div>
+      </div>
+
+      {/* Horizontal Pillars */}
+      <div className="section-padding py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+          {pillars.map((pillar, i) => {
+            const Icon = pillar.icon;
+            return (
+              <div
+                key={pillar.title}
+                className={`border-t border-border pt-6 pb-4 pr-6 transition-all duration-700 ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+                style={{ transitionDelay: `${300 + i * 150}ms` }}
+              >
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-foreground/5 flex items-center justify-center mb-4">
+                  <Icon size={18} strokeWidth={1.3} className="text-foreground/70" />
+                </div>
+                <h3 className="text-base font-medium text-foreground mb-2">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm text-muted-foreground font-light leading-[1.7]">
+                  {pillar.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
