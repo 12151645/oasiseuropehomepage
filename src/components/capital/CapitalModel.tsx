@@ -51,10 +51,14 @@ const steps = [
   },
 ];
 
+const STEP_DURATION = 5000;
+
 const CapitalModel = () => {
   const [visible, setVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval>>();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,8 +69,28 @@ const CapitalModel = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const tick = 50;
+    setProgress(0);
+    intervalRef.current = setInterval(() => {
+      setProgress((p) => {
+        if (p >= 100) {
+          setActiveIndex((prev) => (prev + 1) % steps.length);
+          return 0;
+        }
+        return p + (tick / STEP_DURATION) * 100;
+      });
+    }, tick);
+    return () => clearInterval(intervalRef.current);
+  }, [activeIndex]);
+
+  const handleStepClick = (i: number) => {
+    setActiveIndex(i);
+    setProgress(0);
+  };
+
   return (
-    <section ref={ref} style={{ backgroundColor: 'rgb(58, 64, 50)' }}>
+    <section ref={ref} className="bg-secondary">
       <div
         className={`text-center py-20 md:py-28 transition-all duration-1000 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
