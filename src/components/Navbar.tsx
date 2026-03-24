@@ -10,7 +10,7 @@ const navItems = [
   { label: "About Us", href: "/about" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ dark = false }: { dark?: boolean }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
