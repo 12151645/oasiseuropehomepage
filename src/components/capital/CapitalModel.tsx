@@ -96,8 +96,8 @@ const CapitalModel = () => {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <p className="label-sm text-white/50 mb-6">Investment Process</p>
-        <h2 className="heading-lg text-white">How It Works</h2>
+        <p className="label-sm mb-6">Investment Process</p>
+        <h2 className="heading-lg">How It Works</h2>
       </div>
 
       <div className="section-padding pb-24 md:pb-32">
