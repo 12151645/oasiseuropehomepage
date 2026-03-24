@@ -113,21 +113,26 @@ const CapitalModel = () => {
               return (
                 <button
                   key={step.number}
-                  onClick={() => setActiveIndex(i)}
-                  className={`text-left border-t border-white/10 px-6 lg:px-10 transition-all duration-500 ${
+                  onClick={() => handleStepClick(i)}
+                  className={`relative text-left border-t border-border px-6 lg:px-10 transition-all duration-500 ${
                     isActive
-                      ? "py-8 lg:py-10 bg-white/5"
-                      : "py-5 lg:py-6 hover:bg-white/[0.02]"
+                      ? "py-8 lg:py-10 bg-muted/50"
+                      : "py-5 lg:py-6 hover:bg-muted/30"
                   }`}
                 >
+                  {/* Progress bar */}
+                  {isActive && (
+                    <div className="absolute top-0 left-0 h-[2px] bg-accent transition-none" style={{ width: `${progress}%` }} />
+                  )}
+
                   <div className="flex items-center gap-4">
                     <span className={`text-sm tracking-[0.08em] transition-colors duration-300 ${
-                      isActive ? "text-white/60" : "text-white/25"
+                      isActive ? "text-muted-foreground" : "text-muted-foreground/40"
                     }`}>
                       {step.number}
                     </span>
                     <h3 className={`font-display font-medium transition-all duration-300 ${
-                      isActive ? "text-xl md:text-2xl text-white" : "text-lg text-white/50"
+                      isActive ? "text-xl md:text-2xl text-foreground" : "text-lg text-muted-foreground/60"
                     }`}>
                       {step.title}
                     </h3>
@@ -138,12 +143,12 @@ const CapitalModel = () => {
                       isActive ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <p className="text-sm text-white/60 font-light leading-[1.7] pl-10 mb-4">
+                    <p className="text-sm text-muted-foreground font-light leading-[1.7] pl-10 mb-4">
                       {step.description}
                     </p>
                     <ul className="space-y-1.5 pl-10">
                       {step.highlights.map((h) => (
-                        <li key={h} className="text-sm text-white/40 italic">
+                        <li key={h} className="text-sm text-muted-foreground/60 italic">
                           — {h}
                         </li>
                       ))}
@@ -161,7 +166,7 @@ const CapitalModel = () => {
                 </button>
               );
             })}
-            <div className="border-t border-white/10" />
+            <div className="border-t border-border" />
           </div>
 
           {/* Right: Active Image (desktop only) */}
