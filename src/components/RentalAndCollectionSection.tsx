@@ -57,7 +57,7 @@ const RentalAndCollectionSection = () => {
           }`}
         >
           <p className="label-sm text-gold/70 mb-8">The Marbella Collection</p>
-          <h2 className="heading-xl text-sand mb-6">The Exceptional Only.</h2>
+          <h2 className="font-gourmand text-3xl md:text-4xl lg:text-[2.75rem] font-normal leading-[1.12] text-sand mb-6">The Exceptional Only.</h2>
           <p className="body-md text-sand/50 max-w-lg mx-auto mb-10">
             A highly curated portfolio launching 2027.
           </p>
