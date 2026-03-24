@@ -51,7 +51,7 @@ const Navbar = ({ dark = false }: { dark?: boolean }) => {
               className={`label-sm transition-colors duration-300 ${
                 scrolled
                   ? "text-foreground/70 hover:text-foreground"
-                  : "text-capital-foreground/80 hover:text-capital-foreground"
+                  : dark ? "text-foreground/80 hover:text-foreground" : "text-capital-foreground/80 hover:text-capital-foreground"
               }`}
             >
               {item.label}
