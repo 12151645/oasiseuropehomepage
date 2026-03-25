@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Settings, ShieldCheck, BarChart3 } from "lucide-react";
+import { Settings, ShieldCheck, BarChart3, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -79,6 +80,17 @@ const AdvisoryPostPurchase = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Arrow CTA */}
+        <div className="flex justify-end max-w-5xl mx-auto mt-12">
+          <Link
+            to="/management"
+            className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+          >
+            <span className="font-light tracking-wide">Explore Management</span>
+            <ArrowRight size={16} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </div>
       </div>
     </section>
