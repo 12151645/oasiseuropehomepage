@@ -68,7 +68,7 @@ const AdvisoryApproach = () => {
             return (
               <div
                 key={pillar.title}
-                className={`relative border-t border-border pt-8 pb-6 pr-6 transition-all duration-700 ${
+                className={`group relative border-t border-border pt-8 pb-6 pr-6 transition-all duration-700 ${
                   visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
                 style={{ transitionDelay: `${300 + i * 150}ms` }}
