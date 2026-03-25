@@ -3,28 +3,24 @@ import { Search, Shield, TrendingUp, Handshake } from "lucide-react";
 
 const pillars = [
   {
-    number: "01",
     icon: Search,
     title: "Market Intelligence",
     description:
       "Deep analysis of micro-markets, comparable transactions, and emerging opportunities across the Golden Triangle.",
   },
   {
-    number: "02",
     icon: Shield,
     title: "Due Diligence",
     description:
       "Comprehensive legal, fiscal, and structural review of every asset before any commitment is made.",
   },
   {
-    number: "03",
     icon: TrendingUp,
     title: "Value Optimisation",
     description:
       "Strategic positioning and timing to ensure maximum value capture on both acquisition and exit.",
   },
   {
-    number: "04",
     icon: Handshake,
     title: "Trusted Network",
     description:
