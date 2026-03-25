@@ -85,7 +85,7 @@ const AdvisoryPostPurchase = () => {
 
       {/* Bottom-left arrow CTA */}
       <div className="section-padding pb-10">
-        <div className="flex justify-end">
+        <div className="flex justify-start">
           <Link
             to="/management"
             className="group inline-flex items-center gap-3 text-xs uppercase tracking-[0.08em] text-muted-foreground hover:text-foreground transition-colors duration-300"
