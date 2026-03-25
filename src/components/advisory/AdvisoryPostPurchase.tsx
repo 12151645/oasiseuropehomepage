@@ -81,6 +81,17 @@ const AdvisoryPostPurchase = () => {
             );
           })}
         </div>
+
+        {/* Arrow CTA */}
+        <div className="flex justify-end max-w-5xl mx-auto mt-12">
+          <Link
+            to="/management"
+            className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+          >
+            <span className="font-light tracking-wide">Explore Management</span>
+            <ArrowRight size={16} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </div>
       </div>
     </section>
   );
