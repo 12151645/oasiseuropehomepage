@@ -73,13 +73,8 @@ const AdvisoryApproach = () => {
                 }`}
                 style={{ transitionDelay: `${300 + i * 150}ms` }}
               >
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-xs font-light tracking-[0.1em] text-muted-foreground/50">
-                    {pillar.number}
-                  </span>
-                  <div className="w-9 h-9 rounded-full bg-foreground/5 flex items-center justify-center">
-                    <Icon size={16} strokeWidth={1.3} className="text-accent" />
-                  </div>
+                <div className="w-10 h-10 rounded-full bg-foreground/5 flex items-center justify-center mb-5 group-hover:bg-accent/10 group-hover:scale-110 transition-all duration-300">
+                  <Icon size={18} strokeWidth={1.3} className="text-accent transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <h3 className="text-base font-medium text-foreground mb-3 leading-snug">
                   {pillar.title}
