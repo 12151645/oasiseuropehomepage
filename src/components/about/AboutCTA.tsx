@@ -1,26 +1,27 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutCTA = () => {
   return (
-    <section className="py-28 md:py-36 bg-background">
+    <section className="py-24 md:py-32 bg-foreground">
       <div className="section-padding max-w-3xl mx-auto text-center">
-        <p className="label-sm mb-6">Get in Touch</p>
-        <h2 className="heading-lg text-foreground mb-6">
-          Let's Build Something Together
-        </h2>
-        <p className="body-lg mb-12 leading-[1.7]">
-          Whether you're exploring an acquisition, planning a renovation, or
-          seeking structured management for your property — we're here to help.
+        <p className="text-xs font-body font-medium uppercase tracking-[0.08em] text-primary-foreground/40 mb-4">
+          Ready to Begin?
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="mailto:info@oasiseurope.nl"
-            className="inline-flex items-center gap-3 px-8 py-3 bg-foreground text-background text-sm uppercase tracking-[0.12em] font-medium hover:bg-foreground/90 transition-colors"
-          >
-            Contact Us
-            <ArrowRight size={16} />
-          </a>
-        </div>
+        <h2 className="font-display text-2xl md:text-3xl font-medium leading-[1.15] text-primary-foreground mb-6">
+          Find Your Oasis
+        </h2>
+        <p className="text-sm font-body font-light text-primary-foreground/60 leading-[1.7] mb-10 max-w-lg mx-auto">
+          At Oasis Europe, we're not just managing properties — we're building
+          legacies under the Spanish sun. Ready to find your oasis?
+        </p>
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-3 px-8 py-3 bg-primary-foreground text-foreground text-sm uppercase tracking-[0.12em] font-medium hover:bg-primary-foreground/90 transition-colors"
+        >
+          Contact Us Today
+          <ArrowRight size={16} />
+        </Link>
       </div>
     </section>
   );
