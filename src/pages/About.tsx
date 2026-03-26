@@ -3,18 +3,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
-import AboutVisionMission from "@/components/about/AboutVisionMission";
 import AboutValues from "@/components/about/AboutValues";
-import AboutTeam from "@/components/about/AboutTeam";
-import AboutTestimonials from "@/components/about/AboutTestimonials";
+import AboutVisionMission from "@/components/about/AboutVisionMission";
 import AboutCTA from "@/components/about/AboutCTA";
 
 const About = () => {
   useEffect(() => {
-    document.title = "About Oasis Europe | Luxury Property Management Marbella";
+    document.title = "About Oasis Europe | Marbella Real Estate Services";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
-      meta.setAttribute("content", "Trusted partner for international investors on Spain's South Coast — Automated, seamless property management.");
+      meta.setAttribute("content", "Advisory, private capital, development, property management for global investors on Spain's South Coast.");
     }
   }, []);
 
@@ -23,10 +21,8 @@ const About = () => {
       <Navbar />
       <AboutHero />
       <AboutStory />
-      <AboutVisionMission />
       <AboutValues />
-      <AboutTeam />
-      <AboutTestimonials />
+      <AboutVisionMission />
       <AboutCTA />
       <Footer />
     </main>
