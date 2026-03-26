@@ -1,27 +1,62 @@
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const AboutCTA = () => {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-24 md:py-32 bg-foreground">
-      <div className="section-padding max-w-3xl mx-auto text-center">
-        <p className="text-xs font-body font-medium uppercase tracking-[0.08em] text-primary-foreground/40 mb-4">
-          Ready to Begin?
-        </p>
-        <h2 className="font-display text-2xl md:text-3xl font-medium leading-[1.15] text-primary-foreground mb-6">
-          Find Your Oasis
+    <section
+      ref={ref}
+      className="py-24 md:py-32"
+      style={{
+        background: "linear-gradient(135deg, hsl(30 10% 12%), hsl(38 50% 35%))",
+      }}
+    >
+      <div
+        className={`section-padding max-w-3xl mx-auto text-center transition-all duration-1000 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <p className="label-sm text-accent/60 mb-6">Your Journey Begins</p>
+        <h2 className="font-gourmand text-2xl md:text-3xl lg:text-4xl font-normal leading-[1.15] text-sand mb-6">
+          Ready to write your
+          <br />
+          <em className="italic">Oasis story?</em>
         </h2>
-        <p className="text-sm font-body font-light text-primary-foreground/60 leading-[1.7] mb-10 max-w-lg mx-auto">
-          At Oasis Europe, we're not just managing properties — we're building
-          legacies under the Spanish sun. Ready to find your oasis?
+        <p className="text-sm font-body font-light text-sand/60 leading-[1.7] mb-12 max-w-lg mx-auto">
+          Advisory, private capital, development, and property management — all
+          through one seamless, world-class platform.
         </p>
-        <Link
-          to="/contact"
-          className="inline-flex items-center gap-3 px-8 py-3 bg-primary-foreground text-foreground text-sm uppercase tracking-[0.12em] font-medium hover:bg-primary-foreground/90 transition-colors"
-        >
-          Contact Us Today
-          <ArrowRight size={16} />
-        </Link>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-3 px-8 py-3 bg-sand text-foreground text-sm uppercase tracking-[0.12em] font-medium hover:bg-sand/90 transition-colors"
+          >
+            Start Your Journey
+            <ArrowRight size={16} />
+          </Link>
+
+          <Link
+            to="/management"
+            className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent/80 uppercase tracking-[0.08em] font-medium transition-colors border-b border-accent/30 pb-1"
+          >
+            Explore Our Services
+          </Link>
+        </div>
       </div>
     </section>
   );
