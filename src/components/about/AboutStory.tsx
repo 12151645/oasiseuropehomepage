@@ -1,42 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import investorImg from "@/assets/about-story-investor.jpg";
-import blueprintImg from "@/assets/about-story-blueprint.jpg";
-import poolImg from "@/assets/about-story-pool.jpg";
 
-const stories = [
-  {
-    image: investorImg,
-    alt: "Investor silhouette watching Marbella sunset",
-    title: "A Vision Takes Root",
-    body: "A Dutch investor arrived in Marbella and discovered unmatched potential on Europe's most desirable coast.",
-  },
-  {
-    image: blueprintImg,
-    alt: "Modern architecture blueprint overlay",
-    title: "The Opportunity Emerged",
-    body: "Fragmented services — advisory, capital, development, management — needed a unified, world-class solution.",
-  },
-  {
-    image: poolImg,
-    alt: "Luxury villa infinity pool overlooking Mediterranean",
-    title: "Oasis Europe Was Born",
-    body: "Complete real estate solutions through one seamless, innovative platform.",
-  },
-];
-
-const StoryBlock = ({
-  image,
-  alt,
-  title,
-  body,
-  index,
-}: {
-  image: string;
-  alt: string;
-  title: string;
-  body: string;
-  index: number;
-}) => {
+const AboutStory = () => {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -51,54 +15,38 @@ const StoryBlock = ({
     return () => observer.disconnect();
   }, []);
 
-  const isEven = index % 2 === 0;
-
   return (
-    <div
-      ref={ref}
-      className={`grid grid-cols-1 md:grid-cols-2 min-h-[60vh] transition-all duration-1000 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
-    >
-      {/* Image */}
-      <div className={`relative overflow-hidden ${!isEven ? "md:order-2" : ""}`}>
-        <img
-          src={image}
-          alt={alt}
-          className="w-full h-full object-cover min-h-[40vh]"
-          loading="lazy"
-          width={960}
-          height={1080}
-        />
-        <div className="absolute inset-0 bg-foreground/10" />
-      </div>
-
-      {/* Text */}
+    <section ref={ref} className="bg-background py-24 md:py-32">
       <div
-        className={`flex flex-col justify-center section-padding py-16 md:py-24 ${
-          !isEven ? "md:order-1" : ""
+        className={`mx-auto max-w-[680px] px-6 text-left transition-all duration-1000 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <div className="max-w-md">
-          <p className="label-sm text-accent mb-4">
-            Chapter {String(index + 1).padStart(2, "0")}
+        <p className="label-sm text-accent mb-4">Our Beginning</p>
+        <h2 className="font-gourmand text-2xl md:text-3xl font-normal text-foreground leading-[1.2] mb-10">
+          A Vision Takes Root
+        </h2>
+
+        <div className="space-y-6 text-[15px] md:text-base font-body font-light text-muted-foreground leading-[1.85]">
+          <p>
+            Oasis Europe was founded from first-hand experience.
           </p>
-          <h2 className="font-gourmand text-2xl md:text-3xl font-normal leading-[1.15] text-foreground mb-6">
-            {title}
-          </h2>
-          <p className="body-lg leading-[1.8]">{body}</p>
+          <p>
+            As Dutch entrepreneurs investing in Southern Europe, we spent years navigating the realities of owning and managing property across borders—balancing opportunities abroad with the practical challenges that come with it.
+          </p>
+          <p>
+            While the region offered exceptional potential, the process itself was often fragmented, inefficient, and lacking the level of service international investors expect.
+          </p>
+          <p>
+            We recognised this not as outsiders, but as investors ourselves.
+          </p>
+          <p>
+            That perspective shaped Oasis Europe: a business built to provide clarity, structure, and a more considered approach to real estate ownership in one of Europe's most sought-after regions.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
-
-const AboutStory = () => (
-  <section id="story-journey" className="bg-background">
-    {stories.map((s, i) => (
-      <StoryBlock key={s.title} {...s} index={i} />
-    ))}
-  </section>
-);
 
 export default AboutStory;
