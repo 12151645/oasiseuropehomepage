@@ -31,35 +31,32 @@ const AboutTeam = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-28 bg-card">
-      <div className="section-padding max-w-6xl mx-auto">
+    <section ref={ref} className="py-28 md:py-36 bg-secondary">
+      <div className="section-padding">
         <div
-          className={`mb-14 transition-all duration-1000 ${
+          className={`max-w-2xl mx-auto text-center mb-20 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm text-accent mb-4">People</p>
-          <h2 className="font-gourmand text-2xl md:text-3xl font-normal text-foreground mb-6">
-            Our Team
-          </h2>
-          <p className="text-[15px] md:text-base font-body font-light text-muted-foreground leading-[1.85] max-w-2xl">
-            We are a multidisciplinary team with experience across property operations, management, and residential asset improvement.
+          <p className="label-sm mb-6">People</p>
+          <h2 className="heading-lg text-foreground mb-6">Our Team</h2>
+          <p className="body-md max-w-lg mx-auto">
+            We are a multidisciplinary team with experience across property
+            operations, management, and residential asset improvement.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 max-w-5xl mx-auto">
           {departments.map((dept, i) => (
             <div
               key={dept.title}
-              className={`transition-all duration-1000 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              className={`border-t border-border pt-8 pb-6 pr-8 transition-all duration-700 ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
               style={{ transitionDelay: `${300 + i * 150}ms` }}
             >
-              <h3 className="text-xs uppercase tracking-[0.15em] font-medium text-muted-foreground mb-4 font-body">
-                {dept.title}
-              </h3>
-              <p className="text-sm text-muted-foreground font-light leading-[1.7] font-body">
+              <p className="label-sm text-accent mb-4">{dept.title}</p>
+              <p className="text-sm text-muted-foreground font-light leading-[1.7]">
                 {dept.body}
               </p>
             </div>
