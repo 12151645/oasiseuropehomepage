@@ -3,8 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
-import AboutValues from "@/components/about/AboutValues";
 import AboutVisionMission from "@/components/about/AboutVisionMission";
+import AboutValues from "@/components/about/AboutValues";
+import AboutApproach from "@/components/about/AboutApproach";
+import AboutImpact from "@/components/about/AboutImpact";
+import AboutTeam from "@/components/about/AboutTeam";
 import AboutCTA from "@/components/about/AboutCTA";
 
 const About = () => {
@@ -21,8 +24,11 @@ const About = () => {
       <Navbar />
       <AboutHero />
       <AboutStory />
-      <AboutValues />
       <AboutVisionMission />
+      <AboutValues />
+      <AboutApproach />
+      <AboutImpact />
+      <AboutTeam />
       <AboutCTA />
       <Footer />
     </main>
