@@ -3,19 +3,19 @@ import { useEffect, useRef, useState } from "react";
 const values = [
   {
     title: "Clarity",
-    description: "Clear thinking. Direct advice.",
+    description: "We reduce complexity and bring structure to every aspect of property management.",
   },
   {
-    title: "Discretion",
-    description: "Trust and confidentiality at every stage.",
+    title: "Consistency",
+    description: "We believe reliable outcomes come from disciplined, repeatable execution.",
   },
   {
-    title: "Discipline",
-    description: "Selective, considered decision-making.",
+    title: "Accountability",
+    description: "We take ownership of performance and maintain transparency with owners and partners.",
   },
   {
-    title: "Partnership",
-    description: "Working closely with our clients, with aligned interests over the long term.",
+    title: "Long-Term Thinking",
+    description: "We prioritize stability, asset quality, and sustainable performance over short-term gains.",
   },
 ];
 
@@ -35,8 +35,8 @@ const AboutValues = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-28 bg-card">
-      <div className="section-padding max-w-4xl mx-auto">
+    <section ref={ref} className="py-24 md:py-28 bg-background">
+      <div className="section-padding max-w-6xl mx-auto">
         <div
           className={`mb-14 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -48,7 +48,7 @@ const AboutValues = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10">
           {values.map((value, i) => (
             <div
               key={value.title}
@@ -57,7 +57,7 @@ const AboutValues = () => {
               }`}
               style={{ transitionDelay: `${300 + i * 120}ms` }}
             >
-              <h3 className="text-lg font-medium text-foreground mb-2 font-body">
+              <h3 className="text-lg font-medium text-foreground mb-3 font-body">
                 {value.title}
               </h3>
               <p className="text-sm text-muted-foreground font-light leading-[1.7] font-body">
