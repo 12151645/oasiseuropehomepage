@@ -40,20 +40,29 @@ const AboutHero = () => {
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            Real Estate Built
+            Built on Insight.
             <br />
-            on Structure
+            Driven by Strategy.
+            <br />
+            Powered by Results.
           </h1>
 
-          <p
+          <div
             className={`text-sm md:text-base font-body font-light text-primary-foreground/75 leading-[1.8] max-w-lg mb-10 transition-all duration-1000 delay-[400ms] ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            A tailored, integrated platform designed to enhance and manage
-            residential assets, creating long-term value for owners, investors,
-            and stakeholders.
-          </p>
+            <p className="italic text-primary-foreground/60 mb-4">
+              We begin with understanding.
+              <br />
+              We execute with precision.
+              <br />
+              We deliver long-term outcomes.
+            </p>
+            <p>
+              We provide advisory services across rentals, asset management, private capital, and development opportunities throughout the Costa del Sol. Our approach is grounded in clarity, care, and long-term performance—helping clients make informed decisions and build lasting value in a dynamic market.
+            </p>
+          </div>
 
           <div
             className={`flex flex-wrap gap-4 transition-all duration-1000 delay-500 ${
@@ -64,14 +73,8 @@ const AboutHero = () => {
               to="/contact"
               className="inline-flex items-center gap-3 px-8 py-3 bg-primary-foreground text-foreground text-sm uppercase tracking-[0.12em] font-medium hover:bg-primary-foreground/90 transition-colors font-body"
             >
-              Contact Us
+              Book a Private Consultation
               <ArrowRight size={16} />
-            </Link>
-            <Link
-              to="/"
-              className="inline-flex items-center gap-3 px-8 py-3 border border-primary-foreground/30 text-primary-foreground text-sm uppercase tracking-[0.12em] font-medium hover:bg-primary-foreground/10 transition-colors font-body"
-            >
-              Explore Our Platform
             </Link>
           </div>
         </div>
