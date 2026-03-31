@@ -5,6 +5,7 @@ import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
 import AboutVisionMission from "@/components/about/AboutVisionMission";
 import AboutValues from "@/components/about/AboutValues";
+import AboutImageBreak from "@/components/about/AboutImageBreak";
 import AboutApproach from "@/components/about/AboutApproach";
 import AboutImpact from "@/components/about/AboutImpact";
 import AboutTeam from "@/components/about/AboutTeam";
@@ -26,6 +27,7 @@ const About = () => {
       <AboutStory />
       <AboutVisionMission />
       <AboutValues />
+      <AboutImageBreak />
       <AboutApproach />
       <AboutImpact />
       <AboutTeam />
