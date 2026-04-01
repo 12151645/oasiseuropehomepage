@@ -35,6 +35,9 @@ const AboutCTA = () => {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
+        <h2 className="font-gourmand text-3xl md:text-4xl text-primary-foreground mb-6 leading-[1.2]">
+          Real Estate Built on Structure
+        </h2>
         <p className="text-sm md:text-base font-body font-light text-primary-foreground/75 leading-[1.8] max-w-lg mx-auto mb-12">
           Partner with a team focused on clarity, execution, and sustained performance.
         </p>
