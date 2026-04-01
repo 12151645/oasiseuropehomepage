@@ -35,13 +35,8 @@ const AboutCTA = () => {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="font-gourmand text-3xl md:text-4xl text-primary-foreground mb-6 leading-[1.2]">
-          Real Estate Built on Structure
-        </h2>
         <p className="text-sm md:text-base font-body font-light text-primary-foreground/75 leading-[1.8] max-w-lg mx-auto mb-12">
-          A tailored, integrated platform designed to enhance and manage
-          residential assets, creating long-term value for owners, investors,
-          and stakeholders.
+          Partner with a team focused on clarity, execution, and sustained performance.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
@@ -49,14 +44,14 @@ const AboutCTA = () => {
             to="/contact"
             className="inline-flex items-center gap-3 px-8 py-3 bg-primary-foreground text-foreground text-sm uppercase tracking-[0.12em] font-medium hover:bg-primary-foreground/90 transition-colors font-body"
           >
-            Contact Us
+            Partner With Us
             <ArrowRight size={16} />
           </Link>
           <Link
-            to="/"
+            to="/contact"
             className="inline-flex items-center gap-3 px-8 py-3 border border-primary-foreground/30 text-primary-foreground text-sm uppercase tracking-[0.12em] font-medium hover:bg-primary-foreground/10 transition-colors font-body"
           >
-            Explore Our Platform
+            Join Our Team
           </Link>
         </div>
       </div>

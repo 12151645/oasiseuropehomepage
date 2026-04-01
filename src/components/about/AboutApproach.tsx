@@ -1,25 +1,26 @@
 import { useEffect, useRef, useState } from "react";
+import { Gem, Lightbulb, BarChart3, Handshake } from "lucide-react";
 
-const steps = [
+const commitments = [
   {
-    num: "01",
-    label: "Assess",
-    body: "We begin by understanding each property in depth — its condition, context, and operational needs.",
+    icon: Gem,
+    title: "Quality",
+    body: "We uphold a consistent standard across every asset, process, and interaction—executed with precision and attention to detail.",
   },
   {
-    num: "02",
-    label: "Stabilize",
-    body: "We ensure consistent management, occupancy stability, and operational control.",
+    icon: Lightbulb,
+    title: "Innovation",
+    body: "We apply modern thinking and refined systems to enhance performance, efficiency, and long-term asset value.",
   },
   {
-    num: "03",
-    label: "Improve",
-    body: "We implement targeted improvements to enhance asset quality and performance.",
+    icon: BarChart3,
+    title: "Insight",
+    body: "Our decisions are grounded in market knowledge, experience, and a deep understanding of local and international dynamics.",
   },
   {
-    num: "04",
-    label: "Maintain",
-    body: "We focus on long-term consistency through proactive management and oversight.",
+    icon: Handshake,
+    title: "Strategic Partnership",
+    body: "We work closely with our clients, aligning interests to build lasting relationships and sustainable outcomes.",
   },
 ];
 
@@ -42,38 +43,44 @@ const AboutApproach = () => {
     <section ref={ref} className="py-28 md:py-36 bg-card">
       <div className="section-padding">
         <div
-          className={`max-w-2xl mb-20 transition-all duration-1000 ${
+          className={`max-w-2xl mx-auto text-center mb-20 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="label-sm mb-6">Process</p>
-          <h2 className="heading-lg text-foreground">How We Work</h2>
+          <p className="label-sm mb-6">Our Commitment</p>
+          <h2 className="heading-lg text-foreground mb-6">Our Commitment</h2>
+          <p className="text-sm md:text-[0.938rem] font-body font-light text-muted-foreground leading-[1.85] max-w-lg mx-auto">
+            The principles that define our approach to real estate ownership and long-term value creation.
+          </p>
         </div>
 
-        <div className="max-w-5xl">
-          {steps.map((step, i) => (
-            <div
-              key={step.label}
-              className={`grid grid-cols-[40px_1fr] md:grid-cols-[60px_140px_1fr] gap-4 md:gap-6 border-t border-border py-8 md:py-10 items-baseline transition-all duration-700 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-              }`}
-              style={{ transitionDelay: `${300 + i * 150}ms` }}
-            >
-              <span className="text-xs font-body text-accent tracking-wider">{step.num}</span>
-              <h3 className="text-base font-medium text-foreground font-body hidden md:block">
-                {step.label}
-              </h3>
-              <div>
-                <h3 className="text-base font-medium text-foreground font-body mb-2 md:hidden">
-                  {step.label}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 max-w-6xl mx-auto">
+          {commitments.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className={`group border-t border-border pt-8 pb-6 pr-6 transition-all duration-700 ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+                style={{ transitionDelay: `${300 + i * 150}ms` }}
+              >
+                <div className="w-10 h-10 rounded-full bg-foreground/5 flex items-center justify-center mb-5 group-hover:bg-accent/10 group-hover:scale-110 transition-all duration-300">
+                  <Icon
+                    size={18}
+                    strokeWidth={1.3}
+                    className="text-accent transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <h3 className="text-base font-medium text-foreground mb-3 leading-snug">
+                  {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground font-light leading-[1.7] font-body">
-                  {step.body}
+                <p className="text-sm text-muted-foreground font-light leading-[1.7]">
+                  {item.body}
                 </p>
               </div>
-            </div>
-          ))}
-          <div className="border-t border-border" />
+            );
+          })}
         </div>
       </div>
     </section>

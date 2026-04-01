@@ -13,7 +13,6 @@ const AboutHero = () => {
 
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-end overflow-hidden">
-      {/* Background image */}
       <img
         src={heroImg}
         alt="Luxury Mediterranean villa overlooking the sea"
@@ -21,10 +20,8 @@ const AboutHero = () => {
         width={1920}
         height={1080}
       />
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-foreground/20" />
 
-      {/* Bottom-left content */}
       <div className="relative z-10 section-padding pb-16 md:pb-24 pt-32">
         <div className="max-w-2xl">
           <p
@@ -40,29 +37,18 @@ const AboutHero = () => {
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            Built on Insight.
+            Built on Structure.
             <br />
-            Driven by Strategy.
-            <br />
-            Powered by Results.
+            Driven by Results.
           </h1>
 
-          <div
+          <p
             className={`text-sm md:text-base font-body font-light text-primary-foreground/75 leading-[1.8] max-w-lg mb-10 transition-all duration-1000 delay-[400ms] ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <p className="italic text-primary-foreground/60 mb-4">
-              We begin with understanding.
-              <br />
-              We execute with precision.
-              <br />
-              We deliver long-term outcomes.
-            </p>
-            <p>
-              We provide advisory services across rentals, asset management, private capital, and development opportunities throughout the Costa del Sol. Our approach is grounded in clarity, care, and long-term performance—helping clients make informed decisions and build lasting value in a dynamic market.
-            </p>
-          </div>
+            A disciplined approach to residential real estate.
+          </p>
 
           <div
             className={`flex flex-wrap gap-4 transition-all duration-1000 delay-500 ${
@@ -80,7 +66,6 @@ const AboutHero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div
         className={`absolute bottom-6 right-8 md:bottom-10 md:right-12 flex flex-col items-center gap-2 text-primary-foreground/40 transition-all duration-1000 delay-700 ${
           visible ? "opacity-100" : "opacity-0"
