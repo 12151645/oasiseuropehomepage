@@ -17,11 +17,25 @@ const AboutVisionMission = () => {
   }, []);
 
   const content = {
-    mission:
-      "To bring structure, clarity, and long-term performance to residential real estate ownership through disciplined execution and transparent management.",
-    vision:
-      "To define the benchmark for structured real estate ownership across Southern Europe and international markets.",
+    mission: {
+      text: "To bring structure, clarity, and long-term performance to residential real estate ownership through disciplined execution and transparent management.",
+      details: [
+        "Deliver operational excellence across every property we manage",
+        "Create transparent systems that give owners confidence and control",
+        "Build lasting value through disciplined, repeatable processes",
+      ],
+    },
+    vision: {
+      text: "To define the benchmark for structured real estate ownership across Southern Europe and international markets.",
+      details: [
+        "Set the standard for professional residential asset management",
+        "Expand our integrated platform across key international markets",
+        "Empower a new generation of informed, strategic property owners",
+      ],
+    },
   };
+
+  const current = content[active];
 
   return (
     <section ref={ref} className="py-28 md:py-36 bg-secondary">
@@ -58,9 +72,29 @@ const AboutVisionMission = () => {
             </button>
           </div>
 
-          <p className="text-sm md:text-[0.938rem] font-body font-light text-muted-foreground leading-[1.85] max-w-lg mx-auto transition-opacity duration-500">
-            {content[active]}
+          <p
+            key={active + "-text"}
+            className="text-sm md:text-[0.938rem] font-body font-light text-muted-foreground leading-[1.85] max-w-lg mx-auto mb-10 animate-fade-in"
+          >
+            {current.text}
           </p>
+
+          <div
+            key={active + "-details"}
+            className="max-w-md mx-auto space-y-4 animate-fade-in"
+          >
+            {current.details.map((detail, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 text-left"
+              >
+                <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
+                <p className="text-sm font-body font-light text-muted-foreground leading-[1.7]">
+                  {detail}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
