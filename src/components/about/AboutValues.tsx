@@ -12,7 +12,7 @@ const values = [
     icon: RefreshCw,
     title: "Consistency",
     description:
-      "We deliver reliable outcomes through disciplined, repeatable execution.",
+      "We deliver reliable outcomes through disciplined, repeatable execution. This consistency builds trust and predictability for our partners and investors.",
   },
   {
     icon: ShieldCheck,
