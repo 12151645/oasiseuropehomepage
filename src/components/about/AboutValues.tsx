@@ -6,25 +6,25 @@ const values = [
     icon: Eye,
     title: "Clarity",
     description:
-      "We reduce complexity and bring structure to every aspect of property management.",
+      "We simplify complexity, creating clear structures across every stage of asset management—from acquisition to market exit.",
   },
   {
     icon: RefreshCw,
     title: "Consistency",
     description:
-      "We believe reliable outcomes come from disciplined, repeatable execution.",
+      "We deliver reliable outcomes through disciplined, repeatable execution.",
   },
   {
     icon: ShieldCheck,
     title: "Accountability",
     description:
-      "We take ownership of performance and maintain transparency with owners and partners.",
+      "We take full ownership of performance, maintaining transparency with owners and partners at every step.",
   },
   {
     icon: Clock,
-    title: "Long-Term Thinking",
+    title: "Enduring Value",
     description:
-      "We prioritize stability, asset quality, and sustainable performance over short-term gains.",
+      "We focus on sustainable growth by enhancing asset performance, strengthening quality, and creating enduring value.",
   },
 ];
 
