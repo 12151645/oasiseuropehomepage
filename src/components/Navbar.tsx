@@ -90,8 +90,8 @@ const Navbar = ({ dark = false }: { dark?: boolean }) => {
 
       {/* Mobile Menu - Full Screen Overlay */}
       <div
-        className={`lg:hidden fixed inset-0 top-0 bg-background z-50 transition-all duration-500 ease-in-out ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`lg:hidden fixed inset-0 bg-background transition-all duration-500 ease-in-out ${
+          menuOpen ? "opacity-100 pointer-events-auto z-[55]" : "opacity-0 pointer-events-none z-[55]"
         }`}
       >
         <div className="flex flex-col justify-center items-start h-full section-padding">
