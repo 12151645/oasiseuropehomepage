@@ -53,7 +53,7 @@ const ManagementTestimonials = () => {
   }, [next]);
 
   return (
-    <section ref={ref} className="relative py-28 md:py-36 overflow-hidden">
+    <section ref={ref} className="relative py-20 md:py-36 overflow-hidden">
       <img
         src={ctaVilla}
         alt="Luxury Mediterranean villa"
@@ -68,7 +68,7 @@ const ManagementTestimonials = () => {
         >
           <p className="label-sm text-primary-foreground/70 mb-16">What Owners Say</p>
 
-          <div className="relative min-h-[200px] flex items-center justify-center">
+          <div className="relative min-h-[160px] md:min-h-[200px] flex items-center justify-center">
             {testimonials.map((t, i) => (
               <div
                 key={i}
@@ -76,7 +76,7 @@ const ManagementTestimonials = () => {
                   i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
                 }`}
               >
-                <blockquote className="font-display text-xl md:text-2xl font-normal italic leading-[1.5] text-primary-foreground mb-8">
+                <blockquote className="font-display text-lg md:text-2xl font-normal italic leading-[1.5] text-primary-foreground mb-6 md:mb-8">
                   "{t.quote}"
                 </blockquote>
                 <p className="text-sm text-primary-foreground/60 uppercase tracking-[0.08em]">

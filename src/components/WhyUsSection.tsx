@@ -37,10 +37,10 @@ const WhyUsSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 md:py-36 bg-secondary">
+    <section ref={ref} className="py-20 md:py-36 bg-secondary">
       <div className="section-padding">
-        <div className="mb-20">
-          <p className="label-sm mb-6">Why Us</p>
+        <div className="mb-12 md:mb-20">
+          <p className="label-sm mb-4 md:mb-6">Why Us</p>
           <h2 className="heading-lg">Why Partners Choose Us</h2>
         </div>
 
@@ -48,7 +48,7 @@ const WhyUsSection = () => {
           {reasons.map((reason, i) => (
             <div
               key={reason.title}
-              className={`bg-secondary p-10 md:p-12 transition-all duration-700 ${
+              className={`bg-secondary p-8 md:p-12 transition-all duration-700 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}

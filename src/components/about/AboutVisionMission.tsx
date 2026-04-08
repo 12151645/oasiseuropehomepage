@@ -38,7 +38,7 @@ const AboutVisionMission = () => {
   };
 
   return (
-    <section ref={ref} className="py-28 md:py-36 bg-secondary">
+    <section ref={ref} className="py-20 md:py-36 bg-secondary">
       <div className="section-padding">
         <div
           className={`max-w-2xl mx-auto text-center mb-20 transition-all duration-1000 ${
@@ -49,7 +49,7 @@ const AboutVisionMission = () => {
           <h2 className="heading-lg text-foreground">Mission &amp; Vision</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 max-w-5xl mx-auto">
           {(["mission", "vision"] as const).map((key, idx) => {
             const item = data[key];
             const isExpanded = expanded === key;

@@ -31,7 +31,7 @@ const AboutTeam = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 md:py-36 bg-secondary">
+    <section ref={ref} className="py-20 md:py-36 bg-secondary">
       <div className="section-padding">
         <div
           className={`max-w-2xl mx-auto text-center mb-20 transition-all duration-1000 ${
@@ -45,7 +45,7 @@ const AboutTeam = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 max-w-5xl mx-auto">
           {departments.map((dept, i) => (
             <div
               key={dept.title}

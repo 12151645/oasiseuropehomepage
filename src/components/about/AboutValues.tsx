@@ -44,7 +44,7 @@ const AboutValues = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 md:py-36 bg-background">
+    <section ref={ref} className="py-20 md:py-36 bg-background">
       <div className="section-padding">
         <div
           className={`max-w-2xl mx-auto text-center mb-20 md:mb-24 transition-all duration-1000 ${
@@ -55,7 +55,7 @@ const AboutValues = () => {
           <h2 className="heading-lg text-foreground">Our Values</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-0 max-w-6xl mx-auto">
           {values.map((value, i) => {
             const Icon = value.icon;
             return (

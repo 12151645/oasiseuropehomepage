@@ -36,7 +36,7 @@ const PositioningSection = () => {
         </div>
 
         {/* Right - Image */}
-        <div className="relative min-h-[400px] lg:min-h-full overflow-hidden">
+        <div className="relative min-h-[300px] md:min-h-[400px] lg:min-h-full overflow-hidden">
           <img
             src={architecturalImage}
             alt="Mediterranean architectural detail"
