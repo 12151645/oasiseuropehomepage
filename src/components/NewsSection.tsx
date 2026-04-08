@@ -76,20 +76,20 @@ const NewsModal = ({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl mx-4 my-8 md:my-16 bg-background animate-in slide-in-from-bottom-4 duration-500"
+        className="relative w-full max-w-3xl mx-0 md:mx-4 my-0 md:my-16 min-h-screen md:min-h-0 bg-background animate-in slide-in-from-bottom-4 duration-500"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-background/80 backdrop-blur-sm hover:bg-secondary transition-colors"
+          className="absolute top-3 right-3 md:top-4 md:right-4 z-10 w-10 h-10 flex items-center justify-center bg-background/80 backdrop-blur-sm hover:bg-secondary transition-colors"
           aria-label="Close article"
         >
           <X size={18} />
         </button>
 
         {/* Hero image */}
-        <div className="aspect-[16/9] overflow-hidden">
+        <div className="aspect-[16/10] md:aspect-[16/9] overflow-hidden">
           <img
             src={item.image}
             alt={item.title}
@@ -98,14 +98,14 @@ const NewsModal = ({
         </div>
 
         {/* Content */}
-        <div className="p-8 md:p-12 lg:p-16">
+        <div className="p-6 md:p-12 lg:p-16">
           <span className="label-sm text-accent">{item.tag}</span>
-          <p className="text-xs text-muted-foreground mt-1 mb-6">{item.date}</p>
-          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.2] mb-8">
+          <p className="text-xs text-muted-foreground mt-1 mb-4 md:mb-6">{item.date}</p>
+          <h2 className="font-display text-xl md:text-3xl lg:text-4xl font-medium leading-[1.2] mb-6 md:mb-8">
             {item.title}
           </h2>
-          <div className="w-12 h-px bg-accent mb-8" />
-          <div className="space-y-5">
+          <div className="w-12 h-px bg-accent mb-6 md:mb-8" />
+          <div className="space-y-4 md:space-y-5">
             {item.body.map((paragraph, i) => (
               <p
                 key={i}
@@ -129,7 +129,7 @@ const NewsSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -137,11 +137,11 @@ const NewsSection = () => {
 
   return (
     <>
-      <section ref={ref} className="py-28 md:py-36 bg-background">
+      <section ref={ref} className="py-20 md:py-36 bg-background">
         <div className="section-padding">
-          <div className="flex items-end justify-between mb-20">
+          <div className="flex items-end justify-between mb-12 md:mb-20">
             <div>
-              <p className="label-sm mb-6">Latest</p>
+              <p className="label-sm mb-4 md:mb-6">Latest</p>
               <h2 className="heading-lg">News</h2>
             </div>
             <a
@@ -152,12 +152,12 @@ const NewsSection = () => {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-px md:bg-border">
             {newsItems.map((item, i) => (
               <button
                 key={item.title}
                 onClick={() => setActiveArticle(item)}
-                className={`group bg-background hover:bg-secondary/50 transition-all duration-700 text-left ${
+                className={`group md:bg-background hover:bg-secondary/50 transition-all duration-700 text-left ${
                   visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
                 style={{ transitionDelay: `${i * 150}ms` }}
@@ -169,21 +169,31 @@ const NewsSection = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-8 md:p-10">
+                <div className="py-5 md:p-10">
                   <span className="label-sm text-accent">{item.tag}</span>
-                  <p className="text-xs text-muted-foreground mt-1 mb-4">{item.date}</p>
-                  <h3 className="text-xl font-medium mb-3 group-hover:text-accent transition-colors">
+                  <p className="text-xs text-muted-foreground mt-1 mb-3 md:mb-4">{item.date}</p>
+                  <h3 className="text-lg md:text-xl font-medium mb-2 md:mb-3 group-hover:text-accent transition-colors leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground font-light leading-[1.7]">
+                  <p className="text-sm text-muted-foreground font-light leading-[1.7] line-clamp-3">
                     {item.excerpt}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 label-sm mt-6 group-hover:text-accent transition-colors">
+                  <span className="inline-flex items-center gap-1.5 label-sm mt-4 md:mt-6 group-hover:text-accent transition-colors">
                     Read Article <ArrowRight size={12} />
                   </span>
                 </div>
               </button>
             ))}
+          </div>
+
+          {/* Mobile View All */}
+          <div className="md:hidden mt-8 text-center">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 label-sm hover:text-foreground transition-colors"
+            >
+              View All <ArrowRight size={14} />
+            </a>
           </div>
         </div>
       </section>
