@@ -48,10 +48,10 @@ const OasisModelSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-28 md:py-36 bg-background">
+    <section ref={ref} className="py-20 md:py-36 bg-background">
       <div className="section-padding">
-        <div className="text-center mb-20 md:mb-24">
-          <p className="label-sm mb-6">The Oasis Model</p>
+        <div className="text-center mb-12 md:mb-24">
+          <p className="label-sm mb-4 md:mb-6">The Oasis Model</p>
           <h2 className="heading-lg">One Ecosystem. Total Control.</h2>
         </div>
 
@@ -61,7 +61,7 @@ const OasisModelSection = () => {
             <a
               key={step.label}
               href={step.link}
-              className={`group flex-1 relative p-8 border border-border hover:bg-secondary/50 transition-all duration-500 ${
+              className={`group flex-1 relative p-6 md:p-8 border border-border hover:bg-secondary/50 transition-all duration-500 ${
                 visible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"

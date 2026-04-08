@@ -19,7 +19,7 @@ const AboutCTA = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative py-32 md:py-40 overflow-hidden">
+    <section ref={ref} className="relative py-24 md:py-40 overflow-hidden">
       <img
         src={coastImg}
         alt="Marbella coastline"
@@ -35,14 +35,14 @@ const AboutCTA = () => {
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2 className="font-gourmand text-3xl md:text-4xl text-primary-foreground mb-6 leading-[1.2]">
+        <h2 className="font-gourmand text-2xl md:text-4xl text-primary-foreground mb-5 md:mb-6 leading-[1.2]">
           Real Estate Built on Structure
         </h2>
         <p className="text-sm md:text-base font-body font-light text-primary-foreground/75 leading-[1.8] max-w-lg mx-auto mb-12">
           Partner with a team focused on clarity, execution, and sustained performance.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
           <Link
             to="/contact"
             className="inline-flex items-center gap-3 px-8 py-3 bg-primary-foreground text-foreground text-sm uppercase tracking-[0.12em] font-medium hover:bg-primary-foreground/90 transition-colors font-body"

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section id="contact" className="py-24 md:py-28 bg-secondary">
+    <section id="contact" className="py-20 md:py-28 bg-secondary">
       <div className="section-padding text-center">
         <p className="label-sm mb-6">Get in Touch</p>
         <h2 className="heading-lg mb-6">Where Your Investment Begins</h2>
