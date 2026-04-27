@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-villa.jpg";
 
@@ -68,16 +69,20 @@ const HeroSection = () => {
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <Button variant="hero-light" size="lg" className="w-full sm:w-auto text-xs md:text-sm py-3">
-              Explore Our Ecosystem
-            </Button>
-            <Button
-              variant="hero-outline"
-              size="lg"
-              className="border-sand/40 text-sand hover:bg-sand hover:text-foreground w-full sm:w-auto text-xs md:text-sm py-3"
-            >
-              Schedule a Private Consultation
-            </Button>
+            <Link to="/search?type=sale" className="w-full sm:w-auto">
+              <Button variant="hero-light" size="lg" className="w-full sm:w-auto text-xs md:text-sm py-3">
+                Acquire Your Next Signature Property
+              </Button>
+            </Link>
+            <Link to="/search?type=rent" className="w-full sm:w-auto">
+              <Button
+                variant="hero-outline"
+                size="lg"
+                className="border-sand/40 text-sand hover:bg-sand hover:text-foreground w-full sm:w-auto text-xs md:text-sm py-3"
+              >
+                Secure a Long-Term Residence
+              </Button>
+            </Link>
           </div>
         </div>
 
