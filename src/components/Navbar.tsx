@@ -82,7 +82,28 @@ const Navbar = ({ dark = false }: { dark?: boolean }) => {
               ))}
             </div>
 
-            <div className="mt-12 animate-in fade-in slide-in-from-bottom-2 duration-500" style={{ animationDelay: "500ms", animationFillMode: "both" }}>
+            <div className="mt-8 pt-6 border-t border-border/50 animate-in fade-in slide-in-from-bottom-2 duration-500" style={{ animationDelay: "420ms", animationFillMode: "both" }}>
+              <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">
+                Discover
+              </p>
+              <div className="flex flex-col">
+                {secondaryItems.map((item, i) => (
+                  <Link
+                    key={item.label}
+                    to={item.href}
+                    className={`py-2.5 text-base text-foreground/70 hover:text-foreground transition-colors animate-in slide-in-from-left-4 duration-500 ${
+                      location.pathname === item.href ? "!text-accent" : ""
+                    }`}
+                    style={{ animationDelay: `${480 + i * 50}ms`, animationFillMode: "both" }}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10 animate-in fade-in slide-in-from-bottom-2 duration-500" style={{ animationDelay: "640ms", animationFillMode: "both" }}>
               <p className="text-xs text-muted-foreground uppercase tracking-[0.08em] mb-3">
                 Marbella · Costa del Sol · Ibiza
               </p>
