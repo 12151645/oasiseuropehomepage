@@ -86,6 +86,32 @@ const News = () => {
         </div>
       </section>
 
+      <section className="section-padding pb-24 md:pb-32">
+        <div className="bg-foreground text-background px-6 sm:px-12 md:px-16 py-14 md:py-20 grid md:grid-cols-[1.4fr_1fr] gap-10 md:gap-16 items-center">
+          <div>
+            <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Stay informed</p>
+            <h2 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight mb-5">
+              Curated insights, delivered quietly.
+            </h2>
+            <p className="text-background/70 text-base md:text-lg leading-relaxed max-w-xl">
+              Subscribe to receive new announcements, market intelligence and select listings before they reach the wider audience.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row md:flex-col gap-3 md:items-end">
+            <SubscribeDialog
+              trigger={
+                <Button variant="gold" size="lg" className="w-full sm:w-auto">
+                  <Mail size={16} className="mr-2" /> Subscribe to Updates
+                </Button>
+              }
+            />
+            <p className="text-[0.7rem] uppercase tracking-[0.14em] text-background/50 md:text-right">
+              Quarterly · No spam · Unsubscribe anytime
+            </p>
+          </div>
+        </div>
+      </section>
+
       <FloatingCTABar />
       <Footer />
     </main>
