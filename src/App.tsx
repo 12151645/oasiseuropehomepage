@@ -15,6 +15,9 @@ import OasisEurope from "./pages/OasisEurope.tsx";
 import OasisEuropeListings from "./pages/OasisEuropeListings.tsx";
 import Insights from "./pages/Insights.tsx";
 import InsightDetail from "./pages/InsightDetail.tsx";
+import News from "./pages/News.tsx";
+import FAQ from "./pages/FAQ.tsx";
+import CaseStudies from "./pages/CaseStudies.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -38,6 +41,9 @@ const App = () => (
           <Route path="/oasis-europe/rentals" element={<OasisEuropeListings mode="rent" />} />
           <Route path="/oasis-europe/sales" element={<OasisEuropeListings mode="sale" />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/insights/news" element={<Insights />} />
           <Route path="/insights/:slug" element={<InsightDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
