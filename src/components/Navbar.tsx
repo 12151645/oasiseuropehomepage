@@ -12,6 +12,12 @@ const navItems = [
   { label: "About Us", href: "/about" },
 ];
 
+const secondaryItems = [
+  { label: "News", href: "/news" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "FAQ", href: "/faq" },
+];
+
 const Navbar = ({ dark = false }: { dark?: boolean }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
