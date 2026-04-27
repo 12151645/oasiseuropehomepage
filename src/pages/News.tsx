@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
+import { SubscribeDialog } from "@/components/cta/CTAModals";
+import { Button } from "@/components/ui/button";
 import newsDevelopment from "@/assets/news-development.jpg";
 import newsCapital from "@/assets/news-capital.jpg";
 import newsRntls from "@/assets/news-rntls.jpg";
