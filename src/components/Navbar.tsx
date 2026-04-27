@@ -158,6 +158,39 @@ const Navbar = ({ dark = false }: { dark?: boolean }) => {
                 {item.label}
               </Link>
             ))}
+
+            {/* Discover dropdown */}
+            <div className="relative group">
+              <button
+                className={`label-sm flex items-center gap-1.5 transition-colors duration-300 ${
+                  scrolled
+                    ? "text-foreground/70 hover:text-foreground"
+                    : dark ? "text-foreground/80 hover:text-foreground" : "text-capital-foreground/80 hover:text-capital-foreground"
+                } ${secondaryItems.some((s) => s.href === location.pathname) ? "!text-accent" : ""}`}
+                aria-haspopup="true"
+              >
+                Discover
+                <ChevronDown size={12} className="transition-transform duration-300 group-hover:rotate-180" />
+              </button>
+              <div className="absolute right-0 top-full pt-4 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+                <div className="min-w-[200px] bg-background border border-border shadow-xl py-2">
+                  <p className="px-5 pt-2 pb-3 text-[0.6rem] uppercase tracking-[0.18em] text-accent border-b border-border/50">
+                    Discover
+                  </p>
+                  {secondaryItems.map((item) => (
+                    <Link
+                      key={item.label}
+                      to={item.href}
+                      className={`block px-5 py-3 text-sm text-foreground/70 hover:text-foreground hover:bg-foreground/[0.03] transition-colors ${
+                        location.pathname === item.href ? "!text-accent" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
