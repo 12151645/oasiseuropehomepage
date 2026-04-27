@@ -19,6 +19,9 @@ const buttonVariants = cva(
         "hero-outline": "border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm uppercase tracking-[0.12em] font-medium",
         "hero-light": "bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-sm uppercase tracking-[0.12em] font-medium",
         dark: "bg-warm-black text-sand hover:bg-warm-black/90 text-sm uppercase tracking-[0.12em] font-medium",
+        gold: "bg-accent text-accent-foreground hover:bg-accent/90 text-sm uppercase tracking-[0.12em] font-medium",
+        "outline-gold": "border border-accent text-foreground hover:bg-accent hover:text-accent-foreground text-sm uppercase tracking-[0.12em] font-medium",
+        editorial: "bg-transparent text-foreground border-b border-foreground/40 rounded-none px-1 pb-1 hover:border-accent hover:text-accent text-xs uppercase tracking-[0.16em] font-medium",
       },
       size: {
         default: "h-10 px-4 py-2",
