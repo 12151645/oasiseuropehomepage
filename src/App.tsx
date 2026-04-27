@@ -9,6 +9,12 @@ import Developments from "./pages/Developments.tsx";
 import Capital from "./pages/Capital.tsx";
 import Advisory from "./pages/Advisory.tsx";
 import About from "./pages/About.tsx";
+import Search from "./pages/Search.tsx";
+import PropertyDetail from "./pages/PropertyDetail.tsx";
+import OasisEurope from "./pages/OasisEurope.tsx";
+import OasisEuropeListings from "./pages/OasisEuropeListings.tsx";
+import Insights from "./pages/Insights.tsx";
+import InsightDetail from "./pages/InsightDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +32,14 @@ const App = () => (
           <Route path="/capital" element={<Capital />} />
           <Route path="/advisory" element={<Advisory />} />
           <Route path="/about" element={<About />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/properties/:slug" element={<PropertyDetail />} />
+          <Route path="/oasis-europe" element={<OasisEurope />} />
+          <Route path="/oasis-europe/rentals" element={<OasisEuropeListings mode="rent" />} />
+          <Route path="/oasis-europe/sales" element={<OasisEuropeListings mode="sale" />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/news" element={<Insights />} />
+          <Route path="/insights/:slug" element={<InsightDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
