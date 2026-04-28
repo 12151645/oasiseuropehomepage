@@ -166,7 +166,7 @@ const Contact = () => {
           <aside className="space-y-8">
             <div className="bg-foreground text-background p-7 md:p-10">
               <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-accent mb-4">Direct Channels</p>
-              <h3 className="font-display text-2xl md:text-3xl mb-6 leading-tight">
+              <h3 className="heading-md mb-6">
                 Reach the private office directly.
               </h3>
               <div className="space-y-4">
