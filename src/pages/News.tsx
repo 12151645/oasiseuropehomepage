@@ -105,6 +105,15 @@ const News = () => {
                 key={f}
                 onClick={() => setActive(f)}
                 className={`text-[0.7rem] uppercase tracking-[0.14em] px-4 py-2 border transition-colors ${
+      {/* Filter rail + Search */}
+      <section className="section-padding pt-6 pb-8 border-t border-border">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+          <div className="flex flex-wrap gap-2 md:gap-3">
+            {filters.map((f) => (
+              <button
+                key={f}
+                onClick={() => setActive(f)}
+                className={`text-[0.7rem] uppercase tracking-[0.14em] px-4 py-2 border transition-colors ${
                   active === f
                     ? "bg-foreground text-background border-foreground"
                     : "border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
@@ -114,16 +123,46 @@ const News = () => {
               </button>
             ))}
           </div>
-          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground">
-            {grid.length} {grid.length === 1 ? "entry" : "entries"}
-          </p>
+
+          <div className="flex items-center gap-4">
+            <div className="relative flex-1 lg:w-80">
+              <Search
+                size={14}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none"
+              />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search news…"
+                aria-label="Search news"
+                className="w-full h-10 pl-9 pr-9 text-base lg:text-sm bg-transparent border border-border focus:border-foreground/60 focus:outline-none transition-colors text-foreground placeholder:text-muted-foreground"
+              />
+              {query && (
+                <button
+                  onClick={() => setQuery("")}
+                  aria-label="Clear search"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <X size={14} />
+                </button>
+              )}
+            </div>
+            <p className="hidden sm:block text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground whitespace-nowrap">
+              {grid.length} {grid.length === 1 ? "entry" : "entries"}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Grid */}
       <section className="section-padding pb-20 md:pb-28">
         {grid.length === 0 ? (
-          <p className="text-foreground/60 py-20 text-center">No entries in this category yet.</p>
+          <p className="text-foreground/60 py-20 text-center">
+            {query.trim()
+              ? `No results for “${query.trim()}”.`
+              : "No entries in this category yet."}
+          </p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 md:gap-y-20">
             {grid.map((n) => (
