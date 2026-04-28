@@ -96,15 +96,6 @@ const News = () => {
         </section>
       )}
 
-      {/* Filter rail */}
-      <section className="section-padding pt-6 pb-8 border-t border-border">
-        <div className="flex items-center justify-between gap-4 flex-wrap">
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setActive(f)}
-                className={`text-[0.7rem] uppercase tracking-[0.14em] px-4 py-2 border transition-colors ${
       {/* Filter rail + Search */}
       <section className="section-padding pt-6 pb-8 border-t border-border">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
