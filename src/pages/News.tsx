@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { ArrowRight, Mail, Phone, Search, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
@@ -20,17 +20,26 @@ type Filter = (typeof filters)[number];
 
 const News = () => {
   const [active, setActive] = useState<Filter>("All");
+  const [query, setQuery] = useState("");
 
-  const filtered = useMemo(
-    () =>
+  const filtered = useMemo(() => {
+    const byCategory =
       active === "All"
         ? articles
-        : articles.filter((a) => a.category === (active as ArticleCategory)),
-    [active],
-  );
+        : articles.filter((a) => a.category === (active as ArticleCategory));
+    const q = query.trim().toLowerCase();
+    if (!q) return byCategory;
+    return byCategory.filter(
+      (a) =>
+        a.title.toLowerCase().includes(q) ||
+        a.excerpt.toLowerCase().includes(q) ||
+        a.category.toLowerCase().includes(q),
+    );
+  }, [active, query]);
 
   const featured = articles[0];
-  const grid = active === "All" ? filtered.filter((i) => i.slug !== featured.slug) : filtered;
+  const showFeatured = active === "All" && !query.trim();
+  const grid = showFeatured ? filtered.filter((i) => i.slug !== featured.slug) : filtered;
 
   return (
     <main className="min-h-screen bg-background">
@@ -52,7 +61,7 @@ const News = () => {
       </section>
 
       {/* Featured (only when no filter applied) */}
-      {active === "All" && (
+      {showFeatured && (
         <section className="section-padding pb-12 md:pb-16">
           <Link to={`/insights/${featured.slug}`} className="group block">
             <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 md:gap-12 items-center border-t border-border pt-10 md:pt-14">
@@ -87,9 +96,9 @@ const News = () => {
         </section>
       )}
 
-      {/* Filter rail */}
+      {/* Filter rail + Search */}
       <section className="section-padding pt-6 pb-8 border-t border-border">
-        <div className="flex items-center justify-between gap-4 flex-wrap">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
           <div className="flex flex-wrap gap-2 md:gap-3">
             {filters.map((f) => (
               <button
@@ -105,16 +114,46 @@ const News = () => {
               </button>
             ))}
           </div>
-          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground">
-            {grid.length} {grid.length === 1 ? "entry" : "entries"}
-          </p>
+
+          <div className="flex items-center gap-4">
+            <div className="relative flex-1 lg:w-80">
+              <Search
+                size={14}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none"
+              />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search news…"
+                aria-label="Search news"
+                className="w-full h-10 pl-9 pr-9 text-base lg:text-sm bg-transparent border border-border focus:border-foreground/60 focus:outline-none transition-colors text-foreground placeholder:text-muted-foreground"
+              />
+              {query && (
+                <button
+                  onClick={() => setQuery("")}
+                  aria-label="Clear search"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <X size={14} />
+                </button>
+              )}
+            </div>
+            <p className="hidden sm:block text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground whitespace-nowrap">
+              {grid.length} {grid.length === 1 ? "entry" : "entries"}
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Grid */}
       <section className="section-padding pb-20 md:pb-28">
         {grid.length === 0 ? (
-          <p className="text-foreground/60 py-20 text-center">No entries in this category yet.</p>
+          <p className="text-foreground/60 py-20 text-center">
+            {query.trim()
+              ? `No results for “${query.trim()}”.`
+              : "No entries in this category yet."}
+          </p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 md:gap-y-20">
             {grid.map((n) => (
