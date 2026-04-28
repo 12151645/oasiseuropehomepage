@@ -193,10 +193,10 @@ const Contact = () => {
 
             <div className="border border-border/60 p-7 md:p-10">
               <p className="label-sm mb-3">Private Consultation</p>
-              <h3 className="font-display text-xl font-light mb-3 text-foreground">
+              <h3 className="font-display text-2xl md:text-3xl text-foreground mb-3 leading-tight">
                 Prefer a structured introduction?
               </h3>
-              <p className="text-sm text-foreground/60 leading-[1.7] mb-5">
+              <p className="body-md mb-5">
                 Request a confidential briefing with a senior advisor.
               </p>
               <EnquiryDialog
