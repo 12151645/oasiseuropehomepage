@@ -20,17 +20,26 @@ type Filter = (typeof filters)[number];
 
 const News = () => {
   const [active, setActive] = useState<Filter>("All");
+  const [query, setQuery] = useState("");
 
-  const filtered = useMemo(
-    () =>
+  const filtered = useMemo(() => {
+    const byCategory =
       active === "All"
         ? articles
-        : articles.filter((a) => a.category === (active as ArticleCategory)),
-    [active],
-  );
+        : articles.filter((a) => a.category === (active as ArticleCategory));
+    const q = query.trim().toLowerCase();
+    if (!q) return byCategory;
+    return byCategory.filter(
+      (a) =>
+        a.title.toLowerCase().includes(q) ||
+        a.excerpt.toLowerCase().includes(q) ||
+        a.category.toLowerCase().includes(q),
+    );
+  }, [active, query]);
 
   const featured = articles[0];
-  const grid = active === "All" ? filtered.filter((i) => i.slug !== featured.slug) : filtered;
+  const showFeatured = active === "All" && !query.trim();
+  const grid = showFeatured ? filtered.filter((i) => i.slug !== featured.slug) : filtered;
 
   return (
     <main className="min-h-screen bg-background">
