@@ -18,6 +18,7 @@ import InsightDetail from "./pages/InsightDetail.tsx";
 import News from "./pages/News.tsx";
 import FAQ from "./pages/FAQ.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/news" element={<News />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/insights/news" element={<Insights />} />
           <Route path="/insights/:slug" element={<InsightDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
