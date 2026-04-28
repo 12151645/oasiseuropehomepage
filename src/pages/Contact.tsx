@@ -92,13 +92,13 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28">
-        <div className="section-padding max-w-5xl mx-auto text-center">
-          <p className="label-sm mb-6 text-accent">Private Office</p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-6">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 bg-secondary">
+        <div className="section-padding max-w-3xl mx-auto text-center">
+          <p className="label-sm mb-8">Private Office</p>
+          <h1 className="heading-xl text-foreground mb-6">
             Begin a quiet conversation.
           </h1>
-          <p className="body-lg max-w-2xl mx-auto">
+          <p className="body-md max-w-xl mx-auto">
             Whether you are considering acquisition, advisory, or entrusting an existing residence to our care,
             our team responds with the discretion the matter deserves.
           </p>
@@ -111,7 +111,7 @@ const Contact = () => {
           {/* Form */}
           <div className="bg-card border border-border/60 p-7 md:p-12">
             <p className="label-sm mb-3">Direct Enquiry</p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-8 leading-tight">
+            <h2 className="heading-lg text-foreground mb-8">
               Tell us how we may assist.
             </h2>
             <form onSubmit={onSubmit} className="space-y-5">
@@ -166,7 +166,7 @@ const Contact = () => {
           <aside className="space-y-8">
             <div className="bg-foreground text-background p-7 md:p-10">
               <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-accent mb-4">Direct Channels</p>
-              <h3 className="font-display text-2xl md:text-3xl mb-6 leading-tight">
+              <h3 className="heading-md mb-6">
                 Reach the private office directly.
               </h3>
               <div className="space-y-4">
@@ -193,7 +193,7 @@ const Contact = () => {
 
             <div className="border border-border/60 p-7 md:p-10">
               <p className="label-sm mb-3">Private Consultation</p>
-              <h3 className="font-display text-2xl md:text-3xl text-foreground mb-3 leading-tight">
+              <h3 className="heading-md text-foreground mb-3">
                 Prefer a structured introduction?
               </h3>
               <p className="body-md mb-5">
@@ -219,7 +219,7 @@ const Contact = () => {
         <div className="section-padding max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="label-sm mb-4 text-accent">Our Offices</p>
-            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-foreground leading-[1.08] tracking-tight">
+            <h2 className="heading-lg text-foreground">
               Anchored across three coastlines.
             </h2>
           </div>
@@ -227,7 +227,7 @@ const Contact = () => {
             {offices.map((o) => (
               <div key={o.city} className="border-t border-foreground/20 pt-8">
                 <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-accent mb-3">{o.region}</p>
-                <h3 className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight">{o.city}</h3>
+                <h3 className="heading-md text-foreground mb-5">{o.city}</h3>
                 <div className="space-y-3 text-sm text-foreground/70">
                   <p className="flex items-start gap-3 leading-[1.7]">
                     <MapPin size={14} className="text-accent mt-1 shrink-0" />
