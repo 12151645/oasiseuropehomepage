@@ -4,7 +4,6 @@ const AdvisoryCTA = () => {
   return (
     <section className="py-28 md:py-36" style={{ backgroundColor: 'rgb(250, 248, 245)' }}>
       <div className="section-padding max-w-3xl mx-auto text-center">
-        <p className="label-sm mb-6">Asset Advisory</p>
         <h2 className="heading-lg text-advisory-foreground mb-6">
           Interested in Our Services?
         </h2>
