@@ -16,6 +16,7 @@ const secondaryItems = [
   { label: "News", href: "/news" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = ({ dark = false }: { dark?: boolean }) => {
