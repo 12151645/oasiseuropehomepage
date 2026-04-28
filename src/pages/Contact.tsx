@@ -219,7 +219,7 @@ const Contact = () => {
         <div className="section-padding max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="label-sm mb-4 text-accent">Our Offices</p>
-            <h2 className="font-display font-light text-3xl md:text-5xl text-foreground tracking-[-0.01em]">
+            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-foreground leading-[1.08] tracking-tight">
               Anchored across three coastlines.
             </h2>
           </div>
@@ -227,7 +227,7 @@ const Contact = () => {
             {offices.map((o) => (
               <div key={o.city} className="border-t border-foreground/20 pt-8">
                 <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-accent mb-3">{o.region}</p>
-                <h3 className="font-display text-2xl md:text-3xl font-light text-foreground mb-5">{o.city}</h3>
+                <h3 className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight">{o.city}</h3>
                 <div className="space-y-3 text-sm text-foreground/70">
                   <p className="flex items-start gap-3 leading-[1.7]">
                     <MapPin size={14} className="text-accent mt-1 shrink-0" />
