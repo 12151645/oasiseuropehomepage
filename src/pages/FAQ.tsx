@@ -211,7 +211,7 @@ const FAQ = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
           <div className="relative min-h-[320px] md:min-h-[480px] lg:min-h-full overflow-hidden bg-secondary">
             <img
-              src="/src/assets/architectural-detail.jpg"
+              src={architecturalImage}
               alt="Sculpted architectural detail in warm stone"
               className="w-full h-full object-cover"
               loading="lazy"
