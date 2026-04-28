@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { EnquiryDialog } from "@/components/cta/CTAModals";
+import architecturalImage from "@/assets/architectural-detail.jpg";
 
 const sections = [
   {
