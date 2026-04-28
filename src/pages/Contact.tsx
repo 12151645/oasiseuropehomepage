@@ -111,7 +111,7 @@ const Contact = () => {
           {/* Form */}
           <div className="bg-card border border-border/60 p-7 md:p-12">
             <p className="label-sm mb-3">Direct Enquiry</p>
-            <h2 className="font-display text-2xl md:text-3xl font-light mb-8 text-foreground">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-8 leading-tight">
               Tell us how we may assist.
             </h2>
             <form onSubmit={onSubmit} className="space-y-5">
