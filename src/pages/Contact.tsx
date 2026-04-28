@@ -92,13 +92,13 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28">
-        <div className="section-padding max-w-5xl mx-auto text-center">
-          <p className="label-sm mb-6 text-accent">Private Office</p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-6">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 bg-secondary">
+        <div className="section-padding max-w-3xl mx-auto text-center">
+          <p className="label-sm mb-8">Private Office</p>
+          <h1 className="heading-xl text-foreground mb-6">
             Begin a quiet conversation.
           </h1>
-          <p className="body-lg max-w-2xl mx-auto">
+          <p className="body-md max-w-xl mx-auto">
             Whether you are considering acquisition, advisory, or entrusting an existing residence to our care,
             our team responds with the discretion the matter deserves.
           </p>
