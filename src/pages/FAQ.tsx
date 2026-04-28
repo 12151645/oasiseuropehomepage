@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { EnquiryDialog } from "@/components/cta/CTAModals";
+import architecturalImage from "@/assets/architectural-detail.jpg";
 
 const sections = [
   {
@@ -192,29 +193,41 @@ const FAQ = () => {
     <main className="min-h-screen bg-background">
       <Navbar dark />
 
-      {/* Hero */}
-      <section className="pt-32 md:pt-44 pb-10 md:pb-16 section-padding">
-        <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Services · Frequently Asked</p>
-        <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.02] tracking-tight max-w-4xl">
-          Considered answers, from acquisition to exit.
-        </h1>
-        <p className="mt-6 text-foreground/70 max-w-2xl text-lg leading-relaxed">
-          Oasis Europe answers the questions most often raised by private investors and property owners — how we manage and transform luxury assets in Marbella, structure acquisitions, optimise performance, and guide each exit.
-        </p>
+      {/* Hero — centered editorial */}
+      <section className="pt-32 md:pt-44 pb-20 md:pb-32 section-padding bg-secondary">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-foreground/60 mb-8">Services</p>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
+            Frequently Asked Questions
+          </h1>
+          <p className="mt-8 text-foreground/70 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+            Oasis Europe answers the questions most often raised by private investors and property owners — how we manage and transform luxury assets in Marbella, how we structure acquisitions, optimise performance, and guide each exit. A clear look at how we work and what to expect when partnering with us.
+          </p>
+        </div>
       </section>
 
-      {/* Position statement */}
-      <section className="section-padding py-14 md:py-20 border-y border-border bg-foreground/[0.02]">
-        <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-4">Our Position</p>
-        <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 md:gap-16 items-end">
-          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-foreground leading-[1.05] tracking-tight">
-            We are not brokers.
-            <br />
-            <span className="italic text-accent">We are asset architects.</span>
-          </h2>
-          <p className="text-foreground/70 leading-relaxed text-base md:text-lg">
-            Oasis Europe manages the full lifecycle of luxury real estate — from acquisition and transformation to rental performance and structured exit.
-          </p>
+      {/* Position statement — split image/text */}
+      <section className="bg-background">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+          <div className="relative min-h-[320px] md:min-h-[480px] lg:min-h-full overflow-hidden bg-secondary">
+            <img
+              src={architecturalImage}
+              alt="Sculpted architectural detail in warm stone"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="flex flex-col justify-center section-padding py-16 md:py-24 lg:py-32">
+            <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-foreground/60 mb-8">Our Position</p>
+            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-foreground leading-[1.08] tracking-tight mb-8">
+              We are not brokers.
+              <br />
+              <em className="italic font-normal">We are asset architects.</em>
+            </h2>
+            <p className="text-foreground/70 leading-relaxed text-base md:text-lg max-w-lg">
+              Oasis Europe manages the full lifecycle of luxury real estate — from acquisition and transformation to rental performance and structured exit.
+            </p>
+          </div>
         </div>
       </section>
 
