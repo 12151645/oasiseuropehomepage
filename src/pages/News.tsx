@@ -61,7 +61,7 @@ const News = () => {
       </section>
 
       {/* Featured (only when no filter applied) */}
-      {active === "All" && (
+      {showFeatured && (
         <section className="section-padding pb-12 md:pb-16">
           <Link to={`/insights/${featured.slug}`} className="group block">
             <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 md:gap-12 items-center border-t border-border pt-10 md:pt-14">
