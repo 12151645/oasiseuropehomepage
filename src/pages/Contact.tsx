@@ -95,10 +95,10 @@ const Contact = () => {
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28">
         <div className="section-padding max-w-5xl mx-auto text-center">
           <p className="label-sm mb-6 text-accent">Private Office</p>
-          <h1 className="font-display font-light text-[2.4rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-[-0.01em] text-foreground mb-6">
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight mb-6">
             Begin a quiet conversation.
           </h1>
-          <p className="body-md text-foreground/60 max-w-2xl mx-auto leading-[1.7]">
+          <p className="body-lg max-w-2xl mx-auto">
             Whether you are considering acquisition, advisory, or entrusting an existing residence to our care,
             our team responds with the discretion the matter deserves.
           </p>
