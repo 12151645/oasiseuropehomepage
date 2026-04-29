@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MessageCircle, MapPin, Phone, ArrowRight, Linkedin, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Instagram } from "lucide-react";
 import { SubscribeDialog, EnquiryDialog } from "@/components/cta/CTAModals";
 
 const WHATSAPP_NUMBER = "34600000000";
