@@ -196,12 +196,14 @@ const FAQ = () => {
       {/* Hero — centered editorial */}
       <section className="pt-32 md:pt-44 pb-20 md:pb-32 section-padding bg-secondary">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-foreground/60 mb-8">Services</p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
-            Frequently Asked Questions
+          <p className="text-[0.65rem] uppercase tracking-[0.22em] text-foreground/50 mb-10 font-normal">
+            Services
+          </p>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] tracking-tight font-normal">
+            Frequently Asked<br />Questions.
           </h1>
-          <p className="mt-8 text-foreground/70 max-w-xl mx-auto text-base md:text-lg leading-relaxed">
-            Oasis Europe answers the questions most often raised by private investors and property owners — how we manage and transform luxury assets in Marbella, how we structure acquisitions, optimise performance, and guide each exit. A clear look at how we work and what to expect when partnering with us.
+          <p className="mt-8 text-foreground/60 text-sm md:text-base leading-[1.7] max-w-xl mx-auto">
+            Oasis Europe answers the questions most often raised by private investors and property owners — how we manage and transform luxury assets in Marbella, how we structure acquisitions, optimise performance, and guide each exit.
           </p>
         </div>
       </section>
