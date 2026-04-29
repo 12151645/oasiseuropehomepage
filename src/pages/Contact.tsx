@@ -9,11 +9,21 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { EnquiryDialog } from "@/components/cta/CTAModals";
+import contactHero from "@/assets/contact-hero.jpg";
+
+const enquiryTypes = [
+  "Rental Management",
+  "Asset Advisory",
+  "Private Capital",
+  "Development",
+  "Other",
+] as const;
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
+  enquiryType: z.enum(enquiryTypes),
   subject: z.string().trim().min(2, "Please add a subject").max(140),
   message: z.string().trim().min(5, "Message is too short").max(1000),
   preferred: z.enum(["email", "phone", "whatsapp"]),
@@ -48,6 +58,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    enquiryType: "Rental Management" as (typeof enquiryTypes)[number],
     subject: "",
     message: "",
     preferred: "email" as "email" | "phone" | "whatsapp",
@@ -83,7 +94,15 @@ const Contact = () => {
       toast.success("Message received", {
         description: "Thank you. A member of our private office will respond within one business day.",
       });
-      setForm({ name: "", email: "", phone: "", subject: "", message: "", preferred: "email" });
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        enquiryType: "Rental Management",
+        subject: "",
+        message: "",
+        preferred: "email",
+      });
     }, 700);
   };
 
@@ -91,19 +110,40 @@ const Contact = () => {
     <main className="overflow-x-hidden bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 bg-secondary">
-        <div className="section-padding max-w-3xl mx-auto text-center">
-          <p className="label-sm mb-8">Private Office</p>
-          <h1 className="heading-xl text-foreground mb-6">
-            Begin a quiet conversation.
-          </h1>
-          <p className="body-md max-w-xl mx-auto">
-            Whether you are considering acquisition, advisory, or entrusting an existing residence to our care,
-            our team responds with the discretion the matter deserves.
-          </p>
+      {/* Hero — split image / text, 60vh */}
+      <section className="relative bg-secondary">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[60vh] pt-20 lg:pt-0">
+          <div className="relative min-h-[300px] lg:min-h-[60vh] overflow-hidden order-1 lg:order-2">
+            <img
+              src={contactHero}
+              alt="A quiet sunlit private office in Marbella with travertine walls, a walnut desk and a single white orchid"
+              className="w-full h-full object-cover"
+              width={1600}
+              height={1200}
+            />
+          </div>
+          <div className="flex flex-col justify-center section-padding py-16 md:py-20 lg:py-0 order-2 lg:order-1">
+            <div className="max-w-md">
+              <p className="label-sm mb-8">Private Office</p>
+              <h1 className="heading-xl text-foreground mb-6">
+                A quiet introduction.
+              </h1>
+              <p className="body-md mb-4">
+                Every conversation begins in confidence. Whether you are exploring an
+                acquisition, entrusting an existing residence, or seeking strategic
+                counsel on a Mediterranean asset, our private office responds personally —
+                never through an intermediary.
+              </p>
+              <p className="text-[0.7rem] uppercase tracking-[0.16em] text-accent mt-8">
+                Reply within one business day · Handled in confidence
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Section break — pulled up so form sits beneath hero */}
+      <div className="pt-16 md:pt-24" />
 
       {/* Form + sidebar */}
       <section className="pb-24 md:pb-32">
@@ -115,6 +155,21 @@ const Contact = () => {
               Tell us how we may assist.
             </h2>
             <form onSubmit={onSubmit} className="space-y-5">
+              <div>
+                <Label htmlFor="c-type">I am enquiring about</Label>
+                <select
+                  id="c-type"
+                  value={form.enquiryType}
+                  onChange={update("enquiryType")}
+                  className="mt-1.5 flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-base md:text-sm"
+                >
+                  {enquiryTypes.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="c-name">Full Name</Label>
