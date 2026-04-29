@@ -220,13 +220,8 @@ const FAQ = () => {
             />
           </div>
           <div className="flex flex-col justify-center section-padding py-16 md:py-24 lg:py-32">
-            <p className="text-[0.6875rem] uppercase tracking-[0.22em] text-foreground/60 mb-8">Our Position</p>
-            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-foreground leading-[1.08] tracking-tight mb-8">
-              We are not brokers.
-              <br />
-              <em className="italic font-normal">We are asset architects.</em>
-            </h2>
-            <p className="text-foreground/70 leading-relaxed text-base md:text-lg max-w-lg">
+            <p className="text-[0.65rem] uppercase tracking-[0.22em] text-foreground/50 mb-10 font-normal">Our Position</p>
+            <p className="text-foreground/60 text-sm md:text-base leading-[1.7] max-w-lg">
               At Oasis Europe, real estate is approached as an asset class — not just a service. We provide end-to-end solutions for investors and property owners across rental management, asset advisory, private capital, and development, enabling our partners to access, manage, and grow high-quality real estate investments in Southern Europe. Below you'll find answers to common questions about our approach and services.
             </p>
           </div>
