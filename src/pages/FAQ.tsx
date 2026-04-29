@@ -227,7 +227,7 @@ const FAQ = () => {
               <em className="italic font-normal">We are asset architects.</em>
             </h2>
             <p className="text-foreground/70 leading-relaxed text-base md:text-lg max-w-lg">
-              Oasis Europe manages the full lifecycle of luxury real estate — from acquisition and transformation to rental performance and structured exit.
+              At Oasis Europe, real estate is approached as an asset class — not just a service. We provide end-to-end solutions for investors and property owners across rental management, asset advisory, private capital, and development, enabling our partners to access, manage, and grow high-quality real estate investments in Southern Europe. Below you'll find answers to common questions about our approach and services.
             </p>
           </div>
         </div>
