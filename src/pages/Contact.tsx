@@ -155,6 +155,21 @@ const Contact = () => {
               Tell us how we may assist.
             </h2>
             <form onSubmit={onSubmit} className="space-y-5">
+              <div>
+                <Label htmlFor="c-type">I am enquiring about</Label>
+                <select
+                  id="c-type"
+                  value={form.enquiryType}
+                  onChange={update("enquiryType")}
+                  className="mt-1.5 flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-base md:text-sm"
+                >
+                  {enquiryTypes.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="c-name">Full Name</Label>
