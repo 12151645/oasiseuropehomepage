@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import { Button } from "@/components/ui/button";
 import { getProperty, formatPrice, properties } from "@/data/properties";
 import { Bed, Bath, Maximize2, MapPin, Phone, MessageCircle, Heart, Share2, Download, Calendar } from "lucide-react";
@@ -210,6 +211,7 @@ const PropertyDetail = () => {
         />
       </div>
 
+      <NewsletterBand />
       <Footer />
       <div className="hidden lg:block"><FloatingCTABar /></div>
     </main>

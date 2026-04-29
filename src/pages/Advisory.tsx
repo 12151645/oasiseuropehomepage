@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import AdvisoryHero from "@/components/advisory/AdvisoryHero";
 import AdvisoryAcquisition from "@/components/advisory/AdvisoryAcquisition";
 import AdvisoryPostPurchase from "@/components/advisory/AdvisoryPostPurchase";
@@ -17,6 +18,7 @@ const Advisory = () => {
       <AdvisoryPostPurchase />
       <AdvisoryExitStrategy />
       <AdvisoryCTA />
+      <NewsletterBand />
       <Footer />
     </main>
   );

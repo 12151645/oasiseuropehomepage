@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, FileText } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import { Button } from "@/components/ui/button";
 import { SubscribeDialog, EnquiryDialog } from "@/components/cta/CTAModals";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
@@ -256,6 +257,7 @@ const Insights = () => {
         </div>
       </section>
 
+      <NewsletterBand />
       <Footer />
       <FloatingCTABar />
 

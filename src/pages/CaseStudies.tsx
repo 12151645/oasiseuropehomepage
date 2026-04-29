@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
 import capitalImg from "@/assets/news-capital.jpg";
 import devImg from "@/assets/news-development.jpg";
@@ -108,6 +109,7 @@ const CaseStudies = () => {
       </section>
 
       <FloatingCTABar />
+      <NewsletterBand />
       <Footer />
     </main>
   );
