@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import CapitalHero from "@/components/capital/CapitalHero";
 import CapitalPositioning from "@/components/capital/CapitalPositioning";
 import CapitalModel from "@/components/capital/CapitalModel";
@@ -17,6 +18,7 @@ const Capital = () => {
       <CapitalExpectations />
       <CapitalLocation />
       <CapitalCTA />
+      <NewsletterBand />
       <Footer />
     </main>
   );

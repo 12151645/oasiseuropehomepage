@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import AboutHero from "@/components/about/AboutHero";
 import AboutStory from "@/components/about/AboutStory";
 import AboutVisionMission from "@/components/about/AboutVisionMission";
@@ -32,6 +33,7 @@ const About = () => {
       <AboutImpact />
       <AboutTeam />
       <AboutCTA />
+      <NewsletterBand />
       <Footer />
     </main>
   );

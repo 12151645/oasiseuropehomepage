@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import { Button } from "@/components/ui/button";
 import { EnquiryDialog, SubscribeDialog } from "@/components/cta/CTAModals";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
@@ -189,6 +190,7 @@ const InsightDetail = () => {
         </div>
       </section>
 
+      <NewsletterBand />
       <Footer />
       <FloatingCTABar />
     </main>

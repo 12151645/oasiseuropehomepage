@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -287,6 +288,7 @@ const Contact = () => {
         </div>
       </section>
 
+      <NewsletterBand />
       <Footer />
     </main>
   );

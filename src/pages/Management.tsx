@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterBand from "@/components/NewsletterBand";
 import ManagementHero from "@/components/management/ManagementHero";
 import ManagementPositioning from "@/components/management/ManagementPositioning";
 import ManagementModel from "@/components/management/ManagementModel";
@@ -21,6 +22,7 @@ const Management = () => {
       <ManagementOwnerExperience />
       <ManagementTestimonials />
       <ManagementCTA />
+      <NewsletterBand />
       <Footer />
     </main>
   );
