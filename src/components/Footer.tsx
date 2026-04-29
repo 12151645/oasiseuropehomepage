@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone, Linkedin, Instagram } from "lucide-react";
-import { SubscribeDialog, EnquiryDialog } from "@/components/cta/CTAModals";
+
 
 const PHONE_DISPLAY = "+34 600 000 000";
 const EMAIL = "private@oasiseurope.com";
