@@ -11,8 +11,8 @@ import { articles, ArticleCategory } from "@/data/articles";
 const filters = [
   "All",
   "Company Update",
-  "Marbella Market Insight",
   "Featured Property",
+  "Marbella Market Insight",
   "New Listing Added",
 ] as const;
 
