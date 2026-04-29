@@ -9,11 +9,21 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { EnquiryDialog } from "@/components/cta/CTAModals";
+import contactHero from "@/assets/contact-hero.jpg";
+
+const enquiryTypes = [
+  "Rental Management",
+  "Asset Advisory",
+  "Private Capital",
+  "Development",
+  "Other",
+] as const;
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
+  enquiryType: z.enum(enquiryTypes),
   subject: z.string().trim().min(2, "Please add a subject").max(140),
   message: z.string().trim().min(5, "Message is too short").max(1000),
   preferred: z.enum(["email", "phone", "whatsapp"]),
@@ -48,6 +58,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    enquiryType: "Rental Management" as (typeof enquiryTypes)[number],
     subject: "",
     message: "",
     preferred: "email" as "email" | "phone" | "whatsapp",
@@ -83,7 +94,15 @@ const Contact = () => {
       toast.success("Message received", {
         description: "Thank you. A member of our private office will respond within one business day.",
       });
-      setForm({ name: "", email: "", phone: "", subject: "", message: "", preferred: "email" });
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        enquiryType: "Rental Management",
+        subject: "",
+        message: "",
+        preferred: "email",
+      });
     }, 700);
   };
 
