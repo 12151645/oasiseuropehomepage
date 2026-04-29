@@ -1,11 +1,9 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Search, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
-import { SubscribeDialog, EnquiryDialog } from "@/components/cta/CTAModals";
-import { Button } from "@/components/ui/button";
 import { articles, ArticleCategory } from "@/data/articles";
 
 const filters = [
