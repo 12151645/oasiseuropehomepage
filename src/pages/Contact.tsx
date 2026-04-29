@@ -110,40 +110,24 @@ const Contact = () => {
     <main className="overflow-x-hidden bg-background">
       <Navbar />
 
-      {/* Hero — split image / text, 60vh */}
-      <section className="relative bg-secondary">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[60vh] pt-20 lg:pt-0">
-          <div className="relative min-h-[300px] lg:min-h-[60vh] overflow-hidden order-1 lg:order-2">
-            <img
-              src={contactHero}
-              alt="A quiet sunlit private office in Marbella with travertine walls, a walnut desk and a single white orchid"
-              className="w-full h-full object-cover"
-              width={1600}
-              height={1200}
-            />
-          </div>
-          <div className="flex flex-col justify-center section-padding py-16 md:py-20 lg:py-0 order-2 lg:order-1">
-            <div className="max-w-md">
-              <p className="label-sm mb-8">Private Office</p>
-              <h1 className="heading-xl text-foreground mb-6">
-                A quiet introduction.
-              </h1>
-              <p className="body-md mb-4">
-                Every conversation begins in confidence. Whether you are exploring an
-                acquisition, entrusting an existing residence, or seeking strategic
-                counsel on a Mediterranean asset, our private office responds personally —
-                never through an intermediary.
-              </p>
-              <p className="text-[0.7rem] uppercase tracking-[0.16em] text-accent mt-8">
-                Reply within one business day · Handled in confidence
-              </p>
-            </div>
-          </div>
+      {/* Hero — centered editorial intro */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 bg-secondary">
+        <div className="section-padding max-w-3xl mx-auto text-center">
+          <p className="label-sm mb-8">Private Office</p>
+          <h1 className="heading-xl text-foreground mb-6">
+            A quiet introduction.
+          </h1>
+          <p className="body-md max-w-xl mx-auto mb-6">
+            Every conversation begins in confidence. Whether you are exploring an
+            acquisition, entrusting an existing residence, or seeking strategic
+            counsel on a Mediterranean asset, our private office responds personally —
+            never through an intermediary.
+          </p>
+          <p className="text-[0.7rem] uppercase tracking-[0.16em] text-accent mt-8">
+            Reply within one business day · Handled in confidence
+          </p>
         </div>
       </section>
-
-      {/* Section break — pulled up so form sits beneath hero */}
-      <div className="pt-16 md:pt-24" />
 
       {/* Form + sidebar */}
       <section className="pb-24 md:pb-32">
