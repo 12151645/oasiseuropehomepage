@@ -45,22 +45,22 @@ const News = () => {
     <main className="min-h-screen bg-background">
       <Navbar dark />
 
-      {/* Hero — editorial intro + prominent search */}
-      <section className="pt-32 md:pt-44 pb-12 md:pb-16 section-padding">
-        <div className="max-w-4xl">
-          <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">
-            Updates · Newsroom
+      {/* Hero — centered editorial intro */}
+      <section className="pt-32 md:pt-44 pb-16 md:pb-24 section-padding">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-8">
+            Newsroom
           </p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.02] tracking-tight">
-            News &amp; Insights from Marbella.
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
+            News &amp; Insights<br />from Marbella.
           </h1>
-          <p className="mt-6 text-foreground/70 max-w-2xl text-lg leading-relaxed">
-            Market intelligence, regulatory updates and a look behind the scenes of how we acquire,
-            optimise and exit luxury assets on the Costa del Sol.
+          <p className="mt-8 text-foreground/70 text-base md:text-lg leading-[1.7] max-w-xl mx-auto">
+            Market intelligence, regulatory updates and a look behind the scenes of how we
+            acquire, optimise and exit luxury assets on the Costa del Sol.
           </p>
 
           {/* Prominent search */}
-          <div className="mt-10 md:mt-12 max-w-2xl">
+          <div className="mt-12 md:mt-14 max-w-2xl mx-auto">
             <label htmlFor="news-search" className="sr-only">
               Search articles
             </label>
