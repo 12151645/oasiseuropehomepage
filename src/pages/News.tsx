@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Search, X, Calendar, Clock } from "lucide-react";
+import { Mail, Search, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
