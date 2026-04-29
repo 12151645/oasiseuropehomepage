@@ -281,7 +281,7 @@ const FAQ = () => {
       <section className="section-padding pb-24 md:pb-32">
         <div className="bg-foreground text-background px-6 sm:px-12 md:px-16 py-14 md:py-20 grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center">
           <div>
-            <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Asset Advisory</p>
+            <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Get in Touch</p>
             <h2 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight mb-5">
               Interested in our services?
             </h2>
