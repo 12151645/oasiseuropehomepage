@@ -196,13 +196,11 @@ const FAQ = () => {
       {/* Hero — centered editorial */}
       <section className="pt-32 md:pt-44 pb-20 md:pb-32 section-padding bg-secondary">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[0.65rem] uppercase tracking-[0.22em] text-foreground/50 mb-10 font-normal">
-            Services
-          </p>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] tracking-tight font-normal">
+          <p className="label-sm mb-8">Services</p>
+          <h1 className="heading-xl text-foreground mb-6">
             Frequently Asked<br />Questions.
           </h1>
-          <p className="mt-8 text-foreground/60 text-sm md:text-base leading-[1.7] max-w-xl mx-auto">
+          <p className="body-md max-w-xl mx-auto">
             Oasis Europe answers the questions most often raised by private investors and property owners — how we manage and transform luxury assets in Marbella, how we structure acquisitions, optimise performance, and guide each exit.
           </p>
         </div>
@@ -220,8 +218,8 @@ const FAQ = () => {
             />
           </div>
           <div className="flex flex-col justify-center section-padding py-16 md:py-24 lg:py-32">
-            <p className="text-[0.65rem] uppercase tracking-[0.22em] text-foreground/50 mb-10 font-normal">Our Position</p>
-            <p className="text-foreground/60 text-sm md:text-base leading-[1.7] max-w-lg">
+            <p className="label-sm mb-8">Our Position</p>
+            <p className="body-md max-w-lg mx-0">
               At Oasis Europe, real estate is approached as an asset class — not just a service. We provide end-to-end solutions for investors and property owners across rental management, asset advisory, private capital, and development, enabling our partners to access, manage, and grow high-quality real estate investments in Southern Europe. Below you'll find answers to common questions about our approach and services.
             </p>
           </div>
