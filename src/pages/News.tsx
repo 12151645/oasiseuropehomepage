@@ -46,7 +46,7 @@ const News = () => {
       <Navbar dark />
 
       {/* Hero — centered editorial intro */}
-      <section className="pt-32 md:pt-44 pb-16 md:pb-24 section-padding">
+      <section className="pt-32 md:pt-44 pb-12 md:pb-16 section-padding">
         <div className="max-w-3xl mx-auto text-center">
           <p className="label-sm mb-8">Newsroom</p>
           <h1 className="heading-xl text-foreground mb-6">
@@ -56,110 +56,63 @@ const News = () => {
             Market intelligence, regulatory updates and a look behind the scenes of how we
             acquire, optimise and exit luxury assets on the Costa del Sol.
           </p>
-
-          {/* Prominent search */}
-          <div className="mt-12 md:mt-14 max-w-2xl mx-auto">
-            <label htmlFor="news-search" className="sr-only">
-              Search articles
-            </label>
-            <div className="relative">
-              <Search
-                size={18}
-                className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-foreground/40 pointer-events-none"
-              />
-              <input
-                id="news-search"
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search by topic, regulation, location…"
-                className="w-full h-14 md:h-16 pl-12 md:pl-14 pr-12 text-base md:text-lg bg-secondary border border-border focus:border-foreground/60 focus:outline-none transition-colors text-foreground placeholder:text-foreground/40"
-              />
-              {query && (
-                <button
-                  onClick={() => setQuery("")}
-                  aria-label="Clear search"
-                  className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-foreground/50 hover:text-foreground transition-colors"
-                >
-                  <X size={16} />
-                </button>
-              )}
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Filter rail */}
-      <section className="section-padding pt-2 pb-10 md:pb-14 border-t border-border">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 pt-8">
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            {filters.map((f) => (
+      {/* Search bar — placed directly above the news items */}
+      <section className="section-padding pb-8 md:pb-10">
+        <div className="max-w-2xl mx-auto">
+          <label htmlFor="news-search" className="sr-only">
+            Search articles
+          </label>
+          <div className="relative">
+            <Search
+              size={18}
+              className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-foreground/40 pointer-events-none"
+            />
+            <input
+              id="news-search"
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search by topic, regulation, location…"
+              className="w-full h-14 md:h-16 pl-12 md:pl-14 pr-12 text-base md:text-lg bg-secondary border border-border focus:border-foreground/60 focus:outline-none transition-colors text-foreground placeholder:text-foreground/40"
+            />
+            {query && (
               <button
-                key={f}
-                onClick={() => setActive(f)}
-                className={`text-[0.7rem] uppercase tracking-[0.14em] px-4 py-2.5 border transition-colors min-h-[40px] ${
-                  active === f
-                    ? "bg-foreground text-background border-foreground"
-                    : "border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
-                }`}
+                onClick={() => setQuery("")}
+                aria-label="Clear search"
+                className="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-foreground/50 hover:text-foreground transition-colors"
               >
-                {f}
+                <X size={16} />
               </button>
-            ))}
+            )}
           </div>
-          <p className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground whitespace-nowrap">
-            {grid.length + (showFeatured ? 1 : 0)}{" "}
-            {grid.length + (showFeatured ? 1 : 0) === 1 ? "article" : "articles"}
-            {query.trim() && ` · for "${query.trim()}"`}
-          </p>
         </div>
       </section>
 
-      {/* Featured (only when no filter / search applied) */}
-      {showFeatured && (
-        <section className="section-padding pb-14 md:pb-20">
-          <Link to={`/insights/${featured.slug}`} className="group block">
-            <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 md:gap-14 items-center">
-              <div className="aspect-[4/3] md:aspect-[5/4] overflow-hidden bg-muted order-1">
-                <img
-                  src={featured.image}
-                  alt={featured.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="order-2">
-                <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-4">
-                  Featured
-                </p>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground mb-5">
-                  <span>{featured.category}</span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <Calendar size={11} />
-                    <time dateTime={featured.dateISO}>{featured.date}</time>
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <Clock size={11} />
-                    {featured.readTime}
-                  </span>
-                </div>
-                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground leading-[1.08] mb-5 group-hover:text-accent transition-colors">
-                  {featured.title}
-                </h2>
-                <p className="text-foreground/70 leading-[1.7] text-base md:text-lg mb-7">
-                  {featured.excerpt}
-                </p>
-                <span className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.14em] text-foreground border-b border-foreground/30 pb-1 group-hover:text-accent group-hover:border-accent transition-colors">
-                  Read article <ArrowRight size={14} />
-                </span>
-              </div>
-            </div>
-          </Link>
-        </section>
-      )}
+      {/* Filter rail — centered above the grid */}
+      <section className="section-padding pb-10 md:pb-14">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+          {filters.map((f) => (
+            <button
+              key={f}
+              onClick={() => setActive(f)}
+              className={`text-[0.7rem] uppercase tracking-[0.14em] px-4 py-2.5 border transition-colors min-h-[40px] ${
+                active === f
+                  ? "bg-foreground text-background border-foreground"
+                  : "border-border text-foreground/60 hover:text-foreground hover:border-foreground/40"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+      </section>
 
-      {/* Editorial list — easier to scan than dense card grid */}
-      <section className="section-padding pb-20 md:pb-28 border-t border-border">
-        {grid.length === 0 ? (
+      {/* News grid — uniform 3-column layout */}
+      <section className="section-padding pb-20 md:pb-28">
+        {filtered.length === 0 ? (
           <div className="py-24 md:py-32 text-center">
             <p className="text-foreground/60 text-lg mb-6">
               {query.trim()
@@ -179,14 +132,11 @@ const News = () => {
             )}
           </div>
         ) : (
-          <ul className="divide-y divide-border">
-            {grid.map((n) => (
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 md:gap-y-16">
+            {filtered.map((n) => (
               <li key={n.slug}>
-                <Link
-                  to={`/insights/${n.slug}`}
-                  className="group grid md:grid-cols-[260px_1fr] lg:grid-cols-[320px_1fr_auto] gap-6 md:gap-10 py-8 md:py-10 items-start"
-                >
-                  <div className="aspect-[4/3] md:aspect-[5/4] overflow-hidden bg-muted">
+                <Link to={`/insights/${n.slug}`} className="group block">
+                  <div className="aspect-[4/3] overflow-hidden bg-muted mb-6">
                     <img
                       src={n.image}
                       alt={n.title}
@@ -194,28 +144,23 @@ const News = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <div className="min-w-0">
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.6875rem] uppercase tracking-[0.14em] text-muted-foreground mb-3">
-                      <span className="text-accent">{n.category}</span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <Calendar size={11} />
-                        <time dateTime={n.dateISO}>{n.date}</time>
-                      </span>
-                      <span className="inline-flex items-center gap-1.5">
-                        <Clock size={11} />
-                        {n.readTime}
-                      </span>
-                    </div>
-                    <h3 className="font-display text-2xl md:text-3xl lg:text-[2rem] text-foreground leading-[1.15] mb-3 group-hover:text-accent transition-colors">
-                      {n.title}
-                    </h3>
-                    <p className="text-foreground/70 leading-[1.7] text-base max-w-2xl line-clamp-2 md:line-clamp-3">
-                      {n.excerpt}
-                    </p>
+                  <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">
+                    {n.category}
+                  </p>
+                  <h3 className="font-display text-2xl md:text-[1.625rem] text-foreground leading-[1.2] mb-4 group-hover:text-accent transition-colors">
+                    {n.title}
+                  </h3>
+                  <p className="text-foreground/70 leading-[1.7] text-base mb-5 line-clamp-3">
+                    {n.excerpt}
+                  </p>
+                  <div className="pt-4 border-t border-border">
+                    <time
+                      dateTime={n.dateISO}
+                      className="text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground"
+                    >
+                      {n.date}
+                    </time>
                   </div>
-                  <span className="hidden lg:inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-foreground/60 group-hover:text-accent transition-colors mt-2 whitespace-nowrap">
-                    Read <ArrowRight size={12} />
-                  </span>
                 </Link>
               </li>
             ))}
