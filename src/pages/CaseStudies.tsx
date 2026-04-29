@@ -45,14 +45,23 @@ const CaseStudies = () => {
     <main className="min-h-screen bg-background">
       <Navbar dark />
 
-      <section className="pt-32 md:pt-44 pb-12 md:pb-16 section-padding">
-        <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Case Studies</p>
-        <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight max-w-4xl">
-          Evidence over narrative.
-        </h1>
-        <p className="mt-6 text-foreground/70 max-w-2xl text-lg leading-relaxed">
-          A selection of projects illustrating our integrated model — from acquisition and transformation to operation and exit.
-        </p>
+      <section className="relative min-h-[60vh] flex flex-col justify-center items-center text-center bg-secondary">
+        <div className="section-padding py-24 md:py-32 max-w-3xl mx-auto">
+          <p className="label-sm mb-8">Case Studies</p>
+          <h1 className="heading-xl text-foreground mb-6">
+            Evidence over narrative.
+          </h1>
+          <p className="text-sm md:text-base font-light text-muted-foreground mb-6 leading-[1.7]">
+            Results speak louder than words.
+            <br />
+            <em className="italic font-display">Each project, a measured outcome.</em>
+          </p>
+          <p className="body-md max-w-xl mx-auto">
+            A selection of projects illustrating our integrated model — from acquisition
+            and transformation to operation and exit, each delivered with discipline and
+            measurable results.
+          </p>
+        </div>
       </section>
 
       <section className="section-padding pb-24 md:pb-32 space-y-16 md:space-y-24">
