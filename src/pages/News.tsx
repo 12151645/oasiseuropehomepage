@@ -37,10 +37,6 @@ const News = () => {
     );
   }, [active, query]);
 
-  const featured = articles[0];
-  const showFeatured = active === "All" && !query.trim();
-  const grid = showFeatured ? filtered.filter((i) => i.slug !== featured.slug) : filtered;
-
   return (
     <main className="min-h-screen bg-background">
       <Navbar dark />
