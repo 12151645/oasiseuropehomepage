@@ -48,13 +48,13 @@ const News = () => {
       {/* Hero — centered editorial intro */}
       <section className="pt-32 md:pt-44 pb-16 md:pb-24 section-padding">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-8">
+          <p className="text-[0.65rem] uppercase tracking-[0.22em] text-foreground/50 mb-10 font-normal">
             Newsroom
           </p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05] tracking-tight">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] tracking-tight font-normal">
             News &amp; Insights<br />from Marbella.
           </h1>
-          <p className="mt-8 text-foreground/70 text-base md:text-lg leading-[1.7] max-w-xl mx-auto">
+          <p className="mt-8 text-foreground/60 text-sm md:text-base leading-[1.7] max-w-xl mx-auto">
             Market intelligence, regulatory updates and a look behind the scenes of how we
             acquire, optimise and exit luxury assets on the Costa del Sol.
           </p>
