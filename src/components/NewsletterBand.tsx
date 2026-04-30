@@ -3,7 +3,7 @@ import { SubscribeDialog, EnquiryDialog } from "@/components/cta/CTAModals";
 
 const NewsletterBand = () => {
   return (
-    <section className="bg-foreground text-primary-foreground">
+    <section className="bg-background text-foreground border-b border-foreground/10">
       <div className="section-padding py-16 md:py-24 lg:py-28">
         <div className="relative">
           {/* Subtle gold accent bar */}
