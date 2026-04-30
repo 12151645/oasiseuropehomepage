@@ -221,13 +221,37 @@ const FAQ = () => {
           <div className="flex flex-col justify-center section-padding py-16 md:py-24 lg:py-32">
             <p className="label-sm mb-8">Our Position</p>
             <p className="body-md max-w-lg mx-0">
-              At Oasis Europe, real estate is approached as an asset class — not just a service. We provide end-to-end solutions for investors and property owners across rental management, asset advisory, private capital, and development, enabling our partners to access, manage, and grow high-quality real estate investments in Southern Europe. Below you'll find answers to common questions about our approach and services.
+              Below you'll find answers to common questions about our approach and services — from how we onboard new properties and structure fees, to how we manage operations, regulatory compliance, and reporting.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Sections with sticky nav — first half */}
+      {/* CTA — placed under About Oasis Europe */}
+      <section className="section-padding py-16 md:py-20">
+        <div className="bg-foreground text-background px-6 sm:px-12 md:px-16 py-14 md:py-20 grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center">
+          <div>
+            <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Get in Touch</p>
+            <h2 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight mb-5">
+              Interested in our services?
+            </h2>
+            <p className="text-background/70 text-base md:text-lg leading-relaxed max-w-xl">
+              We manage the full purchase, transformation and sales process from start to finish. A short call is the easiest way to begin.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 md:items-end">
+            <EnquiryDialog
+              trigger={<Button variant="gold" size="lg" className="w-full md:w-auto">Schedule a Private Consulting</Button>}
+              context="FAQ page"
+            />
+            <p className="text-[0.7rem] uppercase tracking-[0.14em] text-background/50 md:text-right">
+              Reply within one business day
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Sections with sticky nav */}
       {(() => {
         const midpoint = Math.ceil(sections.length / 2);
         const firstHalf = sections.slice(0, midpoint);
@@ -288,27 +312,13 @@ const FAQ = () => {
               </div>
             </section>
 
-            {/* CTA — placed in the middle */}
-            <section className="section-padding py-16 md:py-20">
-              <div className="bg-foreground text-background px-6 sm:px-12 md:px-16 py-14 md:py-20 grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center">
-                <div>
-                  <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Get in Touch</p>
-                  <h2 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight mb-5">
-                    Interested in our services?
-                  </h2>
-                  <p className="text-background/70 text-base md:text-lg leading-relaxed max-w-xl">
-                    We manage the full purchase, transformation and sales process from start to finish. A short call is the easiest way to begin.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-3 md:items-end">
-                  <EnquiryDialog
-                    trigger={<Button variant="gold" size="lg" className="w-full md:w-auto">Schedule a Private Consulting</Button>}
-                    context="FAQ page"
-                  />
-                  <p className="text-[0.7rem] uppercase tracking-[0.14em] text-background/50 md:text-right">
-                    Reply within one business day
-                  </p>
-                </div>
+            {/* Editorial position statement — placed in the middle */}
+            <section className="section-padding py-20 md:py-28 bg-secondary">
+              <div className="max-w-3xl mx-auto text-center">
+                <p className="label-sm mb-6">Our Position</p>
+                <p className="font-display text-2xl md:text-3xl text-foreground leading-[1.4] tracking-tight">
+                  At Oasis Europe, real estate is approached as an asset class — not just a service. We provide end-to-end solutions for investors and property owners across rental management, asset advisory, private capital, and development, enabling our partners to access, manage, and grow high-quality real estate investments in Southern Europe.
+                </p>
               </div>
             </section>
 
