@@ -42,7 +42,7 @@ const NewsletterBand = () => {
                 />
               </div>
 
-              <p className="text-[0.7rem] uppercase tracking-[0.14em] text-primary-foreground/40 mt-6">
+              <p className="text-[0.7rem] uppercase tracking-[0.14em] text-foreground/40 mt-6">
                 Quarterly · No spam · Unsubscribe anytime
               </p>
             </div>
