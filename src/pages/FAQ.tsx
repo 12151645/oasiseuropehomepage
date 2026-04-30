@@ -301,7 +301,6 @@ const FAQ = () => {
       </section>
 
       <FloatingCTABar />
-      <NewsletterBand />
       <Footer />
     </main>
   );
