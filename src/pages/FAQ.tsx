@@ -227,10 +227,13 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* Sections with sticky nav */}
-      <section className="section-padding py-16 md:py-24">
-        <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
-          {/* Sticky sidebar */}
+      {/* Sections with sticky nav — first half */}
+      {(() => {
+        const midpoint = Math.ceil(sections.length / 2);
+        const firstHalf = sections.slice(0, midpoint);
+        const secondHalf = sections.slice(midpoint);
+
+        const renderSidebar = () => (
           <aside className="md:sticky md:top-28 md:self-start">
             <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-muted-foreground mb-4">Topics</p>
             <nav className="flex md:flex-col gap-2 md:gap-3 overflow-x-auto md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 pb-2 md:pb-0">
@@ -249,10 +252,11 @@ const FAQ = () => {
               ))}
             </nav>
           </aside>
+        );
 
-          {/* Accordions */}
+        const renderAccordions = (group: typeof sections) => (
           <div className="space-y-16 md:space-y-24 max-w-3xl">
-            {sections.map((section) => (
+            {group.map((section) => (
               <div key={section.id} id={section.id} className="scroll-mt-28">
                 <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">{section.eyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl text-foreground mb-8 leading-tight">
@@ -273,32 +277,50 @@ const FAQ = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        );
 
-      {/* CTA */}
-      <section className="section-padding pb-24 md:pb-32">
-        <div className="bg-foreground text-background px-6 sm:px-12 md:px-16 py-14 md:py-20 grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center">
-          <div>
-            <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Get in Touch</p>
-            <h2 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight mb-5">
-              Interested in our services?
-            </h2>
-            <p className="text-background/70 text-base md:text-lg leading-relaxed max-w-xl">
-              We manage the full purchase, transformation and sales process from start to finish. A short call is the easiest way to begin.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 md:items-end">
-            <EnquiryDialog
-              trigger={<Button variant="gold" size="lg" className="w-full md:w-auto">Schedule a Private Consulting</Button>}
-              context="FAQ page"
-            />
-            <p className="text-[0.7rem] uppercase tracking-[0.14em] text-background/50 md:text-right">
-              Reply within one business day
-            </p>
-          </div>
-        </div>
-      </section>
+        return (
+          <>
+            <section className="section-padding py-16 md:py-24">
+              <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
+                {renderSidebar()}
+                {renderAccordions(firstHalf)}
+              </div>
+            </section>
+
+            {/* CTA — placed in the middle */}
+            <section className="section-padding py-16 md:py-20">
+              <div className="bg-foreground text-background px-6 sm:px-12 md:px-16 py-14 md:py-20 grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center">
+                <div>
+                  <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Get in Touch</p>
+                  <h2 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight mb-5">
+                    Interested in our services?
+                  </h2>
+                  <p className="text-background/70 text-base md:text-lg leading-relaxed max-w-xl">
+                    We manage the full purchase, transformation and sales process from start to finish. A short call is the easiest way to begin.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3 md:items-end">
+                  <EnquiryDialog
+                    trigger={<Button variant="gold" size="lg" className="w-full md:w-auto">Schedule a Private Consulting</Button>}
+                    context="FAQ page"
+                  />
+                  <p className="text-[0.7rem] uppercase tracking-[0.14em] text-background/50 md:text-right">
+                    Reply within one business day
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className="section-padding py-16 md:py-24 pb-24 md:pb-32">
+              <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
+                {renderSidebar()}
+                {renderAccordions(secondHalf)}
+              </div>
+            </section>
+          </>
+        );
+      })()}
 
       <FloatingCTABar />
       <Footer />
