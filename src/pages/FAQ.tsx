@@ -227,24 +227,22 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* CTA — placed under About Oasis Europe */}
-      <section className="section-padding py-16 md:py-20">
-        <div className="bg-foreground text-background px-6 sm:px-12 md:px-16 py-14 md:py-20 grid md:grid-cols-[1.3fr_1fr] gap-10 md:gap-16 items-center">
-          <div>
-            <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-5">Get in Touch</p>
-            <h2 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight mb-5">
-              Interested in our services?
-            </h2>
-            <p className="text-background/70 text-base md:text-lg leading-relaxed max-w-xl">
-              We manage the full purchase, transformation and sales process from start to finish. A short call is the easiest way to begin.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 md:items-end">
+      {/* CTA — editorial, minimal, matches homepage style */}
+      <section className="py-24 md:py-32 bg-secondary">
+        <div className="section-padding text-center">
+          <p className="label-sm mb-8">Get in Touch</p>
+          <h2 className="heading-lg mb-8 max-w-2xl mx-auto">
+            Where Your Investment Begins
+          </h2>
+          <p className="body-lg max-w-xl mx-auto mb-12 text-foreground/70">
+            We manage the full purchase, transformation and sales process from start to finish. A short call is the easiest way to begin.
+          </p>
+          <div className="flex flex-col items-center gap-5">
             <EnquiryDialog
-              trigger={<Button variant="gold" size="lg" className="w-full md:w-auto">Schedule a Private Consulting</Button>}
+              trigger={<Button variant="hero" size="lg">Schedule a Private Consulting</Button>}
               context="FAQ page"
             />
-            <p className="text-[0.7rem] uppercase tracking-[0.14em] text-background/50 md:text-right">
+            <p className="text-[0.7rem] uppercase tracking-[0.18em] text-foreground/50">
               Reply within one business day
             </p>
           </div>
