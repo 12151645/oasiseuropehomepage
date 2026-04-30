@@ -18,7 +18,7 @@ const NewsletterBand = () => {
               <h2 className="font-display text-3xl md:text-5xl lg:text-[3.25rem] leading-[1.05] tracking-tight mb-6">
                 Marbella intelligence,<br />delivered quietly.
               </h2>
-              <p className="text-primary-foreground/70 text-base md:text-lg leading-[1.7] max-w-lg mb-8">
+              <p className="text-foreground/70 text-base md:text-lg leading-[1.7] max-w-lg mb-8">
                 Quarterly market reports, regulatory updates and select listings — shared with our
                 private circle before they reach the wider audience.
               </p>
