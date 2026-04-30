@@ -48,7 +48,7 @@ const NewsletterBand = () => {
             </div>
 
             {/* Right — value props */}
-            <div className="lg:border-l lg:border-primary-foreground/10 lg:pl-16">
+            <div className="lg:border-l lg:border-foreground/10 lg:pl-16">
               <ul className="space-y-7">
                 {[
                   {
