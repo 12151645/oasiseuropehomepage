@@ -109,7 +109,6 @@ const CaseStudies = () => {
       </section>
 
       <FloatingCTABar />
-      <NewsletterBand />
       <Footer />
     </main>
   );
