@@ -35,7 +35,7 @@ const NewsletterBand = () => {
                   title="Speak with the private office"
                   description="Tell us briefly what you are exploring — we will respond within one business day."
                   trigger={
-                    <button className="text-sm uppercase tracking-[0.14em] text-primary-foreground/80 hover:text-accent border-b border-primary-foreground/30 hover:border-accent pb-1 transition-colors self-center sm:self-auto min-h-[44px] inline-flex items-center">
+                    <button className="text-sm uppercase tracking-[0.14em] text-foreground/80 hover:text-accent border-b border-foreground/30 hover:border-accent pb-1 transition-colors self-center sm:self-auto min-h-[44px] inline-flex items-center">
                       Or speak with us privately →
                     </button>
                   }
