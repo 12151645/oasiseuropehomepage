@@ -288,16 +288,6 @@ const FAQ = () => {
               </div>
             </section>
 
-            {/* Editorial position statement — placed in the middle */}
-            <section className="section-padding py-20 md:py-28 bg-secondary">
-              <div className="max-w-3xl mx-auto text-center">
-                <p className="label-sm mb-6">Our Position</p>
-                <p className="font-display text-2xl md:text-3xl text-foreground leading-[1.4] tracking-tight">
-                  At Oasis Europe, real estate is approached as an asset class — not just a service. We provide end-to-end solutions for investors and property owners across rental management, asset advisory, private capital, and development, enabling our partners to access, manage, and grow high-quality real estate investments in Southern Europe.
-                </p>
-              </div>
-            </section>
-
             <section className="section-padding py-16 md:py-24 pb-24 md:pb-32">
               <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
                 {renderSidebar()}
