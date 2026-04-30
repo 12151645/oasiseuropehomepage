@@ -26,7 +26,7 @@ const NewsletterBand = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
                 <SubscribeDialog
                   trigger={
-                    <button className="inline-flex items-center justify-center gap-2 bg-accent text-foreground px-6 md:px-7 min-h-[52px] py-4 text-[0.72rem] uppercase tracking-[0.18em] font-medium hover:bg-primary-foreground transition-colors duration-300 w-full sm:w-auto">
+                    <button className="inline-flex items-center justify-center gap-2 bg-accent text-foreground px-6 md:px-7 min-h-[52px] py-4 text-[0.72rem] uppercase tracking-[0.18em] font-medium hover:bg-foreground hover:text-background transition-colors duration-300 w-full sm:w-auto">
                       <Mail size={14} className="mr-1" /> Subscribe to The Letter
                     </button>
                   }
