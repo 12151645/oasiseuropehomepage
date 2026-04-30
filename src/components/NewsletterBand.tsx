@@ -69,10 +69,10 @@ const NewsletterBand = () => {
                       ◆
                     </span>
                     <div>
-                      <h3 className="font-display text-lg md:text-xl text-primary-foreground mb-1.5">
+                      <h3 className="font-display text-lg md:text-xl text-foreground mb-1.5">
                         {item.title}
                       </h3>
-                      <p className="text-primary-foreground/60 text-sm leading-[1.65]">{item.body}</p>
+                      <p className="text-foreground/60 text-sm leading-[1.65]">{item.body}</p>
                     </div>
                   </li>
                 ))}
