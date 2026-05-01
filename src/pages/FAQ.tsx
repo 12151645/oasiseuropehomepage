@@ -10,6 +10,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 import { EnquiryDialog } from "@/components/cta/CTAModals";
 import architecturalImage from "@/assets/architectural-detail.jpg";
 
@@ -180,6 +182,7 @@ const sections = [
 
 const FAQ = () => {
   const [activeId, setActiveId] = useState(sections[0].id);
+  const [query, setQuery] = useState("");
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -189,6 +192,29 @@ const FAQ = () => {
       setActiveId(id);
     }
   };
+
+  const leftIds = ["onboarding", "fees", "legal"];
+  const rightIds = ["operations", "revenue", "about"];
+  const leftSections = sections.filter((s) => leftIds.includes(s.id));
+  const rightSections = sections.filter((s) => rightIds.includes(s.id));
+
+  const q = query.trim().toLowerCase();
+  const filterSections = (group: typeof sections) =>
+    group
+      .map((s) => ({
+        ...s,
+        items: q
+          ? s.items.filter(
+              (i) =>
+                i.q.toLowerCase().includes(q) || i.a.toLowerCase().includes(q),
+            )
+          : s.items,
+      }))
+      .filter((s) => s.items.length > 0);
+
+  const leftFiltered = filterSections(leftSections);
+  const rightFiltered = filterSections(rightSections);
+  const noResults = q && leftFiltered.length === 0 && rightFiltered.length === 0;
 
   return (
     <main className="min-h-screen bg-background">
@@ -227,76 +253,60 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* Sections with sticky nav */}
-      {(() => {
-        const midpoint = Math.ceil(sections.length / 2);
-        const firstHalf = sections.slice(0, midpoint);
-        const secondHalf = sections.slice(midpoint);
+      {/* Search + two-column topics */}
+      <section className="section-padding py-16 md:py-24 pb-24 md:pb-32">
+        <div className="max-w-6xl mx-auto">
+          {/* Search bar */}
+          <div className="mb-12 md:mb-16 max-w-2xl mx-auto">
+            <p className="label-sm mb-4 text-center">Search</p>
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+              <Input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search questions, topics, or keywords..."
+                className="h-14 pl-12 pr-4 text-base bg-background border-border/60 focus-visible:ring-accent rounded-none"
+              />
+            </div>
+            {q && (
+              <p className="text-xs text-muted-foreground mt-3 text-center">
+                {noResults
+                  ? "No matches found — try a different keyword."
+                  : `Showing results for "${query}"`}
+              </p>
+            )}
+          </div>
 
-        const renderSidebar = () => (
-          <aside className="md:sticky md:top-28 md:self-start">
-            <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-muted-foreground mb-4">Topics</p>
-            <nav className="flex md:flex-col gap-2 md:gap-3 overflow-x-auto md:overflow-visible -mx-4 px-4 md:mx-0 md:px-0 pb-2 md:pb-0">
-              {sections.map((s) => (
-                <button
-                  key={s.id}
-                  onClick={() => scrollTo(s.id)}
-                  className={`text-left text-sm whitespace-nowrap md:whitespace-normal transition-colors border-l-2 pl-3 py-1 ${
-                    activeId === s.id
-                      ? "border-accent text-foreground"
-                      : "border-transparent text-foreground/50 hover:text-foreground"
-                  }`}
-                >
-                  {s.label}
-                </button>
-              ))}
-            </nav>
-          </aside>
-        );
-
-        const renderAccordions = (group: typeof sections) => (
-          <div className="space-y-16 md:space-y-24 max-w-3xl">
-            {group.map((section) => (
-              <div key={section.id} id={section.id} className="scroll-mt-28">
-                <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">{section.eyebrow}</p>
-                <h2 className="font-display text-3xl md:text-4xl text-foreground mb-8 leading-tight">
-                  {section.label}
-                </h2>
-                <Accordion type="single" collapsible className="w-full border-t border-border">
-                  {section.items.map((item, i) => (
-                    <AccordionItem key={i} value={`${section.id}-${i}`} className="border-b border-border">
-                      <AccordionTrigger className="text-left font-display text-base md:text-lg text-foreground hover:text-accent hover:no-underline py-5">
-                        {item.q}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-foreground/70 leading-relaxed text-[0.95rem] pb-5 pr-4">
-                        {item.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
+          {/* Two-column topic layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            {[leftFiltered, rightFiltered].map((group, gIdx) => (
+              <div key={gIdx} className="space-y-14 md:space-y-20">
+                {group.map((section) => (
+                  <div key={section.id} id={section.id} className="scroll-mt-28">
+                    <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">{section.eyebrow}</p>
+                    <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 leading-tight">
+                      {section.label}
+                    </h2>
+                    <Accordion type="single" collapsible className="w-full border-t border-border">
+                      {section.items.map((item, i) => (
+                        <AccordionItem key={i} value={`${section.id}-${i}`} className="border-b border-border">
+                          <AccordionTrigger className="text-left font-display text-base text-foreground hover:text-accent hover:no-underline py-5">
+                            {item.q}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-foreground/70 leading-relaxed text-[0.95rem] pb-5 pr-4">
+                            {item.a}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
-        );
-
-        return (
-          <>
-            <section className="section-padding py-16 md:py-24">
-              <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
-                {renderSidebar()}
-                {renderAccordions(firstHalf)}
-              </div>
-            </section>
-
-            <section className="section-padding py-16 md:py-24 pb-24 md:pb-32">
-              <div className="grid md:grid-cols-[220px_1fr] gap-10 md:gap-16">
-                {renderSidebar()}
-                {renderAccordions(secondHalf)}
-              </div>
-            </section>
-          </>
-        );
-      })()}
+        </div>
+      </section>
 
       {/* CTA — editorial, minimal, matches homepage style */}
       <section className="py-24 md:py-32 bg-secondary">
