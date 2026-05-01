@@ -310,7 +310,7 @@ const FAQ = () => {
           </p>
           <div className="flex flex-col items-center gap-5">
             <EnquiryDialog
-              trigger={<Button variant="hero" size="lg">Request a Private Consultation</Button>}
+              trigger={<Button variant="hero" size="lg">Submit Enquiry</Button>}
               context="FAQ page"
             />
             <p className="text-[0.7rem] uppercase tracking-[0.18em] text-foreground/50">
