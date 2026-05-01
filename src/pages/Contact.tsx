@@ -344,7 +344,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <NewsletterBand />
+      
       <Footer />
     </main>
   );
