@@ -301,20 +301,20 @@ const FAQ = () => {
       {/* CTA — editorial, minimal, matches homepage style */}
       <section className="py-24 md:py-32 bg-secondary">
         <div className="section-padding text-center">
-          <p className="label-sm mb-8">Get in Touch</p>
+          <p className="label-sm mb-8">Private Consultation</p>
           <h2 className="heading-lg mb-8 max-w-2xl mx-auto">
-            Where Your Investment Begins
+            Begin with a Private Conversation
           </h2>
           <p className="body-lg max-w-xl mx-auto mb-12 text-foreground/70">
-            We manage the full purchase, transformation and sales process from start to finish. A short call is the easiest way to begin.
+            Every investment begins with clarity. Speak directly with our advisory team to discuss your objectives, timeline, and the opportunities best suited to your portfolio.
           </p>
           <div className="flex flex-col items-center gap-5">
             <EnquiryDialog
-              trigger={<Button variant="hero" size="lg">Schedule a Private Consulting</Button>}
+              trigger={<Button variant="hero" size="lg">Request a Private Consultation</Button>}
               context="FAQ page"
             />
             <p className="text-[0.7rem] uppercase tracking-[0.18em] text-foreground/50">
-              Reply within one business day
+              Discreet · Personal · Reply within one business day
             </p>
           </div>
         </div>
