@@ -301,9 +301,9 @@ const FAQ = () => {
       {/* CTA — editorial, minimal, matches homepage style */}
       <section className="py-24 md:py-32 bg-secondary">
         <div className="section-padding text-center">
-          <p className="label-sm mb-8">Private Consultation</p>
+          <p className="label-sm mb-8">Enquiries</p>
           <h2 className="heading-lg mb-8 max-w-2xl mx-auto">
-            Begin with a Private Conversation
+            Direct contact with our team
           </h2>
           <p className="body-lg max-w-xl mx-auto mb-12 text-foreground/70">
             Every investment begins with clarity. Speak directly with our advisory team to discuss your objectives, timeline, and the opportunities best suited to your portfolio.
