@@ -109,8 +109,9 @@ const Contact = () => {
     }, 700);
   };
 
-  const mapQuery = encodeURIComponent(office.address);
-  const mapSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+  // Tight zoom on the office coordinates to minimise surrounding POIs (shops, restaurants, etc.)
+  const officeCoords = { lat: 36.5108, lng: -4.8925 };
+  const mapSrc = `https://www.google.com/maps?q=${officeCoords.lat},${officeCoords.lng}&z=18&t=m&output=embed`;
 
   return (
     <main className="overflow-x-hidden bg-background">
@@ -120,7 +121,7 @@ const Contact = () => {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-secondary">
         <div className="section-padding max-w-3xl mx-auto text-center">
           <p className="label-sm mb-8">Submit an enquiry</p>
-          <h1 className="heading-xl text-foreground mb-6">
+          <h1 className="font-display font-light text-2xl md:text-3xl lg:text-[2rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-6">
             A structured approach to real estate in Marbella.
           </h1>
           <p className="body-md max-w-xl mx-auto">
