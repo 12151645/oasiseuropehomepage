@@ -109,8 +109,9 @@ const Contact = () => {
     }, 700);
   };
 
-  const mapQuery = encodeURIComponent(office.address);
-  const mapSrc = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+  // Tight zoom on the office coordinates to minimise surrounding POIs (shops, restaurants, etc.)
+  const officeCoords = { lat: 36.5108, lng: -4.8925 };
+  const mapSrc = `https://www.google.com/maps?q=${officeCoords.lat},${officeCoords.lng}&z=18&t=m&output=embed`;
 
   return (
     <main className="overflow-x-hidden bg-background">
