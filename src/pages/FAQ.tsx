@@ -10,6 +10,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 import { EnquiryDialog } from "@/components/cta/CTAModals";
 import architecturalImage from "@/assets/architectural-detail.jpg";
 
