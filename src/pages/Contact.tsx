@@ -119,14 +119,16 @@ const Contact = () => {
       {/* Hero — centered editorial intro */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-secondary">
         <div className="section-padding max-w-3xl mx-auto text-center">
-          <p className="label-sm mb-8">Private Office</p>
-          <h1 className="heading-xl text-foreground mb-6">A quiet introduction.</h1>
+          <p className="label-sm mb-8">Submit an enquiry</p>
+          <h1 className="heading-xl text-foreground mb-6">
+            A structured approach to real estate in Marbella.
+          </h1>
           <p className="body-md max-w-xl mx-auto">
-            Every conversation begins in confidence. Our private office responds personally —
-            never through an intermediary.
+            Oasis Europe supports investors and property owners across rental management,
+            asset advisory, private capital, and development. Submit your enquiry below.
           </p>
           <p className="text-[0.7rem] uppercase tracking-[0.16em] text-accent mt-8">
-            Reply within one business day · Handled in confidence
+            We respond within the same business day
           </p>
         </div>
       </section>
