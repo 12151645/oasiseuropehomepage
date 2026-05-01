@@ -120,7 +120,7 @@ const Contact = () => {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-secondary">
         <div className="section-padding max-w-3xl mx-auto text-center">
           <p className="label-sm mb-8">Submit an enquiry</p>
-          <h1 className="heading-xl text-foreground mb-6">
+          <h1 className="font-display font-light text-2xl md:text-3xl lg:text-[2rem] leading-[1.2] tracking-[-0.01em] text-foreground mb-6">
             A structured approach to real estate in Marbella.
           </h1>
           <p className="body-md max-w-xl mx-auto">
