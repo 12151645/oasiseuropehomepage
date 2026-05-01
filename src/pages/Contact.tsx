@@ -136,7 +136,7 @@ const Contact = () => {
       {/* Form + Map */}
       <section className="py-20 md:py-28">
         <div className="section-padding max-w-7xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-12 md:mb-16 tracking-tight">
+          <h2 className="heading-xl text-foreground mb-12 md:mb-16">
             Contact us
           </h2>
 
