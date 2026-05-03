@@ -274,26 +274,13 @@ const FAQ = () => {
           {/* Two-column topic layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {[leftFiltered, rightFiltered].map((group, gIdx) => (
-              <div key={gIdx} className="space-y-14 md:space-y-20">
-                {group.map((section) => (
-                  <div key={section.id} id={section.id} className="scroll-mt-28">
-                    <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">{section.eyebrow}</p>
-                    <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 leading-tight">
-                      {section.label}
-                    </h2>
-                    <Accordion type="single" collapsible className="w-full border-t border-border">
-                      {section.items.map((item, i) => (
-                        <AccordionItem key={i} value={`${section.id}-${i}`} className="border-b border-border">
-                          <AccordionTrigger className="text-left font-display text-base text-foreground hover:text-accent hover:no-underline py-5">
-                            {item.q}
-                          </AccordionTrigger>
-                          <AccordionContent className="text-foreground/70 leading-relaxed text-[0.95rem] pb-5 pr-4">
-                            {item.a}
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </div>
+              <div key={gIdx} className="space-y-16 md:space-y-24">
+                {group.map((section, sIdx) => (
+                  <TopicBlock
+                    key={section.id}
+                    section={section}
+                    align={(gIdx + sIdx) % 2 === 0 ? "left" : "right"}
+                  />
                 ))}
               </div>
             ))}
