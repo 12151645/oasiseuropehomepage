@@ -175,63 +175,62 @@ const sections = [
 
 type Section = (typeof sections)[number];
 
-const TopicBlock = ({ section, align }: { section: Section; align: "left" | "right" }) => {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const item = section.items[activeIdx] ?? section.items[0];
-
-  const header = (
-    <div className={align === "right" ? "lg:text-right" : ""}>
-      <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">
-        {section.eyebrow}
-      </p>
-      <h2 className="font-display text-2xl md:text-3xl text-foreground leading-tight">
-        {section.label}
-      </h2>
-    </div>
-  );
-
-  const questions = (
-    <ul className={`space-y-5 ${align === "right" ? "lg:text-right" : ""}`}>
-      {section.items.map((it, i) => (
-        <li key={i}>
-          <button
-            type="button"
-            onClick={() => setActiveIdx(i)}
-            className={`text-[0.6875rem] uppercase tracking-[0.16em] transition-colors text-left lg:inline-block ${
-              i === activeIdx
-                ? "text-foreground"
-                : "text-muted-foreground/70 hover:text-foreground"
-            } ${align === "right" ? "lg:text-right" : ""}`}
-          >
-            {it.q}
-          </button>
-        </li>
-      ))}
-    </ul>
-  );
-
-  const answer = (
-    <p className="text-foreground/70 leading-[1.8] text-[0.95rem] max-w-md">
-      {item?.a}
-    </p>
-  );
-
+const TopicBlock = ({
+  section,
+  openKey,
+  setOpenKey,
+}: {
+  section: Section;
+  openKey: string | null;
+  setOpenKey: (k: string | null) => void;
+}) => {
   return (
     <div id={section.id} className="scroll-mt-28">
-      <div className="mb-8">{header}</div>
-      {align === "right" ? (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-          <div className="lg:order-1 lg:border-r lg:border-border lg:pr-10 flex lg:justify-end">
-            {answer}
-          </div>
-          <div className="lg:order-2">{questions}</div>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-          <div>{questions}</div>
-          <div className="lg:border-l lg:border-border lg:pl-10">{answer}</div>
-        </div>
-      )}
+      <div className="mb-6 pb-4 border-b border-border">
+        <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-2">
+          {section.eyebrow}
+        </p>
+        <h2 className="font-display text-2xl md:text-[1.75rem] text-foreground leading-tight">
+          {section.label}
+        </h2>
+      </div>
+      <ul className="divide-y divide-border/60">
+        {section.items.map((it, i) => {
+          const key = `${section.id}-${i}`;
+          const open = openKey === key;
+          return (
+            <li key={key}>
+              <button
+                type="button"
+                onClick={() => setOpenKey(open ? null : key)}
+                className="w-full flex items-start justify-between gap-4 py-4 text-left group"
+                aria-expanded={open}
+              >
+                <span
+                  className={`text-[0.95rem] leading-snug transition-colors ${
+                    open ? "text-foreground" : "text-foreground/80 group-hover:text-foreground"
+                  }`}
+                >
+                  {it.q}
+                </span>
+                <span
+                  className={`mt-1 shrink-0 text-accent text-lg leading-none transition-transform ${
+                    open ? "rotate-45" : ""
+                  }`}
+                  aria-hidden
+                >
+                  +
+                </span>
+              </button>
+              {open && (
+                <div className="pb-5 pr-8">
+                  <p className="text-foreground/70 leading-[1.8] text-[0.9rem]">{it.a}</p>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
@@ -239,6 +238,7 @@ const TopicBlock = ({ section, align }: { section: Section; align: "left" | "rig
 const FAQ = () => {
   const [activeId, setActiveId] = useState(sections[0].id);
   const [query, setQuery] = useState("");
+  const [openKey, setOpenKey] = useState<string | null>(null);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -335,14 +335,15 @@ const FAQ = () => {
           </div>
 
           {/* Two-column topic layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-20">
             {[leftFiltered, rightFiltered].map((group, gIdx) => (
-              <div key={gIdx} className="space-y-16 md:space-y-24">
-                {group.map((section, sIdx) => (
+              <div key={gIdx} className="space-y-16">
+                {group.map((section) => (
                   <TopicBlock
                     key={section.id}
                     section={section}
-                    align={(gIdx + sIdx) % 2 === 0 ? "left" : "right"}
+                    openKey={openKey}
+                    setOpenKey={setOpenKey}
                   />
                 ))}
               </div>
