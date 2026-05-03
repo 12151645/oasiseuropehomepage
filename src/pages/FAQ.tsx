@@ -334,14 +334,15 @@ const FAQ = () => {
           </div>
 
           {/* Two-column topic layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-20">
             {[leftFiltered, rightFiltered].map((group, gIdx) => (
-              <div key={gIdx} className="space-y-16 md:space-y-24">
-                {group.map((section, sIdx) => (
+              <div key={gIdx} className="space-y-16">
+                {group.map((section) => (
                   <TopicBlock
                     key={section.id}
                     section={section}
-                    align={(gIdx + sIdx) % 2 === 0 ? "left" : "right"}
+                    openKey={openKey}
+                    setOpenKey={setOpenKey}
                   />
                 ))}
               </div>
