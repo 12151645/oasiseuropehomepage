@@ -173,6 +173,69 @@ const sections = [
   },
 ];
 
+type Section = (typeof sections)[number];
+
+const TopicBlock = ({ section, align }: { section: Section; align: "left" | "right" }) => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const item = section.items[activeIdx] ?? section.items[0];
+
+  const header = (
+    <div className={align === "right" ? "lg:text-right" : ""}>
+      <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">
+        {section.eyebrow}
+      </p>
+      <h2 className="font-display text-2xl md:text-3xl text-foreground leading-tight">
+        {section.label}
+      </h2>
+    </div>
+  );
+
+  const questions = (
+    <ul className={`space-y-5 ${align === "right" ? "lg:text-right" : ""}`}>
+      {section.items.map((it, i) => (
+        <li key={i}>
+          <button
+            type="button"
+            onClick={() => setActiveIdx(i)}
+            className={`text-[0.6875rem] uppercase tracking-[0.16em] transition-colors text-left lg:inline-block ${
+              i === activeIdx
+                ? "text-foreground"
+                : "text-muted-foreground/70 hover:text-foreground"
+            } ${align === "right" ? "lg:text-right" : ""}`}
+          >
+            {it.q}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+
+  const answer = (
+    <p className="text-foreground/70 leading-[1.8] text-[0.95rem] max-w-md">
+      {item?.a}
+    </p>
+  );
+
+  return (
+    <div id={section.id} className="scroll-mt-28">
+      <div className="mb-8">{header}</div>
+      {align === "right" ? (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <div className="lg:order-1 lg:border-r lg:border-border lg:pr-10 flex lg:justify-end">
+            {answer}
+          </div>
+          <div className="lg:order-2">{questions}</div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <div>{questions}</div>
+          <div className="lg:border-l lg:border-border lg:pl-10">{answer}</div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const FAQ = () => {
   const [activeId, setActiveId] = useState(sections[0].id);
   const [query, setQuery] = useState("");
