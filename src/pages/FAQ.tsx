@@ -2,12 +2,6 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
@@ -179,6 +173,69 @@ const sections = [
   },
 ];
 
+type Section = (typeof sections)[number];
+
+const TopicBlock = ({ section, align }: { section: Section; align: "left" | "right" }) => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const item = section.items[activeIdx] ?? section.items[0];
+
+  const header = (
+    <div className={align === "right" ? "lg:text-right" : ""}>
+      <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">
+        {section.eyebrow}
+      </p>
+      <h2 className="font-display text-2xl md:text-3xl text-foreground leading-tight">
+        {section.label}
+      </h2>
+    </div>
+  );
+
+  const questions = (
+    <ul className={`space-y-5 ${align === "right" ? "lg:text-right" : ""}`}>
+      {section.items.map((it, i) => (
+        <li key={i}>
+          <button
+            type="button"
+            onClick={() => setActiveIdx(i)}
+            className={`text-[0.6875rem] uppercase tracking-[0.16em] transition-colors text-left lg:inline-block ${
+              i === activeIdx
+                ? "text-foreground"
+                : "text-muted-foreground/70 hover:text-foreground"
+            } ${align === "right" ? "lg:text-right" : ""}`}
+          >
+            {it.q}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+
+  const answer = (
+    <p className="text-foreground/70 leading-[1.8] text-[0.95rem] max-w-md">
+      {item?.a}
+    </p>
+  );
+
+  return (
+    <div id={section.id} className="scroll-mt-28">
+      <div className="mb-8">{header}</div>
+      {align === "right" ? (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <div className="lg:order-1 lg:border-r lg:border-border lg:pr-10 flex lg:justify-end">
+            {answer}
+          </div>
+          <div className="lg:order-2">{questions}</div>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <div>{questions}</div>
+          <div className="lg:border-l lg:border-border lg:pl-10">{answer}</div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const FAQ = () => {
   const [activeId, setActiveId] = useState(sections[0].id);
   const [query, setQuery] = useState("");
@@ -280,26 +337,13 @@ const FAQ = () => {
           {/* Two-column topic layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {[leftFiltered, rightFiltered].map((group, gIdx) => (
-              <div key={gIdx} className="space-y-14 md:space-y-20">
-                {group.map((section) => (
-                  <div key={section.id} id={section.id} className="scroll-mt-28">
-                    <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-3">{section.eyebrow}</p>
-                    <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6 leading-tight">
-                      {section.label}
-                    </h2>
-                    <Accordion type="single" collapsible className="w-full border-t border-border">
-                      {section.items.map((item, i) => (
-                        <AccordionItem key={i} value={`${section.id}-${i}`} className="border-b border-border">
-                          <AccordionTrigger className="text-left font-display text-base text-foreground hover:text-accent hover:no-underline py-5">
-                            {item.q}
-                          </AccordionTrigger>
-                          <AccordionContent className="text-foreground/70 leading-relaxed text-[0.95rem] pb-5 pr-4">
-                            {item.a}
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </div>
+              <div key={gIdx} className="space-y-16 md:space-y-24">
+                {group.map((section, sIdx) => (
+                  <TopicBlock
+                    key={section.id}
+                    section={section}
+                    align={(gIdx + sIdx) % 2 === 0 ? "left" : "right"}
+                  />
                 ))}
               </div>
             ))}
