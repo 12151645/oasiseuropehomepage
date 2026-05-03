@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NewsletterBand from "@/components/NewsletterBand";
 import { Button } from "@/components/ui/button";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
 import heroImg from "@/assets/cta-villa.jpg";
@@ -53,7 +52,6 @@ const OasisEurope = () => {
         </Link>
       </section>
 
-      <NewsletterBand />
       <Footer />
       <FloatingCTABar />
     </main>

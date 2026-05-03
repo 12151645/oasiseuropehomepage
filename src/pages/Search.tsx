@@ -2,7 +2,6 @@ import { useMemo, useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NewsletterBand from "@/components/NewsletterBand";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -269,7 +268,6 @@ const Search = () => {
         </div>
       </section>
 
-      <NewsletterBand />
       <Footer />
       <FloatingCTABar />
     </main>

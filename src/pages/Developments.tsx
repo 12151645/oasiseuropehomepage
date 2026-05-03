@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NewsletterBand from "@/components/NewsletterBand";
 import DevelopmentsHero from "@/components/developments/DevelopmentsHero";
 import DevelopmentsPositioning from "@/components/developments/DevelopmentsPositioning";
 
@@ -20,7 +19,6 @@ const Developments = () => {
       <DevelopmentsObjectives />
       <DevelopmentsShowcase />
       <DevelopmentsCTA />
-      <NewsletterBand />
       <Footer />
     </main>
   );
