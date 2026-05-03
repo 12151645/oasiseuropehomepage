@@ -7,7 +7,6 @@ import WhyUsSection from "@/components/WhyUsSection";
 import NewsSection from "@/components/NewsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import NewsletterBand from "@/components/NewsletterBand";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
 
 const Index = () => {
@@ -21,7 +20,6 @@ const Index = () => {
       <WhyUsSection />
       <NewsSection />
       <CTASection />
-      <NewsletterBand />
       <Footer />
       <FloatingCTABar />
     </main>

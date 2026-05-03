@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NewsletterBand from "@/components/NewsletterBand";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
 import {
   Accordion,

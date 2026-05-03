@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NewsletterBand from "@/components/NewsletterBand";
 import { properties } from "@/data/properties";
 import { PropertyCard } from "@/components/property/PropertyCard";
 import { Button } from "@/components/ui/button";
@@ -62,7 +61,6 @@ const OasisEuropeListings = ({ mode }: Props) => {
         </div>
       </section>
 
-      <NewsletterBand />
       <Footer />
       <FloatingCTABar />
     </main>
