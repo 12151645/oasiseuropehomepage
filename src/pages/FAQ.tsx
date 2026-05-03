@@ -238,6 +238,7 @@ const TopicBlock = ({
 const FAQ = () => {
   const [activeId, setActiveId] = useState(sections[0].id);
   const [query, setQuery] = useState("");
+  const [openKey, setOpenKey] = useState<string | null>(null);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
