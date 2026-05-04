@@ -326,39 +326,11 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* Sticky category tabs */}
-      <div className="sticky top-0 z-30 bg-background/95 backdrop-blur-md border-b border-border/60">
-        <div className="max-w-5xl mx-auto section-padding">
-          <nav
-            aria-label="FAQ categories"
-            className="flex gap-2 md:gap-1 overflow-x-auto no-scrollbar py-4"
-          >
-            {sections.map((s) => {
-              const active = activeId === s.id;
-              return (
-                <button
-                  key={s.id}
-                  type="button"
-                  onClick={() => scrollTo(s.id)}
-                  className={`shrink-0 px-4 py-2 text-[0.8rem] uppercase tracking-[0.14em] transition-all border-b-2 whitespace-nowrap ${
-                    active
-                      ? "text-accent border-accent"
-                      : "text-foreground/60 border-transparent hover:text-foreground"
-                  }`}
-                >
-                  {s.label}
-                </button>
-              );
-            })}
-          </nav>
-        </div>
-      </div>
-
-      {/* Search + single-column accordions */}
+      {/* Search + sidebar nav + accordions */}
       <section className="section-padding py-16 md:py-20 pb-24 md:pb-32">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Search */}
-          <div className="mb-12 md:mb-16">
+          <div className="mb-12 md:mb-16 max-w-3xl mx-auto">
             <p className="label-sm mb-4 text-center">Search</p>
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
@@ -379,17 +351,46 @@ const FAQ = () => {
             )}
           </div>
 
-          {/* Sections */}
-          <div>
-            {filteredSections.map((section) => (
-              <TopicBlock
-                key={section.id}
-                section={section}
-                openKey={openKey}
-                setOpenKey={setOpenKey}
-                sectionRef={(el) => (sectionRefs.current[section.id] = el)}
-              />
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-10 lg:gap-16">
+            {/* Vertical sticky nav */}
+            <aside className="lg:sticky lg:top-32 lg:self-start">
+              <p className="label-sm mb-6 hidden lg:block">Topics</p>
+              <nav
+                aria-label="FAQ categories"
+                className="flex lg:flex-col gap-1 overflow-x-auto lg:overflow-visible no-scrollbar border-l border-border/60"
+              >
+                {sections.map((s) => {
+                  const active = activeId === s.id;
+                  return (
+                    <button
+                      key={s.id}
+                      type="button"
+                      onClick={() => scrollTo(s.id)}
+                      className={`shrink-0 lg:shrink text-left pl-4 pr-3 py-2 text-[0.8rem] uppercase tracking-[0.14em] border-l-2 -ml-px transition-all whitespace-nowrap ${
+                        active
+                          ? "text-accent border-accent"
+                          : "text-foreground/60 border-transparent hover:text-foreground"
+                      }`}
+                    >
+                      {s.label}
+                    </button>
+                  );
+                })}
+              </nav>
+            </aside>
+
+            {/* Sections */}
+            <div>
+              {filteredSections.map((section) => (
+                <TopicBlock
+                  key={section.id}
+                  section={section}
+                  openKey={openKey}
+                  setOpenKey={setOpenKey}
+                  sectionRef={(el) => (sectionRefs.current[section.id] = el)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
