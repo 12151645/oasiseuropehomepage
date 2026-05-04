@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FloatingCTABar } from "@/components/cta/FloatingCTABar";
@@ -37,60 +37,6 @@ const sections = [
     ],
   },
   {
-    id: "fees",
-    eyebrow: "Financials",
-    label: "Fees and Contracts",
-    items: [
-      {
-        q: "How much does rental management cost in Marbella?",
-        a: "Oasis Europe charges a percentage of gross rental income — the exact rate depends on your property's location, size, and rental potential. Our fee covers full-service management with no hidden setup charges. Housekeeping, laundry, and maintenance are billed separately at actual cost. Contact us for a specific proposal for your property.",
-      },
-      {
-        q: "Is there a fixed monthly fee regardless of whether the property is rented?",
-        a: "No. Our management fee is commission-based — you only pay when income is generated. There is no monthly retainer. Pool, garden, and security costs are ongoing regardless of occupancy and are billed monthly as actual costs, but these are operational expenses for any property owner, not a management charge.",
-      },
-      {
-        q: "What is the minimum contract period?",
-        a: "We work on an annual basis with a standard notice period. We don't believe in locking owners into long multi-year contracts — we prefer to earn your continued business through results. The specifics are discussed during our initial proposal conversation.",
-      },
-      {
-        q: "Are there fees if my property is not rented?",
-        a: "No management commission is charged on periods when there are no bookings. We do charge for any active work carried out during vacant periods — maintenance visits, property inspections, preparatory works — but only at actual cost.",
-      },
-      {
-        q: "What happens to existing bookings if I switch to Oasis Europe from another manager?",
-        a: "Existing confirmed bookings are fully honoured. We coordinate the transition carefully so that no guest is affected and no booking is cancelled. The handover process typically takes 2–4 weeks and is managed in close coordination with the outgoing manager.",
-      },
-    ],
-  },
-  {
-    id: "legal",
-    eyebrow: "Regulations",
-    label: "Legal and Compliance",
-    items: [
-      {
-        q: "Do I need a tourist licence (VFT) to rent my Marbella property?",
-        a: "Yes. All short-term holiday rentals in Andalusia require a VFT (Vivienda de Uso Turístico) licence from the Junta de Andalucía. Advertising on Airbnb, Booking.com, or any other platform without a valid licence is illegal and carries fines of up to €150,000. Oasis Europe verifies licence status for every property we manage and assists with the application where needed.",
-      },
-      {
-        q: "What is the VFT licence number format for Marbella?",
-        a: "Marbella VFT numbers follow the format AT/MA/XXXXXX — where AT indicates tourist accommodation, MA indicates the province of Málaga, and XXXXXX is the unique registration number. This number must appear in all advertising and booking documentation.",
-      },
-      {
-        q: "Can my community ban short-term rentals?",
-        a: "Yes. Communities of owners (comunidades de propietarios) can vote to prohibit tourist rentals by a 3/5 majority, and a valid community ban takes precedence over a VFT licence. Before any property goes to market, Oasis Europe checks the community statutes to confirm rentals are permitted. We strongly recommend this check before purchasing a property specifically for rental purposes.",
-      },
-      {
-        q: "What insurance do I need for a rental property in Marbella?",
-        a: "At minimum, your property insurance should include third-party liability coverage for guests (responsabilidad civil) and cover the property for rental use. Standard homeowner policies often exclude rental activity — review your policy with your insurer before your first guest arrival. Oasis Europe can recommend brokers familiar with the short-term rental market in Marbella.",
-      },
-      {
-        q: "Do I need to declare rental income in Spain?",
-        a: "Yes. Rental income from a Spanish property is subject to Spanish tax — either IRNR (non-resident income tax) for non-residents or IRPF for Spanish residents. The rules differ for EU/EEA residents and non-EU owners. Oasis Europe provides monthly income statements that give your accountant exactly what they need. We work with trusted local tax advisors who specialise in non-resident rental income if you need a referral.",
-      },
-    ],
-  },
-  {
     id: "operations",
     eyebrow: "Management",
     label: "Operations",
@@ -122,6 +68,33 @@ const sections = [
     ],
   },
   {
+    id: "fees",
+    eyebrow: "Financials",
+    label: "Fees and Contracts",
+    items: [
+      {
+        q: "How much does rental management cost in Marbella?",
+        a: "Oasis Europe charges a percentage of gross rental income — the exact rate depends on your property's location, size, and rental potential. Our fee covers full-service management with no hidden setup charges. Housekeeping, laundry, and maintenance are billed separately at actual cost. Contact us for a specific proposal for your property.",
+      },
+      {
+        q: "Is there a fixed monthly fee regardless of whether the property is rented?",
+        a: "No. Our management fee is commission-based — you only pay when income is generated. There is no monthly retainer. Pool, garden, and security costs are ongoing regardless of occupancy and are billed monthly as actual costs, but these are operational expenses for any property owner, not a management charge.",
+      },
+      {
+        q: "What is the minimum contract period?",
+        a: "We work on an annual basis with a standard notice period. We don't believe in locking owners into long multi-year contracts — we prefer to earn your continued business through results. The specifics are discussed during our initial proposal conversation.",
+      },
+      {
+        q: "Are there fees if my property is not rented?",
+        a: "No management commission is charged on periods when there are no bookings. We do charge for any active work carried out during vacant periods — maintenance visits, property inspections, preparatory works — but only at actual cost.",
+      },
+      {
+        q: "What happens to existing bookings if I switch to Oasis Europe from another manager?",
+        a: "Existing confirmed bookings are fully honoured. We coordinate the transition carefully so that no guest is affected and no booking is cancelled. The handover process typically takes 2–4 weeks and is managed in close coordination with the outgoing manager.",
+      },
+    ],
+  },
+  {
     id: "revenue",
     eyebrow: "Data Management",
     label: "Revenue and Reporting",
@@ -149,9 +122,36 @@ const sections = [
     ],
   },
   {
+    id: "legal",
+    eyebrow: "Regulations",
+    label: "Legal and Compliance",
+    items: [
+      {
+        q: "Do I need a tourist licence (VFT) to rent my Marbella property?",
+        a: "Yes. All short-term holiday rentals in Andalusia require a VFT (Vivienda de Uso Turístico) licence from the Junta de Andalucía. Advertising on Airbnb, Booking.com, or any other platform without a valid licence is illegal and carries fines of up to €150,000. Oasis Europe verifies licence status for every property we manage and assists with the application where needed.",
+      },
+      {
+        q: "What is the VFT licence number format for Marbella?",
+        a: "Marbella VFT numbers follow the format AT/MA/XXXXXX — where AT indicates tourist accommodation, MA indicates the province of Málaga, and XXXXXX is the unique registration number. This number must appear in all advertising and booking documentation.",
+      },
+      {
+        q: "Can my community ban short-term rentals?",
+        a: "Yes. Communities of owners (comunidades de propietarios) can vote to prohibit tourist rentals by a 3/5 majority, and a valid community ban takes precedence over a VFT licence. Before any property goes to market, Oasis Europe checks the community statutes to confirm rentals are permitted. We strongly recommend this check before purchasing a property specifically for rental purposes.",
+      },
+      {
+        q: "What insurance do I need for a rental property in Marbella?",
+        a: "At minimum, your property insurance should include third-party liability coverage for guests (responsabilidad civil) and cover the property for rental use. Standard homeowner policies often exclude rental activity — review your policy with your insurer before your first guest arrival. Oasis Europe can recommend brokers familiar with the short-term rental market in Marbella.",
+      },
+      {
+        q: "Do I need to declare rental income in Spain?",
+        a: "Yes. Rental income from a Spanish property is subject to Spanish tax — either IRNR (non-resident income tax) for non-residents or IRPF for Spanish residents. The rules differ for EU/EEA residents and non-EU owners. Oasis Europe provides monthly income statements that give your accountant exactly what they need. We work with trusted local tax advisors who specialise in non-resident rental income if you need a referral.",
+      },
+    ],
+  },
+  {
     id: "about",
     eyebrow: "History",
-    label: "About Oasis Europe",
+    label: "About",
     items: [
       {
         q: "How long has Oasis Europe been operating in Marbella?",
@@ -179,14 +179,20 @@ const TopicBlock = ({
   section,
   openKey,
   setOpenKey,
+  sectionRef,
 }: {
   section: Section;
   openKey: string | null;
   setOpenKey: (k: string | null) => void;
+  sectionRef: (el: HTMLElement | null) => void;
 }) => {
   return (
-    <div id={section.id} className="scroll-mt-28">
-      <div className="mb-6 pb-4 border-b border-border">
+    <section
+      id={section.id}
+      ref={sectionRef}
+      className="scroll-mt-40 py-10 md:py-14 border-b border-border/60 last:border-b-0"
+    >
+      <div className="mb-8">
         <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-accent mb-2">
           {section.eyebrow}
         </p>
@@ -194,7 +200,7 @@ const TopicBlock = ({
           {section.label}
         </h2>
       </div>
-      <ul className="divide-y divide-border/60">
+      <ul className="divide-y divide-border/60 border-y border-border/60">
         {section.items.map((it, i) => {
           const key = `${section.id}-${i}`;
           const open = openKey === key;
@@ -203,18 +209,18 @@ const TopicBlock = ({
               <button
                 type="button"
                 onClick={() => setOpenKey(open ? null : key)}
-                className="w-full flex items-start justify-between gap-4 py-4 text-left group"
+                className="w-full flex items-start justify-between gap-6 py-5 text-left group"
                 aria-expanded={open}
               >
                 <span
-                  className={`text-[0.95rem] leading-snug transition-colors ${
+                  className={`text-[1rem] md:text-[1.05rem] leading-snug transition-colors ${
                     open ? "text-foreground" : "text-foreground/80 group-hover:text-foreground"
                   }`}
                 >
                   {it.q}
                 </span>
                 <span
-                  className={`mt-1 shrink-0 text-accent text-lg leading-none transition-transform ${
+                  className={`mt-1 shrink-0 text-accent text-xl leading-none transition-transform duration-300 ${
                     open ? "rotate-45" : ""
                   }`}
                   aria-hidden
@@ -223,15 +229,15 @@ const TopicBlock = ({
                 </span>
               </button>
               {open && (
-                <div className="pb-5 pr-8">
-                  <p className="text-foreground/70 leading-[1.8] text-[0.9rem]">{it.a}</p>
+                <div className="pb-6 pr-10">
+                  <p className="text-foreground/70 leading-[1.85] text-[0.95rem]">{it.a}</p>
                 </div>
               )}
             </li>
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 };
 
@@ -239,44 +245,55 @@ const FAQ = () => {
   const [activeId, setActiveId] = useState(sections[0].id);
   const [query, setQuery] = useState("");
   const [openKey, setOpenKey] = useState<string | null>(null);
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 120;
+      const top = el.getBoundingClientRect().top + window.scrollY - 140;
       window.scrollTo({ top, behavior: "smooth" });
       setActiveId(id);
     }
   };
 
-  const leftIds = ["onboarding", "fees", "legal"];
-  const rightIds = ["operations", "revenue", "about"];
-  const leftSections = sections.filter((s) => leftIds.includes(s.id));
-  const rightSections = sections.filter((s) => rightIds.includes(s.id));
+  // Active section highlighting on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 200;
+      let current = sections[0].id;
+      for (const s of sections) {
+        const el = sectionRefs.current[s.id];
+        if (el && el.offsetTop <= scrollPos) {
+          current = s.id;
+        }
+      }
+      setActiveId(current);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const q = query.trim().toLowerCase();
-  const filterSections = (group: typeof sections) =>
-    group
-      .map((s) => ({
-        ...s,
-        items: q
-          ? s.items.filter(
-              (i) =>
-                i.q.toLowerCase().includes(q) || i.a.toLowerCase().includes(q),
-            )
-          : s.items,
-      }))
-      .filter((s) => s.items.length > 0);
+  const filteredSections = sections
+    .map((s) => ({
+      ...s,
+      items: q
+        ? s.items.filter(
+            (i) =>
+              i.q.toLowerCase().includes(q) || i.a.toLowerCase().includes(q),
+          )
+        : s.items,
+    }))
+    .filter((s) => s.items.length > 0);
 
-  const leftFiltered = filterSections(leftSections);
-  const rightFiltered = filterSections(rightSections);
-  const noResults = q && leftFiltered.length === 0 && rightFiltered.length === 0;
+  const noResults = q && filteredSections.length === 0;
 
   return (
     <main className="min-h-screen bg-background">
       <Navbar dark />
 
-      {/* Hero — centered editorial */}
+      {/* Hero */}
       <section className="pt-32 md:pt-44 pb-20 md:pb-32 section-padding bg-secondary">
         <div className="max-w-3xl mx-auto text-center">
           <p className="label-sm mb-8">Services</p>
@@ -289,7 +306,7 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* Position statement — split image/text */}
+      {/* Position statement */}
       <section className="bg-background">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
           <div className="relative min-h-[320px] md:min-h-[480px] lg:min-h-full overflow-hidden bg-secondary">
@@ -309,11 +326,39 @@ const FAQ = () => {
         </div>
       </section>
 
-      {/* Search + two-column topics */}
-      <section className="section-padding py-16 md:py-24 pb-24 md:pb-32">
-        <div className="max-w-6xl mx-auto">
-          {/* Search bar */}
-          <div className="mb-12 md:mb-16 max-w-2xl mx-auto">
+      {/* Sticky category tabs */}
+      <div className="sticky top-0 z-30 bg-background/95 backdrop-blur-md border-b border-border/60">
+        <div className="max-w-5xl mx-auto section-padding">
+          <nav
+            aria-label="FAQ categories"
+            className="flex gap-2 md:gap-1 overflow-x-auto no-scrollbar py-4"
+          >
+            {sections.map((s) => {
+              const active = activeId === s.id;
+              return (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => scrollTo(s.id)}
+                  className={`shrink-0 px-4 py-2 text-[0.8rem] uppercase tracking-[0.14em] transition-all border-b-2 whitespace-nowrap ${
+                    active
+                      ? "text-accent border-accent"
+                      : "text-foreground/60 border-transparent hover:text-foreground"
+                  }`}
+                >
+                  {s.label}
+                </button>
+              );
+            })}
+          </nav>
+        </div>
+      </div>
+
+      {/* Search + single-column accordions */}
+      <section className="section-padding py-16 md:py-20 pb-24 md:pb-32">
+        <div className="max-w-3xl mx-auto">
+          {/* Search */}
+          <div className="mb-12 md:mb-16">
             <p className="label-sm mb-4 text-center">Search</p>
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
@@ -334,25 +379,22 @@ const FAQ = () => {
             )}
           </div>
 
-          {/* Two-column topic layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-20">
-            {[leftFiltered, rightFiltered].map((group, gIdx) => (
-              <div key={gIdx} className="space-y-16">
-                {group.map((section) => (
-                  <TopicBlock
-                    key={section.id}
-                    section={section}
-                    openKey={openKey}
-                    setOpenKey={setOpenKey}
-                  />
-                ))}
-              </div>
+          {/* Sections */}
+          <div>
+            {filteredSections.map((section) => (
+              <TopicBlock
+                key={section.id}
+                section={section}
+                openKey={openKey}
+                setOpenKey={setOpenKey}
+                sectionRef={(el) => (sectionRefs.current[section.id] = el)}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA — editorial, minimal, matches homepage style */}
+      {/* CTA */}
       <section className="py-24 md:py-32 bg-secondary">
         <div className="section-padding text-center">
           <p className="label-sm mb-8">Enquiries</p>
